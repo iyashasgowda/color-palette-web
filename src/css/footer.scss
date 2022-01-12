@@ -1,0 +1,63 @@
+@import './mixin';
+
+footer {
+   display: flex;
+   width: 100%;
+   height: 72px;
+
+   margin-top: 1px;
+   @include centerItems();
+   flex-direction: row;
+   justify-content: space-between;
+   background-color: white;
+
+   p {
+      color: #808080;
+      font-size: 18px;
+      font-weight: 600;
+
+      margin-left: 50px;
+
+      span {
+         color: #606060;
+         font-weight: 900;
+         cursor: pointer;
+      }
+   }
+
+   ul {
+      display: flex;
+      padding: 0;
+      margin: 0 50px 0 0;
+      list-style: none;
+
+      li {
+         cursor: pointer;
+         margin-left: 24px;
+      }
+
+      li:nth-child(1) {
+         @include iconDropShadow(rgba(14, 118, 168, 0.3));
+      }
+
+      li:nth-child(2) {
+         @include iconDropShadow(rgba(23, 21, 21, 0.3));
+      }
+
+      li:nth-child(3) {
+         @include iconDropShadow(rgba(255, 51, 51, 0.3));
+      }
+
+      li:nth-child(4) {
+         @include iconDropShadow(rgba(59, 89, 152, 0.3));
+      }
+
+      li:nth-child(5) {
+         @include iconDropShadow(rgba(0, 172, 238, 0.3));
+      }
+
+      li:nth-child(6) {
+         @include iconDropShadow(rgba(255, 51, 51, 0.3));
+      }
+   }
+}

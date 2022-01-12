@@ -1,0 +1,9 @@
+@mixin centerItems {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+@mixin iconDropShadow($color) {
+   filter: drop-shadow(0 4px 4px $color);
+}
