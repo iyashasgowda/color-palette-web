@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/color-palette/static/css/main.1f029650.css",
-    "main.js": "/color-palette/static/js/main.cf341d47.js",
+    "main.css": "/color-palette/static/css/main.e79e6b0e.css",
+    "main.js": "/color-palette/static/js/main.1c31ebb5.js",
     "static/media/instagram.svg": "/color-palette/static/media/instagram.f577db858c955f36cfaebd619c7c2f4b.svg",
     "static/media/logo.svg": "/color-palette/static/media/logo.6fa3d7431f38909e76cbeb53cb090b53.svg",
     "static/media/settings.svg": "/color-palette/static/media/settings.ff0e03b907cb0721000097de21fc4a24.svg",
@@ -16,11 +16,11 @@
     "index.html": "/color-palette/index.html",
     "static/media/facebook.svg": "/color-palette/static/media/facebook.b2bf3e2276ff60172994968fff4b7e30.svg",
     "static/media/harmonizer_off.svg": "/color-palette/static/media/harmonizer_off.ba98077fd1296f04d0ec2804a4d41e04.svg",
-    "main.1f029650.css.map": "/color-palette/static/css/main.1f029650.css.map",
-    "main.cf341d47.js.map": "/color-palette/static/js/main.cf341d47.js.map"
+    "main.e79e6b0e.css.map": "/color-palette/static/css/main.e79e6b0e.css.map",
+    "main.1c31ebb5.js.map": "/color-palette/static/js/main.1c31ebb5.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f029650.css",
-    "static/js/main.cf341d47.js"
+    "static/css/main.e79e6b0e.css",
+    "static/js/main.1c31ebb5.js"
   ]
 }
