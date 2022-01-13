@@ -42,7 +42,16 @@
 .header img {
   cursor: pointer;
   margin-right: 50px;
-  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
-          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+}
+
+.header img:hover {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
 }
 /*# sourceMappingURL=header.css.map */

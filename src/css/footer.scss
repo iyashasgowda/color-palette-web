@@ -34,30 +34,55 @@ footer {
       li {
          cursor: pointer;
          margin-left: 24px;
+         transition: 0.3s;
       }
 
       li:nth-child(1) {
-         @include iconDropShadow(rgba(14, 118, 168, 0.3));
+         @include iconDropShadow(rgba(14, 118, 168, 0.5));
+
+         &:hover {
+            @include iconDropShadow(rgba(0, 0, 0, 0));
+         }
       }
 
       li:nth-child(2) {
-         @include iconDropShadow(rgba(23, 21, 21, 0.3));
+         @include iconDropShadow(rgba(23, 21, 21, 0.5));
+
+         &:hover {
+            @include iconDropShadow(rgba(0, 0, 0, 0));
+         }
       }
 
       li:nth-child(3) {
-         @include iconDropShadow(rgba(255, 51, 51, 0.3));
+         @include iconDropShadow(rgba(255, 51, 51, 0.5));
+
+         &:hover {
+            @include iconDropShadow(rgba(0, 0, 0, 0));
+         }
       }
 
       li:nth-child(4) {
-         @include iconDropShadow(rgba(59, 89, 152, 0.3));
+         @include iconDropShadow(rgba(59, 89, 152, 0.5));
+
+         &:hover {
+            @include iconDropShadow(rgba(0, 0, 0, 0));
+         }
       }
 
       li:nth-child(5) {
-         @include iconDropShadow(rgba(0, 172, 238, 0.3));
+         @include iconDropShadow(rgba(0, 172, 238, 0.5));
+
+         &:hover {
+            @include iconDropShadow(rgba(0, 0, 0, 0));
+         }
       }
 
       li:nth-child(6) {
-         @include iconDropShadow(rgba(255, 51, 51, 0.3));
+         @include iconDropShadow(rgba(255, 51, 51, 0.5));
+
+         &:hover {
+            @include iconDropShadow(rgba(0, 0, 0, 0));
+         }
       }
    }
 }

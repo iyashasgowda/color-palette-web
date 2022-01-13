@@ -47,35 +47,67 @@ footer ul {
 footer ul li {
   cursor: pointer;
   margin-left: 24px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 footer ul li:nth-child(1) {
-  -webkit-filter: drop-shadow(0 4px 4px rgba(14, 118, 168, 0.3));
-          filter: drop-shadow(0 4px 4px rgba(14, 118, 168, 0.3));
+  -webkit-filter: drop-shadow(0 4px 4px rgba(14, 118, 168, 0.5));
+          filter: drop-shadow(0 4px 4px rgba(14, 118, 168, 0.5));
+}
+
+footer ul li:nth-child(1):hover {
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
 }
 
 footer ul li:nth-child(2) {
-  -webkit-filter: drop-shadow(0 4px 4px rgba(23, 21, 21, 0.3));
-          filter: drop-shadow(0 4px 4px rgba(23, 21, 21, 0.3));
+  -webkit-filter: drop-shadow(0 4px 4px rgba(23, 21, 21, 0.5));
+          filter: drop-shadow(0 4px 4px rgba(23, 21, 21, 0.5));
+}
+
+footer ul li:nth-child(2):hover {
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
 }
 
 footer ul li:nth-child(3) {
-  -webkit-filter: drop-shadow(0 4px 4px rgba(255, 51, 51, 0.3));
-          filter: drop-shadow(0 4px 4px rgba(255, 51, 51, 0.3));
+  -webkit-filter: drop-shadow(0 4px 4px rgba(255, 51, 51, 0.5));
+          filter: drop-shadow(0 4px 4px rgba(255, 51, 51, 0.5));
+}
+
+footer ul li:nth-child(3):hover {
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
 }
 
 footer ul li:nth-child(4) {
-  -webkit-filter: drop-shadow(0 4px 4px rgba(59, 89, 152, 0.3));
-          filter: drop-shadow(0 4px 4px rgba(59, 89, 152, 0.3));
+  -webkit-filter: drop-shadow(0 4px 4px rgba(59, 89, 152, 0.5));
+          filter: drop-shadow(0 4px 4px rgba(59, 89, 152, 0.5));
+}
+
+footer ul li:nth-child(4):hover {
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
 }
 
 footer ul li:nth-child(5) {
-  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 172, 238, 0.3));
-          filter: drop-shadow(0 4px 4px rgba(0, 172, 238, 0.3));
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 172, 238, 0.5));
+          filter: drop-shadow(0 4px 4px rgba(0, 172, 238, 0.5));
+}
+
+footer ul li:nth-child(5):hover {
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
 }
 
 footer ul li:nth-child(6) {
-  -webkit-filter: drop-shadow(0 4px 4px rgba(255, 51, 51, 0.3));
-          filter: drop-shadow(0 4px 4px rgba(255, 51, 51, 0.3));
+  -webkit-filter: drop-shadow(0 4px 4px rgba(255, 51, 51, 0.5));
+          filter: drop-shadow(0 4px 4px rgba(255, 51, 51, 0.5));
+}
+
+footer ul li:nth-child(6):hover {
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
 }
 /*# sourceMappingURL=footer.css.map */

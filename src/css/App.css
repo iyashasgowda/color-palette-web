@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Quicksand', sans-serif;
+  overflow: hidden;
   background-color: lightgrey;
 }
 
@@ -57,6 +58,39 @@ section {
   width: 100%;
   height: 100%;
   margin-top: 1px;
+}
+
+.frame .color-shades {
+  width: 100%;
+  height: 100%;
   background-color: white;
+}
+
+.frame .color-holder {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 72px;
+  width: 180px;
+  margin-left: 1px;
+  padding: 9px;
+  background-color: white;
+}
+
+.frame .color-holder .color-item {
+  margin: 9px;
+  border-radius: 16px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+}
+
+.frame .color-holder .color-item:hover {
+  border-radius: 20px;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
 }
 /*# sourceMappingURL=App.css.map */

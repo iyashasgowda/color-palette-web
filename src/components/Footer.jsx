@@ -1,5 +1,5 @@
 import React from 'react';
-import connect from '../utils/data.json';
+import data from '../utils/data.json';
 
 import linkedin from '../assets/icons/social/linkedin.svg';
 import github from '../assets/icons/social/github.svg';
@@ -18,26 +18,26 @@ const Footer = () => {
    return (
       <footer>
          <p>
-            © {this_year} <span onClick={() => goTo(connect.website)}>Yashas Gowda.</span> All rights reserved.
+            © {this_year} <span onClick={() => goTo(data.author.website)}>Yashas Gowda.</span> All rights reserved.
          </p>
          <ul>
             <li>
-               <img onClick={() => goTo(connect.linkedin)} src={linkedin} alt='linkedin' width={icon_size} height={icon_size}></img>
+               <img onClick={() => goTo(data.author.linkedin)} src={linkedin} alt='linkedin' width={icon_size} height={icon_size}></img>
             </li>
             <li>
-               <img onClick={() => goTo(connect.github)} src={github} alt='github' width={icon_size} height={icon_size}></img>
+               <img onClick={() => goTo(data.author.github)} src={github} alt='github' width={icon_size} height={icon_size}></img>
             </li>
             <li>
-               <img onClick={() => goTo(connect.instagram)} src={instagram} alt='instagram' width={icon_size} height={icon_size}></img>
+               <img onClick={() => goTo(data.author.instagram)} src={instagram} alt='instagram' width={icon_size} height={icon_size}></img>
             </li>
             <li>
-               <img onClick={() => goTo(connect.facebook)} src={facebook} alt='facebook' width={icon_size} height={icon_size}></img>
+               <img onClick={() => goTo(data.author.facebook)} src={facebook} alt='facebook' width={icon_size} height={icon_size}></img>
             </li>
             <li>
-               <img onClick={() => goTo(connect.twitter)} src={twitter} alt='twitter' width={icon_size} height={icon_size}></img>
+               <img onClick={() => goTo(data.author.twitter)} src={twitter} alt='twitter' width={icon_size} height={icon_size}></img>
             </li>
             <li>
-               <img onClick={() => goTo(connect.playstore)} src={playstore} alt='playstore' width={icon_size} height={icon_size}></img>
+               <img onClick={() => goTo(data.author.playstore)} src={playstore} alt='playstore' width={icon_size} height={icon_size}></img>
             </li>
          </ul>
       </footer>

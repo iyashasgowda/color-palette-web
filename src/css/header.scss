@@ -31,6 +31,12 @@
    img {
       cursor: pointer;
       margin-right: 50px;
-      @include iconDropShadow(rgba(0, 0, 0, 0.25));
+      transition: 0.3s;
+      @include iconDropShadow(rgba(0, 0, 0, 0.4));
+
+      &:hover {
+         transform: rotate(45deg);
+         @include iconDropShadow(rgba(0, 0, 0, 0));
+      }
    }
 }
