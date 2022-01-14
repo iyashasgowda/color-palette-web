@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Colors from './Colors';
 import Shades from './Shades';
 
 const Frame = () => {
+   const [activeColor, setActiveColor] = useState(1);
+   const handleColorChange = (id) => setActiveColor(id);
+
    return (
       <div className='frame'>
-         <Shades />
-         <Colors />
+         <Shades activeColor={activeColor} />
+         <Colors activeColor={activeColor} changeColor={handleColorChange} />
       </div>
    );
 };

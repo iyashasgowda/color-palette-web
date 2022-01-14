@@ -8,9 +8,6 @@ import create_icon from '../assets/icons/off/create_off.svg';
 import extract_icon from '../assets/icons/off/extract_off.svg';
 import harmonize_icon from '../assets/icons/off/harmonizer_off.svg';
 
-/** Style */
-import '../css/menu.css';
-
 const Menu = () => {
    const logo_size = 48;
 

@@ -1,9 +1,7 @@
 import React from 'react';
 
+/** Icons */
 import theme from '../assets/icons/dark.svg';
-
-/** Style */
-import '../css/header.css';
 
 const Header = ({ version }) => {
    return (
