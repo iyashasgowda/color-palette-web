@@ -1,7 +1,6 @@
 import React from 'react';
 
-/** Icons */
-import theme from '../assets/icons/dark.svg';
+import app from '../../../../package.json';
 
 const Header = ({ version }) => {
    return (
@@ -12,7 +11,7 @@ const Header = ({ version }) => {
                <p>v{version}</p>
             </div>
 
-            <img src={theme} alt='theme'></img>
+            <img src={`${app.name}/assets/icons/dark.svg`} alt='theme'></img>
          </header>
       </>
    );

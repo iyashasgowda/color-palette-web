@@ -63,17 +63,33 @@ body {
             list-style: none;
 
             li {
-               margin-bottom: 50px;
+               margin-bottom: 40px;
                transition: 0.3s;
                cursor: pointer;
-            }
-
-            li:nth-child(1) {
-               @include iconDropShadow(rgba(0, 0, 0, 0.4));
 
                &:hover {
                   @include iconDropShadow(rgba(0, 0, 0, 0));
                }
+            }
+
+            .home-item {
+               @include iconDropShadow(rgba(0, 0, 0, 0.4));
+            }
+
+            .create-item {
+               @include iconDropShadow(rgba(0, 0, 0, 0.4));
+            }
+
+            .extract-item {
+               @include iconDropShadow(rgba(0, 0, 0, 0.4));
+            }
+
+            .harmonizer-item {
+               @include iconDropShadow(rgba(0, 0, 0, 0.4));
+            }
+
+            .saved-item {
+               @include iconDropShadow(rgba(0, 0, 0, 0.4));
             }
          }
       }
@@ -141,7 +157,7 @@ body {
          }
       }
 
-      .frame {
+      .material-color {
          display: flex;
          width: 100%;
          height: 100%;
@@ -253,6 +269,34 @@ body {
                }
             }
          }
+      }
+
+      .create-color {
+         display: flex;
+         width: 100%;
+         height: 100%;
+         margin-top: 1px;
+      }
+
+      .extract-color {
+         display: flex;
+         width: 100%;
+         height: 100%;
+         margin-top: 1px;
+      }
+
+      .harmonize-color {
+         display: flex;
+         width: 100%;
+         height: 100%;
+         margin-top: 1px;
+      }
+
+      .saved-color {
+         display: flex;
+         width: 100%;
+         height: 100%;
+         margin-top: 1px;
       }
 
       footer {

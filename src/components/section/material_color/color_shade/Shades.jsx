@@ -1,7 +1,7 @@
 import React from 'react';
 import Shade from './Shade';
-import { makeToast } from '../utils/utils';
-import data from '../utils/data.json';
+import { makeToast } from '../../../../utils/utils';
+import data from '../../../../utils/data.json';
 
 const Shades = ({ activeColor }) => {
    return (

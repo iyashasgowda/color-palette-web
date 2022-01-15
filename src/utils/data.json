@@ -1,4 +1,26 @@
 {
+   "menu_items": [
+      {
+         "id": 1,
+         "name": "home"
+      },
+      {
+         "id": 2,
+         "name": "create"
+      },
+      {
+         "id": 3,
+         "name": "extract"
+      },
+      {
+         "id": 4,
+         "name": "harmonizer"
+      },
+      {
+         "id": 5,
+         "name": "saved"
+      }
+   ],
    "colors": [
       {
          "id": 1,

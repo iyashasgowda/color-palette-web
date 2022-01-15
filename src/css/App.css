@@ -127,20 +127,40 @@ body p {
 }
 
 .container .menu div ul li {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   cursor: pointer;
 }
 
-.container .menu div ul li:nth-child(1) {
+.container .menu div ul li:hover {
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
+}
+
+.container .menu div ul .home-item {
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
           filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
 }
 
-.container .menu div ul li:nth-child(1):hover {
-  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
-          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
+.container .menu div ul .create-item {
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+}
+
+.container .menu div ul .extract-item {
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+}
+
+.container .menu div ul .harmonizer-item {
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+}
+
+.container .menu div ul .saved-item {
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
 }
 
 .container .menu .settings {
@@ -231,7 +251,7 @@ body p {
           filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
 }
 
-.container section .frame {
+.container section .material-color {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -240,7 +260,7 @@ body p {
   margin-top: 1px;
 }
 
-.container section .frame .color-shades {
+.container section .material-color .color-shades {
   width: 100%;
   height: auto;
   padding: 16px 20px 16px 20px;
@@ -251,7 +271,7 @@ body p {
   background-color: white;
 }
 
-.container section .frame .color-shades .color-shade {
+.container section .material-color .color-shades .color-shade {
   margin: 16px 20px 16px 20px;
   cursor: pointer;
   border-radius: 24px;
@@ -262,7 +282,7 @@ body p {
           filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
 }
 
-.container section .frame .color-shades .color-shade div:nth-child(1) {
+.container section .material-color .color-shades .color-shade div:nth-child(1) {
   width: 100%;
   height: 74%;
   -webkit-transition: 0.3s;
@@ -278,47 +298,47 @@ body p {
           filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
-.container section .frame .color-shades .color-shade div:nth-child(2) {
+.container section .material-color .color-shades .color-shade div:nth-child(2) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 5px 20px;
 }
 
-.container section .frame .color-shades .color-shade div:nth-child(2) div p:nth-child(1) {
+.container section .material-color .color-shades .color-shade div:nth-child(2) div p:nth-child(1) {
   font-size: 20px;
   font-weight: 900;
   margin-bottom: 2px;
 }
 
-.container section .frame .color-shades .color-shade div:nth-child(2) div p:nth-child(2) {
+.container section .material-color .color-shades .color-shade div:nth-child(2) div p:nth-child(2) {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   font-size: 16px;
   font-weight: 600;
 }
 
-.container section .frame .color-shades .color-shade div:nth-child(2) img {
+.container section .material-color .color-shades .color-shade div:nth-child(2) img {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.container section .frame .color-shades .color-shade div:nth-child(2) img:hover {
+.container section .material-color .color-shades .color-shade div:nth-child(2) img:hover {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
 }
 
-.container section .frame .color-shades .color-shade:hover {
+.container section .material-color .color-shades .color-shade:hover {
   -webkit-filter: drop-shadow(0 0px 4px rgba(0, 0, 0, 0.15));
           filter: drop-shadow(0 0px 4px rgba(0, 0, 0, 0.15));
 }
 
-.container section .frame .color-shades .color-shade:hover div {
+.container section .material-color .color-shades .color-shade:hover div {
   -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
           filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
 }
 
-.container section .frame .color-holder {
+.container section .material-color .color-holder {
   width: 218px;
   padding: 12px;
   margin-left: 1px;
@@ -330,7 +350,7 @@ body p {
   background-color: white;
 }
 
-.container section .frame .color-holder .color-item {
+.container section .material-color .color-holder .color-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -349,7 +369,7 @@ body p {
           filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
 }
 
-.container section .frame .color-holder .color-item .selector {
+.container section .material-color .color-holder .color-item .selector {
   width: 10px;
   height: 10px;
   -webkit-transition: 0.3s;
@@ -361,17 +381,53 @@ body p {
           filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
 }
 
-.container section .frame .color-holder .color-item:hover {
+.container section .material-color .color-holder .color-item:hover {
   border-radius: 20px;
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
           filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
 }
 
-.container section .frame .color-holder .color-item:hover .selector {
+.container section .material-color .color-holder .color-item:hover .selector {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
           filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0));
+}
+
+.container section .create-color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 1px;
+}
+
+.container section .extract-color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 1px;
+}
+
+.container section .harmonize-color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 1px;
+}
+
+.container section .saved-color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 1px;
 }
 
 .container section footer {

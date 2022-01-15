@@ -1,6 +1,7 @@
 import React from 'react';
-import { makeToast } from '../utils/utils.js';
-import copy_icon from '../assets/icons/dark/copy.svg';
+
+import app from '../../../../../package.json';
+import { makeToast } from '../../../../utils/utils.js';
 
 const Shade = ({ shade }) => {
    return (
@@ -12,7 +13,7 @@ const Shade = ({ shade }) => {
                <p>{shade.code.toUpperCase()}</p>
             </div>
             <img
-               src={copy_icon}
+               src={`${app.name}/assets/icons/dark/copy.svg`}
                alt='copy'
                onClick={() => {
                   navigator.clipboard.writeText(shade.code.toUpperCase());
