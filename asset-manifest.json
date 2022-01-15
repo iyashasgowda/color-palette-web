@@ -1,27 +1,13 @@
 {
   "files": {
-    "main.css": "/color-palette/static/css/main.769d2d15.css",
-    "main.js": "/color-palette/static/js/main.c442a4eb.js",
-    "static/media/instagram.svg": "/color-palette/static/media/instagram.f577db858c955f36cfaebd619c7c2f4b.svg",
-    "static/media/logo.svg": "/color-palette/static/media/logo.6fa3d7431f38909e76cbeb53cb090b53.svg",
-    "static/media/settings.svg": "/color-palette/static/media/settings.ff0e03b907cb0721000097de21fc4a24.svg",
-    "static/media/dark.svg": "/color-palette/static/media/dark.8bc75eac8e4e17ca7dd6a92484ac54d2.svg",
-    "static/media/create_off.svg": "/color-palette/static/media/create_off.0fcb807c3e6e7fd78e2747ce25a8602e.svg",
-    "static/media/extract_off.svg": "/color-palette/static/media/extract_off.c7bedc6cb25f6bbd689f1300375337fb.svg",
-    "static/media/github.svg": "/color-palette/static/media/github.4fa6d57e20d843134e54331a9cd98af7.svg",
-    "static/media/home_on.svg": "/color-palette/static/media/home_on.ff7cfab30e2f3dd406c727489026d420.svg",
-    "static/media/twitter.svg": "/color-palette/static/media/twitter.cd2daf7c1f64811b6bb2faad8e4a5354.svg",
-    "static/media/copy.svg": "/color-palette/static/media/copy.6c5440d9f2ed6ada5218f7762f802f11.svg",
-    "static/media/playstore.svg": "/color-palette/static/media/playstore.8c54f40d8153b5dad0eac4da7901433c.svg",
+    "main.css": "/color-palette/static/css/main.fe96800f.css",
+    "main.js": "/color-palette/static/js/main.8daabee9.js",
     "index.html": "/color-palette/index.html",
-    "static/media/linkedin.svg": "/color-palette/static/media/linkedin.717d38aaeb8637a24f316038d4e964e7.svg",
-    "static/media/facebook.svg": "/color-palette/static/media/facebook.b2bf3e2276ff60172994968fff4b7e30.svg",
-    "static/media/harmonizer_off.svg": "/color-palette/static/media/harmonizer_off.ba98077fd1296f04d0ec2804a4d41e04.svg",
-    "main.769d2d15.css.map": "/color-palette/static/css/main.769d2d15.css.map",
-    "main.c442a4eb.js.map": "/color-palette/static/js/main.c442a4eb.js.map"
+    "main.fe96800f.css.map": "/color-palette/static/css/main.fe96800f.css.map",
+    "main.8daabee9.js.map": "/color-palette/static/js/main.8daabee9.js.map"
   },
   "entrypoints": [
-    "static/css/main.769d2d15.css",
-    "static/js/main.c442a4eb.js"
+    "static/css/main.fe96800f.css",
+    "static/js/main.8daabee9.js"
   ]
 }
