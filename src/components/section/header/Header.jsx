@@ -1,17 +1,16 @@
 import React from 'react';
 
-import app from '../../../../package.json';
-
-const Header = ({ version }) => {
+const Header = (props) => {
+   let theme = props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/dark/dark.svg` : `${process.env.PUBLIC_URL}/assets/icons/light/dark.svg`;
    return (
       <>
          <header className='header'>
             <div>
                <h1>Color Palette</h1>
-               <p>v{version}</p>
+               <p>v{props.version}</p>
             </div>
 
-            <img src={`${app.name}/assets/icons/dark.svg`} alt='theme'></img>
+            <img src={theme} alt='theme' onClick={props.changeTheme}></img>
          </header>
       </>
    );

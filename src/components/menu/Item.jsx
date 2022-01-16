@@ -1,13 +1,18 @@
 import React from 'react';
-import app from '../../../package.json';
 
-const Item = ({ item, activeMenu, changeMenu }) => {
-   const path = activeMenu === item.id ? `${app.name}/assets/icons/on/${item.name}.svg` : `${app.name}/assets/icons/off/${item.name}.svg`;
-   const style = activeMenu === item.id ? `${item.name}-item` : '';
+const Item = (props) => {
+   const path = props.darkMode
+      ? props.activeMenu === props.item.id
+         ? `${process.env.PUBLIC_URL}/assets/icons/dark/${props.item.name}.svg`
+         : `${process.env.PUBLIC_URL}/assets/icons/off/${props.item.name}.svg`
+      : props.activeMenu === props.item.id
+      ? `${process.env.PUBLIC_URL}/assets/icons/light/${props.item.name}.svg`
+      : `${process.env.PUBLIC_URL}/assets/icons/off/${props.item.name}.svg`;
+   const style = props.activeMenu === props.item.id ? `${props.item.name}-item` : '';
 
    return (
       <li className={style}>
-         <img src={path} alt={item.name} onClick={() => changeMenu(item.id)}></img>
+         <img src={path} alt={props.item.name} onClick={() => props.changeMenu(props.item.id)}></img>
       </li>
    );
 };

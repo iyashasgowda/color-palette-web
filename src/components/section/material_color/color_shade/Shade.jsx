@@ -1,23 +1,23 @@
 import React from 'react';
 
-import app from '../../../../../package.json';
 import { makeToast } from '../../../../utils/utils.js';
 
-const Shade = ({ shade }) => {
+const Shade = (props) => {
+   const copy = props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/dark/copy.svg` : `${process.env.PUBLIC_URL}/assets/icons/light/copy.svg`;
    return (
       <div className='color-shade'>
-         <div style={{ backgroundColor: shade.code }}></div>
+         <div style={{ backgroundColor: props.shade.code }}></div>
          <div>
             <div>
-               <p>{shade.name}</p>
-               <p>{shade.code.toUpperCase()}</p>
+               <p>{props.shade.name}</p>
+               <p>{props.shade.code.toUpperCase()}</p>
             </div>
             <img
-               src={`${app.name}/assets/icons/dark/copy.svg`}
+               src={copy}
                alt='copy'
                onClick={() => {
-                  navigator.clipboard.writeText(shade.code.toUpperCase());
-                  makeToast(`Color ${shade.code.toUpperCase()} copied :)`);
+                  navigator.clipboard.writeText(props.shade.code.toUpperCase());
+                  makeToast(`Color ${props.shade.code.toUpperCase()} copied :)`);
                }}
             ></img>
          </div>

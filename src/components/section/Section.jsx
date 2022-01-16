@@ -8,19 +8,19 @@ import Harmonize from './harmonize/Harmonize';
 import Saved from './saved/Saved';
 import { makeToast } from '../../utils/utils';
 
-const Section = ({ activeMenu, version }) => {
+const Section = (props) => {
    const [activeColor, setActiveColor] = useState(1);
    const handleColorChange = (id) => setActiveColor(id);
 
    return (
       <section>
-         <Header version={version} />
-         {activeMenu === 1 ? <MaterialColor activeColor={activeColor} changeColor={handleColorChange} /> : makeToast('Feature in development!')}
-         {activeMenu === 2 && <Create />}
-         {activeMenu === 3 && <Extract />}
-         {activeMenu === 4 && <Harmonize />}
-         {activeMenu === 5 && <Saved />}
-         <Footer />
+         <Header version={props.version} darkMode={props.darkMode} changeTheme={props.changeTheme} />
+         {props.activeMenu === 1 ? <MaterialColor activeColor={activeColor} darkMode={props.darkMode} changeColor={handleColorChange} /> : makeToast('Feature in development!')}
+         {props.activeMenu === 2 && <Create />}
+         {props.activeMenu === 3 && <Extract />}
+         {props.activeMenu === 4 && <Harmonize />}
+         {props.activeMenu === 5 && <Saved />}
+         <Footer darkMode={props.darkMode} />
       </section>
    );
 };

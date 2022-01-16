@@ -1,1 +1,7 @@
-/* No CSS *//*# sourceMappingURL=variables.css.map */
+:root {
+  --base-color: #d3d3d3;
+  --background-color: #ffffff;
+  --card-color: #fafafa;
+  --text-color: #212121;
+}
+/*# sourceMappingURL=variables.css.map */
