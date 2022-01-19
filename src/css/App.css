@@ -419,6 +419,247 @@ body p {
   margin-top: 1px;
 }
 
+.container section .create-color .solid-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  background-color: var(--background-color);
+}
+
+.container section .create-color .solid-section .solid-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 32px 0 0 32px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container section .create-color .solid-section .solid-header p {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.container section .create-color .solid-section .solid-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  margin: 48px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  border-radius: 24px;
+  background-color: var(--card-color);
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
+}
+
+.container section .create-color .solid-section .solid-body .solid-color {
+  width: 55%;
+  height: 100%;
+  border-radius: inherit;
+  -webkit-filter: drop-shadow(4px 0 8px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(4px 0 8px rgba(0, 0, 0, 0.2));
+}
+
+.container section .create-color .solid-section .solid-body .solid-control {
+  width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: var(--text-color);
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes {
+  margin: 32px;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hex div img:nth-child(2) {
+  margin-left: 16px;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-rgb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-rgb div img:nth-child(2) {
+  margin-left: 16px;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-cmyk {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .seekbars {
+  margin-bottom: 64px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .seekbars ul:nth-child(1) {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .seekbars ul:nth-child(1) li {
+  margin-bottom: 2px;
+  font-size: 18px;
+  font-weight: bold;
+  list-style-type: none;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .seekbars ul:nth-child(2) {
+  margin: 0 0 0 10px;
+  padding: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .seekbars ul:nth-child(2) li {
+  list-style-type: none;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .seekbars ul:nth-child(2) li input[type='range'] {
+  width: 88%;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .seekbars ul:nth-child(2) li input[type='range']:nth-child(1) {
+  -webkit-transition: 0.5;
+  transition: 0.5;
+}
+
+.container section .create-color .gradient-section {
+  width: 100%;
+  height: 100%;
+  margin-left: 1px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  background-color: var(--background-color);
+}
+
+.container section .create-color .gradient-section .gradient-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 32px 0 0 32px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container section .create-color .gradient-section .gradient-header p {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .container section .extract-color {
   display: -webkit-box;
   display: -ms-flexbox;

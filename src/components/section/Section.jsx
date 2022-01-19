@@ -6,7 +6,6 @@ import Create from './create/Create';
 import Extract from './extract/Extract';
 import Harmonize from './harmonize/Harmonize';
 import Saved from './saved/Saved';
-import { makeToast } from '../../utils/utils';
 
 const Section = (props) => {
    const [activeColor, setActiveColor] = useState(1);
@@ -15,11 +14,11 @@ const Section = (props) => {
    return (
       <section>
          <Header version={props.version} darkMode={props.darkMode} changeTheme={props.changeTheme} />
-         {props.activeMenu === 1 ? <MaterialColor activeColor={activeColor} darkMode={props.darkMode} changeColor={handleColorChange} /> : makeToast('Feature in development!')}
-         {props.activeMenu === 2 && <Create />}
-         {props.activeMenu === 3 && <Extract />}
-         {props.activeMenu === 4 && <Harmonize />}
-         {props.activeMenu === 5 && <Saved />}
+         {props.activeMenu === 1 && <MaterialColor activeColor={activeColor} darkMode={props.darkMode} changeColor={handleColorChange} />}
+         {props.activeMenu === 2 && <Create darkMode={props.darkMode} />}
+         {props.activeMenu === 3 && <Extract darkMode={props.darkMode} />}
+         {props.activeMenu === 4 && <Harmonize darkMode={props.darkMode} />}
+         {props.activeMenu === 5 && <Saved darkMode={props.darkMode} />}
          <Footer darkMode={props.darkMode} />
       </section>
    );
