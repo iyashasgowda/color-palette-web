@@ -467,9 +467,17 @@ body p {
 .container section .create-color .solid-section .solid-body .solid-color {
   width: 55%;
   height: 100%;
+  cursor: pointer;
   border-radius: inherit;
   -webkit-filter: drop-shadow(4px 0 8px rgba(0, 0, 0, 0.2));
           filter: drop-shadow(4px 0 8px rgba(0, 0, 0, 0.2));
+}
+
+.container section .create-color .solid-section .solid-body .solid-color:hover {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-filter: drop-shadow(2px 0 4px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(2px 0 4px rgba(0, 0, 0, 0.1));
 }
 
 .container section .create-color .solid-section .solid-body .solid-control {
@@ -505,6 +513,17 @@ body p {
           justify-content: space-between;
 }
 
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hex div img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hex div img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
 .container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hex div img:nth-child(2) {
   margin-left: 16px;
 }
@@ -522,6 +541,17 @@ body p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-rgb div img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-rgb div img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 .container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-rgb div img:nth-child(2) {
@@ -543,6 +573,17 @@ body p {
           justify-content: space-between;
 }
 
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsv img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsv img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
 .container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsl {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -558,6 +599,17 @@ body p {
           justify-content: space-between;
 }
 
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsl img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsl img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
 .container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-cmyk {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -571,6 +623,17 @@ body p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-cmyk img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-cmyk img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 .container section .create-color .solid-section .solid-body .solid-control .seekbars {
@@ -636,6 +699,13 @@ body p {
 }
 
 .container section .create-color .gradient-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
   height: 100%;
   margin-left: 1px;
@@ -658,6 +728,223 @@ body p {
   margin-left: 10px;
   font-size: 20px;
   font-weight: bold;
+}
+
+.container section .create-color .gradient-section .gradient-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  margin: 48px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  border-radius: 24px;
+  background-color: var(--card-color);
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-color {
+  width: 55%;
+  height: 100%;
+  cursor: pointer;
+  border-radius: inherit;
+  -webkit-filter: drop-shadow(4px 0 8px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(4px 0 8px rgba(0, 0, 0, 0.2));
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-color:hover {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-filter: drop-shadow(2px 0 4px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(2px 0 4px rgba(0, 0, 0, 0.1));
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control {
+  width: 45%;
+  height: 100%;
+  margin: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: var(--text-color);
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom {
+  margin: 16px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-hex,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-hex,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-hex,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-hex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-hex div img,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-hex div img,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-hex div img,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-hex div img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-hex div img:hover,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-hex div img:hover,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-hex div img:hover,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-hex div img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-hex div img:nth-child(2),
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-hex div img:nth-child(2),
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-hex div img:nth-child(2),
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-hex div img:nth-child(2) {
+  margin-left: 16px;
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-rgba,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-rgba,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-rgba,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-rgba {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-rgba div img,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-rgba div img,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-rgba div img,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-rgba div img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-rgba div img:hover,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-rgba div img:hover,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-rgba div img:hover,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-rgba div img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-rgba div img:nth-child(2),
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-rgba div img:nth-child(2),
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-rgba div img:nth-child(2),
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-rgba div img:nth-child(2) {
+  margin-left: 16px;
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-sliders,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-sliders,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-sliders,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-sliders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-sliders ul:nth-child(1),
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-sliders ul:nth-child(1),
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-sliders ul:nth-child(1),
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-sliders ul:nth-child(1) {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-sliders ul:nth-child(1) li,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-sliders ul:nth-child(1) li,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-sliders ul:nth-child(1) li,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-sliders ul:nth-child(1) li {
+  font-size: 18px;
+  font-weight: bold;
+  list-style-type: none;
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-sliders ul:nth-child(2),
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-sliders ul:nth-child(2),
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-sliders ul:nth-child(2),
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-sliders ul:nth-child(2) {
+  margin: 0 0 0 14px;
+  padding: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-sliders ul:nth-child(2) li,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-sliders ul:nth-child(2) li,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-sliders ul:nth-child(2) li,
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-sliders ul:nth-child(2) li {
+  list-style-type: none;
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-sliders ul:nth-child(2) li input[type='range'],
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-sliders ul:nth-child(2) li input[type='range'],
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-sliders ul:nth-child(2) li input[type='range'],
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-sliders ul:nth-child(2) li input[type='range'] {
+  width: 100%;
+}
+
+.container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom {
+  margin: 16px 16px 24px 16px;
 }
 
 .container section .extract-color {

@@ -7,7 +7,7 @@ import { changeTheme } from './utils/utils';
 import app from '../package.json';
 
 const App = () => {
-   const [activeMenu, setActiveMenu] = useState(2);
+   const [activeMenu, setActiveMenu] = useState(1);
    const [darkMode, setDarkMode] = useState(false);
 
    const handleMenuChange = (id) => setActiveMenu(id);

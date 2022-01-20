@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { copyText, makeToast, rgba2hex, rgb2hsv, rgb2cmyk, rgb2hsl, updateSlider } from '../../../utils/utils';
+
 import data from '../../../utils/data.json';
-import '../../../css/slider.css';
-import { rgba2hex, rgb2hsv, updateSlider } from '../../../utils/utils';
 
 const Solid = (props) => {
-   const [solid_alpha, setAlpha] = useState(255);
-   const [solid_red, setRed] = useState(220);
-   const [solid_green, setGreen] = useState(40);
-   const [solid_blue, setBlue] = useState(80);
-
+   const [red, green, blue, alpha] = [props.solid.red, props.solid.green, props.solid.blue, props.solid.alpha];
+   const [hex, rgba, hsv, hsl, cmyk] = [rgba2hex(red, green, blue, alpha), `${red}, ${green}, ${blue}, ${alpha}`, rgb2hsv(red, green, blue), rgb2hsl(red, green, blue), rgb2cmyk(red, green, blue)];
    const solid_icon = props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/solid.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/solid.svg`;
 
    useEffect(() => {
@@ -18,8 +15,6 @@ const Solid = (props) => {
       updateSlider('solid_blue_seekbar', data.slider.blue);
    });
 
-   const updateSolid = () => {};
-
    return (
       <div className='solid-section'>
          <div className='solid-header'>
@@ -28,38 +23,73 @@ const Solid = (props) => {
          </div>
 
          <div className='solid-body'>
-            <div className='solid-color' style={{ backgroundColor: `rgba(${solid_red}, ${solid_green}, ${solid_blue}, ${solid_alpha / 255} )` }} />
+            <div className='solid-color' style={{ backgroundColor: `rgba(${red}, ${green}, ${blue}, ${alpha / 255} )` }} />
             <div className='solid-control'>
                <div className='solid-attributes'>
                   <div className='solid-hex'>
-                     <p>HEX: {rgba2hex(solid_red, solid_green, solid_blue, solid_alpha)}</p>
+                     <p>HEX: {hex}</p>
                      <div>
                         <img src={`${process.env.PUBLIC_URL}/assets/icons/edit.svg`} alt='edit' />
-                        <img src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`} alt='copy' />
+                        <img
+                           src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
+                           alt='copy'
+                           onClick={() => {
+                              copyText(hex);
+                              makeToast(`${hex} copied :)`);
+                           }}
+                        />
                      </div>
                   </div>
 
                   <div className='solid-rgb'>
-                     <p>RGBA: {`${solid_red}, ${solid_green}, ${solid_blue}, ${solid_alpha}`}</p>
+                     <p>RGBA: {rgba}</p>
                      <div>
                         <img src={`${process.env.PUBLIC_URL}/assets/icons/edit.svg`} alt='edit' />
-                        <img src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`} alt='copy' />
+                        <img
+                           src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
+                           alt='copy'
+                           onClick={() => {
+                              copyText(rgba);
+                              makeToast(`${rgba} copied :)`);
+                           }}
+                        />
                      </div>
                   </div>
 
                   <div className='solid-hsv'>
-                     <p>HSV: {rgb2hsv(solid_red, solid_green, solid_blue)}</p>
-                     <img src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`} alt='copy' />
+                     <p>HSV: {hsv}</p>
+                     <img
+                        src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
+                        alt='copy'
+                        onClick={() => {
+                           copyText(hsv);
+                           makeToast(`${hsv} copied :)`);
+                        }}
+                     />
                   </div>
 
                   <div className='solid-hsl'>
-                     <p>HSL: 888°, 888%, 888%</p>
-                     <img src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`} alt='copy' />
+                     <p>HSL: {hsl}</p>
+                     <img
+                        src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
+                        alt='copy'
+                        onClick={() => {
+                           copyText(hsl);
+                           makeToast(`${hsl} copied :)`);
+                        }}
+                     />
                   </div>
 
                   <div className='solid-cmyk'>
-                     <p>CMYK: 888%, 888%, 888%, 888%</p>
-                     <img src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`} alt='copy' />
+                     <p>CMYK: {cmyk}</p>
+                     <img
+                        src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
+                        alt='copy'
+                        onClick={() => {
+                           copyText(cmyk);
+                           makeToast(`${cmyk} copied :)`);
+                        }}
+                     />
                   </div>
                </div>
 
@@ -78,11 +108,10 @@ const Solid = (props) => {
                            type='range'
                            min='0'
                            max='255'
-                           value={solid_red}
+                           value={red}
                            onInput={(e) => {
                               updateSlider('solid_red_seekbar', data.slider.red);
-                              setRed(e.target.value);
-                              updateSolid();
+                              props.changeSolid(e.target.value, green, blue, alpha);
                            }}
                         />
                      </li>
@@ -93,11 +122,10 @@ const Solid = (props) => {
                            type='range'
                            min='0'
                            max='255'
-                           value={solid_green}
+                           value={green}
                            onInput={(e) => {
                               updateSlider('solid_green_seekbar', data.slider.green);
-                              setGreen(e.target.value);
-                              updateSolid();
+                              props.changeSolid(red, e.target.value, blue, alpha);
                            }}
                         />
                      </li>
@@ -108,11 +136,10 @@ const Solid = (props) => {
                            type='range'
                            min='0'
                            max='255'
-                           value={solid_blue}
+                           value={blue}
                            onInput={(e) => {
                               updateSlider('solid_blue_seekbar', data.slider.blue);
-                              setBlue(e.target.value);
-                              updateSolid();
+                              props.changeSolid(red, green, e.target.value, alpha);
                            }}
                         />
                      </li>
@@ -123,11 +150,10 @@ const Solid = (props) => {
                            type='range'
                            min='0'
                            max='255'
-                           value={solid_alpha}
+                           value={alpha}
                            onInput={(e) => {
                               updateSlider('solid_alpha_seekbar', data.slider.alpha);
-                              setAlpha(e.target.value);
-                              updateSolid();
+                              props.changeSolid(red, green, blue, e.target.value);
                            }}
                         />
                      </li>

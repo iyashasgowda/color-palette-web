@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { makeToast } from '../../../../utils/utils.js';
+import { copyText, makeToast } from '../../../../utils/utils.js';
 
 const Shade = (props) => {
    const copy = props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/dark/copy.svg` : `${process.env.PUBLIC_URL}/assets/icons/light/copy.svg`;
@@ -16,8 +16,8 @@ const Shade = (props) => {
                src={copy}
                alt='copy'
                onClick={() => {
-                  navigator.clipboard.writeText(props.shade.code.toUpperCase());
-                  makeToast(`Color ${props.shade.code.toUpperCase()} copied :)`);
+                  copyText(props.shade.code);
+                  makeToast(`${props.shade.code.toUpperCase()} copied :)`);
                }}
             ></img>
          </div>
