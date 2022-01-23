@@ -1,9 +1,10 @@
 import data from './data.json';
 
 const hex2rgb = (hex) => `rgb(${hex.match(/\w\w/g).map((x) => +`0x${x}`)})`;
-const hex2rgba = (hex, alpha) => `rgb(${hex.match(/\w\w/g).map((x) => +`0x${x}`)}, ${alpha})`;
+const hexa2rgba = (hex, alpha) => `rgb(${hex.match(/\w\w/g).map((x) => +`0x${x}`)}, ${alpha})`;
 
-const rgba2hex = (r, g, b, a) => `#${(r | (1 << 8)).toString(16).slice(1).toUpperCase() + (g | (1 << 8)).toString(16).slice(1).toUpperCase() + (b | (1 << 8)).toString(16).slice(1).toUpperCase() + (a | (1 << 8)).toString(16).slice(1).toUpperCase()}`;
+const rgba2hexa = (r, g, b, a) => `#${(r | (1 << 8)).toString(16).slice(1).toUpperCase() + (g | (1 << 8)).toString(16).slice(1).toUpperCase() + (b | (1 << 8)).toString(16).slice(1).toUpperCase() + (a | (1 << 8)).toString(16).slice(1).toUpperCase()}`;
+const rgb2hex = (r, g, b) => `#${(r | (1 << 8)).toString(16).slice(1).toUpperCase() + (g | (1 << 8)).toString(16).slice(1).toUpperCase() + (b | (1 << 8)).toString(16).slice(1).toUpperCase()}`;
 
 const rgb2hsv = (r, g, b) => {
    r /= 255;
@@ -70,19 +71,90 @@ const changeTheme = (darkMode) => {
       root.style.setProperty('--background-color', '#000000');
       root.style.setProperty('--card-color', '#212121');
       root.style.setProperty('--text-color', '#FAFAFA');
+
+      root.style.setProperty('--base-color-rgb', '45, 45, 45');
+      root.style.setProperty('--background-color-rgb', '0, 0, 0');
+      root.style.setProperty('--card-color-rgb', '33, 33, 33');
+      root.style.setProperty('--text-color-rgb', '250, 250, 250');
    } else {
       data.slider.alpha = '#212121';
       root.style.setProperty('--base-color', '#D3D3D3');
       root.style.setProperty('--background-color', '#FFFFFF');
       root.style.setProperty('--card-color', '#FAFAFA');
       root.style.setProperty('--text-color', '#212121');
+
+      root.style.setProperty('--base-color-rgb', '211, 211, 211');
+      root.style.setProperty('--background-color-rgb', '255, 255, 255');
+      root.style.setProperty('--card-color-rgb', '250, 250, 250');
+      root.style.setProperty('--text-color-rgb', '33, 33, 33');
    }
 };
 
 const updateSlider = (id, color) => {
    const element = document.querySelector(`#${id}`);
    let progress = ((element.value - element.min) / (element.max - element.min)) * 100;
-   element.style.background = `linear-gradient(90deg, ${hex2rgba(color, 1)} ${progress}%, ${hex2rgba(color, 0.2)} ${progress}%)`;
+   element.style.background = `linear-gradient(90deg, ${hexa2rgba(color, 1)} ${progress}%, ${hexa2rgba(color, 0.2)} ${progress}%)`;
 };
 
-export { hex2rgb, hex2rgba, rgba2hex, rgb2hsv, rgb2hsl, rgb2cmyk, copyText, makeToast, changeTheme, updateSlider };
+const validateColor = (code, hex, alpha) => {
+   try {
+      if (hex) {
+         /** pre validation before conversion */
+         if (code.charAt(0) !== '#') {
+            makeToast('Invalid color code!');
+            return null;
+         }
+
+         /** conversion */
+         const array = alpha ? [parseInt(code.slice(1, 3), 16), parseInt(code.slice(3, 5), 16), parseInt(code.slice(5, 7), 16), parseInt(code.slice(7, 9), 16)] : [parseInt(code.slice(1, 3), 16), parseInt(code.slice(3, 5), 16), parseInt(code.slice(5, 7), 16)];
+
+         /** post validation after conversion */
+         if (array.includes(NaN)) {
+            makeToast('Invalid color code!');
+            return null;
+         }
+         return array;
+      } else {
+         const array = code.trim().split(',');
+
+         if (alpha) {
+            /** pre validation before conversion */
+            if (array.length !== 4) {
+               makeToast('Invalid color code!');
+               return null;
+            }
+
+            /** conversion */
+            const rgba = [parseInt(array[0]), parseInt(array[1]), parseInt(array[2]), parseInt(array[3])];
+
+            /** post validation after conversion */
+            if (rgba.includes(NaN) || rgba[0] < 0 || rgba[0] > 255 || rgba[1] < 0 || rgba[1] > 255 || rgba[2] < 0 || rgba[2] > 255 || rgba[3] < 0 || rgba[3] > 255) {
+               makeToast('Invalid color code!');
+               return null;
+            }
+            return rgba;
+         } else {
+            /** pre validation before conversion */
+            if (array.length !== 3) {
+               makeToast('Invalid color code!');
+               return null;
+            }
+
+            /** conversion */
+            const rgb = [parseInt(array[0]), parseInt(array[1]), parseInt(array[2])];
+
+            /** post validation after conversion */
+            if (rgb.includes(NaN) || rgb[0] < 0 || rgb[0] > 255 || rgb[1] < 0 || rgb[1] > 255 || rgb[2] < 0 || rgb[2] > 255) {
+               makeToast('Invalid color code!');
+               return null;
+            }
+            return rgb;
+         }
+      }
+   } catch {
+      makeToast(`Invalid color code!`);
+      return null;
+   }
+};
+
+export { hex2rgb, rgb2hex, hexa2rgba, rgba2hexa, rgb2hsv, rgb2hsl, rgb2cmyk, copyText, makeToast, changeTheme, updateSlider, validateColor };

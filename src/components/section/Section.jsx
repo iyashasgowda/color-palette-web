@@ -14,12 +14,12 @@ const Section = (props) => {
    const handleColorChange = (id) => setActiveColor(id);
 
    /** Create solid state */
-   const [solid, setSolid] = useState({ red: 220, green: 40, blue: 80, alpha: 255 });
-   const handleSolidChange = (red, green, blue, alpha) => setSolid({ red, green, blue, alpha });
+   const [solid, setSolid] = useState({ red: 220, green: 40, blue: 80, alpha: 255, checkbox: true });
+   const handleSolidChange = (red, green, blue, alpha, checkbox) => setSolid({ red, green, blue, alpha, checkbox });
 
    /** Create gradient state */
-   const [gradient, setGradient] = useState({ top: { red: 85, green: 210, blue: 132, alpha: 255 }, bottom: { red: 242, green: 207, blue: 7, alpha: 255 } });
-   const handleGradientChange = (top, bottom) => setGradient({ top, bottom });
+   const [gradient, setGradient] = useState({ top: { red: 85, green: 210, blue: 132, alpha: 255 }, bottom: { red: 242, green: 207, blue: 7, alpha: 255 }, checkbox: true });
+   const handleGradientChange = (top, bottom, checkbox) => setGradient({ top, bottom, checkbox });
 
    return (
       <section>

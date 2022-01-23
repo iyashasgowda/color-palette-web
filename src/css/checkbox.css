@@ -1,0 +1,41 @@
+.toggle-checkbox {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  -webkit-appearance: none;
+  background: #c6c6c6;
+  outline: none;
+  cursor: pointer;
+  border-radius: 20px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.toggle-checkbox::before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  left: 0px;
+  border-radius: 20px;
+  background-color: var(--card-color);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.toggle-checkbox:checked {
+  background-color: rgba(var(--text-color-rgb), 0.6);
+}
+
+.toggle-checkbox:checked::before {
+  left: 22.5px;
+  background-color: var(--text-color);
+}
+/*# sourceMappingURL=checkbox.css.map */

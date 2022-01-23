@@ -1,12 +1,26 @@
-import React, { useEffect } from 'react';
-import { copyText, makeToast, rgba2hex, rgb2hsv, rgb2cmyk, rgb2hsl, updateSlider } from '../../../utils/utils';
+import React, { useState, useEffect } from 'react';
+import Modal from './Modal';
 
 import data from '../../../utils/data.json';
+import { copyText, makeToast, rgb2hex, rgba2hexa, rgb2hsv, rgb2cmyk, rgb2hsl, updateSlider, validateColor } from '../../../utils/utils';
 
 const Solid = (props) => {
-   const [red, green, blue, alpha] = [props.solid.red, props.solid.green, props.solid.blue, props.solid.alpha];
-   const [hex, rgba, hsv, hsl, cmyk] = [rgba2hex(red, green, blue, alpha), `${red}, ${green}, ${blue}, ${alpha}`, rgb2hsv(red, green, blue), rgb2hsl(red, green, blue), rgb2cmyk(red, green, blue)];
+   const [red, green, blue, alpha, checkbox] = [props.solid.red, props.solid.green, props.solid.blue, props.solid.alpha, props.solid.checkbox];
    const solid_icon = props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/solid.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/solid.svg`;
+   const [hex, rgb, hexa, rgba, hsv, hsl, cmyk] = [rgb2hex(red, green, blue), `${red}, ${green}, ${blue}`, rgba2hexa(red, green, blue, alpha), `${red}, ${green}, ${blue}, ${alpha}`, rgb2hsv(red, green, blue), rgb2hsl(red, green, blue), rgb2cmyk(red, green, blue)];
+
+   const [modal, setModal] = useState({ hex: false, rgba: false });
+   const handleModalClose = () => setModal({ hex: false, rgba: false });
+
+   const handleColorInput = (color, hex) => {
+      const user_input = validateColor(color, hex, checkbox);
+
+      if (user_input != null) {
+         setModal({ hex: false, rgba: false });
+         checkbox ? props.changeSolid(user_input[0], user_input[1], user_input[2], user_input[3], checkbox) : props.changeSolid(user_input[0], user_input[1], user_input[2], alpha, checkbox);
+         makeToast(`${color} applied :)`);
+      }
+   };
 
    useEffect(() => {
       updateSlider('solid_alpha_seekbar', data.slider.alpha);
@@ -17,9 +31,24 @@ const Solid = (props) => {
 
    return (
       <div className='solid-section'>
+         {modal.hex ? (
+            <Modal darkMode={props.darkMode} is_hex={true} is_alpha={checkbox} from={'solid'} closeModal={handleModalClose} inputColor={handleColorInput} />
+         ) : modal.rgba ? (
+            <Modal darkMode={props.darkMode} is_hex={false} is_alpha={checkbox} from={'solid'} closeModal={handleModalClose} inputColor={handleColorInput} />
+         ) : (
+            <></>
+         )}
+
          <div className='solid-header'>
-            <img src={solid_icon} alt='solid'></img>
-            <p>Create solid color</p>
+            <div className='solid-header-title'>
+               <img src={solid_icon} alt='solid'></img>
+               <p>Create solid color</p>
+            </div>
+
+            <div className='solid-alpha-control'>
+               <p>Alpha</p>
+               <input type='checkbox' className='toggle-checkbox' id='solid-alpha-checkbox' checked={checkbox} onChange={() => props.changeSolid(red, green, blue, 255, !checkbox)} />
+            </div>
          </div>
 
          <div className='solid-body'>
@@ -27,30 +56,30 @@ const Solid = (props) => {
             <div className='solid-control'>
                <div className='solid-attributes'>
                   <div className='solid-hex'>
-                     <p>HEX: {hex}</p>
+                     <p>HEX: {checkbox ? hexa : hex}</p>
                      <div>
-                        <img src={`${process.env.PUBLIC_URL}/assets/icons/edit.svg`} alt='edit' />
+                        <img src={`${process.env.PUBLIC_URL}/assets/icons/edit.svg`} alt='edit' onClick={() => setModal({ hex: true })} />
                         <img
                            src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
                            alt='copy'
                            onClick={() => {
-                              copyText(hex);
-                              makeToast(`${hex} copied :)`);
+                              copyText(`${checkbox ? hexa : hex}`);
+                              makeToast(`${checkbox ? hexa : hex} copied :)`);
                            }}
                         />
                      </div>
                   </div>
 
                   <div className='solid-rgb'>
-                     <p>RGBA: {rgba}</p>
+                     <p>{checkbox ? `RGBA: ${rgba}` : `RGB: ${rgb}`}</p>
                      <div>
-                        <img src={`${process.env.PUBLIC_URL}/assets/icons/edit.svg`} alt='edit' />
+                        <img src={`${process.env.PUBLIC_URL}/assets/icons/edit.svg`} alt='edit' onClick={() => setModal({ rgba: true })} />
                         <img
                            src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
                            alt='copy'
                            onClick={() => {
-                              copyText(rgba);
-                              makeToast(`${rgba} copied :)`);
+                              copyText(`${checkbox ? rgba : rgb}`);
+                              makeToast(`${checkbox ? rgba : rgb} copied :)`);
                            }}
                         />
                      </div>
@@ -98,7 +127,7 @@ const Solid = (props) => {
                      <li>Red</li>
                      <li>Green</li>
                      <li>Blue</li>
-                     <li>Alpha</li>
+                     <li className={!checkbox ? `disabled` : ``}>Alpha</li>
                   </ul>
                   <ul>
                      <li>
@@ -111,7 +140,7 @@ const Solid = (props) => {
                            value={red}
                            onInput={(e) => {
                               updateSlider('solid_red_seekbar', data.slider.red);
-                              props.changeSolid(e.target.value, green, blue, alpha);
+                              props.changeSolid(e.target.value, green, blue, alpha, checkbox);
                            }}
                         />
                      </li>
@@ -125,7 +154,7 @@ const Solid = (props) => {
                            value={green}
                            onInput={(e) => {
                               updateSlider('solid_green_seekbar', data.slider.green);
-                              props.changeSolid(red, e.target.value, blue, alpha);
+                              props.changeSolid(red, e.target.value, blue, alpha, checkbox);
                            }}
                         />
                      </li>
@@ -139,21 +168,22 @@ const Solid = (props) => {
                            value={blue}
                            onInput={(e) => {
                               updateSlider('solid_blue_seekbar', data.slider.blue);
-                              props.changeSolid(red, green, e.target.value, alpha);
+                              props.changeSolid(red, green, e.target.value, alpha, checkbox);
                            }}
                         />
                      </li>
                      <li>
                         <input
                            id='solid_alpha_seekbar'
-                           className='solid_alpha_seekbar'
+                           className={checkbox ? `solid_alpha_seekbar` : `solid_alpha_seekbar disabled`}
                            type='range'
                            min='0'
                            max='255'
                            value={alpha}
+                           disabled={!checkbox}
                            onInput={(e) => {
                               updateSlider('solid_alpha_seekbar', data.slider.alpha);
-                              props.changeSolid(red, green, blue, e.target.value);
+                              props.changeSolid(red, green, blue, e.target.value, checkbox);
                            }}
                         />
                      </li>

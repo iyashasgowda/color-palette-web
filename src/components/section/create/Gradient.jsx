@@ -1,15 +1,54 @@
-import React, { useEffect } from 'react';
-import { copyText, makeToast, rgba2hex, updateSlider } from '../../../utils/utils';
+import React, { useState, useEffect } from 'react';
+import Modal from './Modal';
 
 import data from '../../../utils/data.json';
+import { copyText, makeToast, rgb2hex, rgba2hexa, updateSlider, validateColor } from '../../../utils/utils';
 
 const Gradient = (props) => {
-   const [top_red, top_green, top_blue, top_alpha] = [props.gradient.top.red, props.gradient.top.green, props.gradient.top.blue, props.gradient.top.alpha];
+   const [top_red, top_green, top_blue, top_alpha, checkbox] = [props.gradient.top.red, props.gradient.top.green, props.gradient.top.blue, props.gradient.top.alpha, props.gradient.checkbox];
    const [bottom_red, bottom_green, bottom_blue, bottom_alpha] = [props.gradient.bottom.red, props.gradient.bottom.green, props.gradient.bottom.blue, props.gradient.bottom.alpha];
-   const [top_hex, top_rgba, bottom_hex, bottom_rgba] = [rgba2hex(top_red, top_green, top_blue, top_alpha), `${top_red}, ${top_green}, ${top_blue}, ${top_alpha}`, rgba2hex(bottom_red, bottom_green, bottom_blue, bottom_alpha), `${bottom_red}, ${bottom_green}, ${bottom_blue}, ${bottom_alpha}`];
+   const [top_hex, top_rgb, top_hexa, top_rgba, bottom_hex, bottom_rgb, bottom_hexa, bottom_rgba] = [
+      rgb2hex(top_red, top_green, top_blue),
+      `${top_red}, ${top_green}, ${top_blue}`,
+      rgba2hexa(top_red, top_green, top_blue, top_alpha),
+      `${top_red}, ${top_green}, ${top_blue}, ${top_alpha}`,
+      rgb2hex(bottom_red, bottom_green, bottom_blue),
+      `${bottom_red}, ${bottom_green}, ${bottom_blue}`,
+      rgba2hexa(bottom_red, bottom_green, bottom_blue, bottom_alpha),
+      `${bottom_red}, ${bottom_green}, ${bottom_blue}, ${bottom_alpha}`,
+   ];
 
    const gradient = `linear-gradient(rgba(${top_red}, ${top_green}, ${top_blue}, ${top_alpha / 255} ), rgba(${bottom_red}, ${bottom_green}, ${bottom_blue}, ${bottom_alpha / 255} ))`;
-   let gradient_icon = props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/gradient.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/gradient.svg`;
+   const gradient_icon = props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/gradient.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/gradient.svg`;
+
+   const [color_index, setColorIndex] = useState(0);
+   const [modal, setModal] = useState({ hex: false, rgba: false });
+   const handleModalClose = () => setModal({ hex: false, rgba: false });
+
+   const handleColorInput = (color, hex) => {
+      const user_input = validateColor(color, hex, checkbox);
+
+      if (user_input != null) {
+         setModal({ hex: false, rgba: false });
+
+         const [top_rgba, bottom_rgba] = [
+            {
+               red: color_index === 1 ? user_input[0] : top_red,
+               green: color_index === 1 ? user_input[1] : top_green,
+               blue: color_index === 1 ? user_input[2] : top_blue,
+               alpha: checkbox ? (color_index === 1 ? user_input[3] : top_alpha) : top_alpha,
+            },
+            {
+               red: color_index === 2 ? user_input[0] : bottom_red,
+               green: color_index === 2 ? user_input[1] : bottom_green,
+               blue: color_index === 2 ? user_input[2] : bottom_blue,
+               alpha: checkbox ? (color_index === 2 ? user_input[3] : bottom_alpha) : bottom_alpha,
+            },
+         ];
+         props.changeGradient(top_rgba, bottom_rgba, checkbox);
+         makeToast(`${color} applied :)`);
+      }
+   };
 
    useEffect(() => {
       updateSlider('gradient_top_red_seekbar', data.slider.red);
@@ -25,9 +64,46 @@ const Gradient = (props) => {
 
    return (
       <div className='gradient-section'>
+         {modal.hex ? (
+            <Modal darkMode={props.darkMode} is_hex={true} is_alpha={checkbox} closeModal={handleModalClose} inputColor={handleColorInput} />
+         ) : modal.rgba ? (
+            <Modal darkMode={props.darkMode} is_hex={false} is_alpha={checkbox} closeModal={handleModalClose} inputColor={handleColorInput} />
+         ) : (
+            <></>
+         )}
+
          <div className='gradient-header'>
-            <img src={gradient_icon} alt='gradient'></img>
-            <p>Create gradient color</p>
+            <div className='gradient-header-title'>
+               <img src={gradient_icon} alt='gradient'></img>
+               <p>Create gradient color</p>
+            </div>
+
+            <div className='gradient-alpha-control'>
+               <p>Alpha</p>
+               <input
+                  type='checkbox'
+                  className='toggle-checkbox'
+                  id='gradient-alpha-checkbox'
+                  checked={checkbox}
+                  onChange={() => {
+                     const [top_rgba, bottom_rgba] = [
+                        {
+                           red: top_red,
+                           green: top_green,
+                           blue: top_blue,
+                           alpha: 255,
+                        },
+                        {
+                           red: bottom_red,
+                           green: bottom_green,
+                           blue: bottom_blue,
+                           alpha: 255,
+                        },
+                     ];
+                     props.changeGradient(top_rgba, bottom_rgba, !checkbox);
+                  }}
+               />
+            </div>
          </div>
 
          <div className='gradient-body'>
@@ -35,30 +111,44 @@ const Gradient = (props) => {
             <div className='gradient-control'>
                <div className='gradient-top'>
                   <div className='gradient-top-hex'>
-                     <p>HEX: {top_hex}</p>
+                     <p>HEX: {checkbox ? top_hexa : top_hex}</p>
                      <div>
-                        <img src={`${process.env.PUBLIC_URL}/assets/icons/edit.svg`} alt='edit' />
+                        <img
+                           src={`${process.env.PUBLIC_URL}/assets/icons/edit.svg`}
+                           alt='edit'
+                           onClick={() => {
+                              setModal({ hex: true });
+                              setColorIndex(1);
+                           }}
+                        />
                         <img
                            src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
                            alt='copy'
                            onClick={() => {
-                              copyText(top_hex);
-                              makeToast(`${top_hex} copied :)`);
+                              copyText(`${checkbox ? top_hexa : top_hex}`);
+                              makeToast(`${checkbox ? top_hexa : top_hex} copied :)`);
                            }}
                         />
                      </div>
                   </div>
 
                   <div className='gradient-top-rgba'>
-                     <p>RGBA: {top_rgba}</p>
+                     <p>{checkbox ? `RGBA: ${top_rgba}` : `RGB: ${top_rgb}`}</p>
                      <div>
-                        <img src={`${process.env.PUBLIC_URL}/assets/icons/edit.svg`} alt='edit' />
+                        <img
+                           src={`${process.env.PUBLIC_URL}/assets/icons/edit.svg`}
+                           alt='edit'
+                           onClick={() => {
+                              setModal({ rgba: true });
+                              setColorIndex(1);
+                           }}
+                        />
                         <img
                            src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
                            alt='copy'
                            onClick={() => {
-                              copyText(top_rgba);
-                              makeToast(`${top_rgba} copied :)`);
+                              copyText(`${checkbox ? top_rgba : top_rgb}`);
+                              makeToast(`${checkbox ? top_rgba : top_rgb} copied :)`);
                            }}
                         />
                      </div>
@@ -69,7 +159,7 @@ const Gradient = (props) => {
                         <li>Red</li>
                         <li>Green</li>
                         <li>Blue</li>
-                        <li>Alpha</li>
+                        <li className={!checkbox ? `disabled` : ``}>Alpha</li>
                      </ul>
                      <ul>
                         <li>
@@ -96,7 +186,7 @@ const Gradient = (props) => {
                                        alpha: bottom_alpha,
                                     },
                                  ];
-                                 props.changeGradient(top_rgba, bottom_rgba);
+                                 props.changeGradient(top_rgba, bottom_rgba, checkbox);
                               }}
                            />
                         </li>
@@ -124,7 +214,7 @@ const Gradient = (props) => {
                                        alpha: bottom_alpha,
                                     },
                                  ];
-                                 props.changeGradient(top_rgba, bottom_rgba);
+                                 props.changeGradient(top_rgba, bottom_rgba, checkbox);
                               }}
                            />
                         </li>
@@ -152,18 +242,19 @@ const Gradient = (props) => {
                                        alpha: bottom_alpha,
                                     },
                                  ];
-                                 props.changeGradient(top_rgba, bottom_rgba);
+                                 props.changeGradient(top_rgba, bottom_rgba, checkbox);
                               }}
                            />
                         </li>
                         <li>
                            <input
                               id='gradient_top_alpha_seekbar'
-                              className='gradient_top_alpha_seekbar'
+                              className={checkbox ? `gradient_top_alpha_seekbar` : `gradient_top_alpha_seekbar disabled`}
                               type='range'
                               min='0'
                               max='255'
                               value={top_alpha}
+                              disabled={!checkbox}
                               onInput={(e) => {
                                  updateSlider('gradient_top_alpha_seekbar', data.slider.alpha);
                                  const [top_rgba, bottom_rgba] = [
@@ -180,7 +271,7 @@ const Gradient = (props) => {
                                        alpha: bottom_alpha,
                                     },
                                  ];
-                                 props.changeGradient(top_rgba, bottom_rgba);
+                                 props.changeGradient(top_rgba, bottom_rgba, checkbox);
                               }}
                            />
                         </li>
@@ -190,30 +281,44 @@ const Gradient = (props) => {
 
                <div className='gradient-bottom'>
                   <div className='gradient-bottom-hex'>
-                     <p>HEX: {bottom_hex}</p>
+                     <p>HEX: {checkbox ? bottom_hexa : bottom_hex}</p>
                      <div>
-                        <img src={`${process.env.PUBLIC_URL}/assets/icons/edit.svg`} alt='edit' />
+                        <img
+                           src={`${process.env.PUBLIC_URL}/assets/icons/edit.svg`}
+                           alt='edit'
+                           onClick={() => {
+                              setModal({ hex: true });
+                              setColorIndex(2);
+                           }}
+                        />
                         <img
                            src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
                            alt='copy'
                            onClick={() => {
-                              copyText(bottom_hex);
-                              makeToast(`${bottom_hex} copied :)`);
+                              copyText(`${checkbox ? bottom_hexa : bottom_hex}`);
+                              makeToast(`${checkbox ? bottom_hexa : bottom_hex} copied :)`);
                            }}
                         />
                      </div>
                   </div>
 
                   <div className='gradient-bottom-rgba'>
-                     <p>RGBA: {bottom_rgba}</p>
+                     <p>{checkbox ? `RGBA: ${bottom_rgba}` : `RGB: ${bottom_rgb}`}</p>
                      <div>
-                        <img src={`${process.env.PUBLIC_URL}/assets/icons/edit.svg`} alt='edit' />
+                        <img
+                           src={`${process.env.PUBLIC_URL}/assets/icons/edit.svg`}
+                           alt='edit'
+                           onClick={() => {
+                              setModal({ rgba: true });
+                              setColorIndex(2);
+                           }}
+                        />
                         <img
                            src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
                            alt='copy'
                            onClick={() => {
-                              copyText(bottom_rgba);
-                              makeToast(`${bottom_rgba} copied :)`);
+                              copyText(`${checkbox ? bottom_rgba : bottom_rgb}`);
+                              makeToast(`${checkbox ? bottom_rgba : bottom_rgb} copied :)`);
                            }}
                         />
                      </div>
@@ -224,7 +329,7 @@ const Gradient = (props) => {
                         <li>Red</li>
                         <li>Green</li>
                         <li>Blue</li>
-                        <li>Alpha</li>
+                        <li className={!checkbox ? `disabled` : ``}>Alpha</li>
                      </ul>
                      <ul>
                         <li>
@@ -251,7 +356,7 @@ const Gradient = (props) => {
                                        alpha: bottom_alpha,
                                     },
                                  ];
-                                 props.changeGradient(top_rgba, bottom_rgba);
+                                 props.changeGradient(top_rgba, bottom_rgba, checkbox);
                               }}
                            />
                         </li>
@@ -279,7 +384,7 @@ const Gradient = (props) => {
                                        alpha: bottom_alpha,
                                     },
                                  ];
-                                 props.changeGradient(top_rgba, bottom_rgba);
+                                 props.changeGradient(top_rgba, bottom_rgba, checkbox);
                               }}
                            />
                         </li>
@@ -307,18 +412,19 @@ const Gradient = (props) => {
                                        alpha: bottom_alpha,
                                     },
                                  ];
-                                 props.changeGradient(top_rgba, bottom_rgba);
+                                 props.changeGradient(top_rgba, bottom_rgba, checkbox);
                               }}
                            />
                         </li>
                         <li>
                            <input
                               id='gradient_bottom_alpha_seekbar'
-                              className='gradient_bottom_alpha_seekbar'
+                              className={checkbox ? `gradient_bottom_alpha_seekbar` : `gradient_bottom_alpha_seekbar disabled`}
                               type='range'
                               min='0'
                               max='255'
                               value={bottom_alpha}
+                              disabled={!checkbox}
                               onInput={(e) => {
                                  updateSlider('gradient_bottom_alpha_seekbar', data.slider.alpha);
                                  const [top_rgba, bottom_rgba] = [
@@ -335,7 +441,7 @@ const Gradient = (props) => {
                                        alpha: e.target.value,
                                     },
                                  ];
-                                 props.changeGradient(top_rgba, bottom_rgba);
+                                 props.changeGradient(top_rgba, bottom_rgba, checkbox);
                               }}
                            />
                         </li>

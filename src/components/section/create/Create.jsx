@@ -2,8 +2,6 @@ import React from 'react';
 import Solid from './Solid';
 import Gradient from './Gradient';
 
-import '../../../css/slider.css';
-
 const Create = (props) => {
    return (
       <div className='create-color'>

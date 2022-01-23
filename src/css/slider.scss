@@ -18,21 +18,6 @@
    box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-.solid_alpha_seekbar:hover,
-.solid_red_seekbar:hover,
-.solid_green_seekbar:hover,
-.solid_blue_seekbar:hover,
-.gradient_top_alpha_seekbar:hover,
-.gradient_top_red_seekbar:hover,
-.gradient_top_green_seekbar:hover,
-.gradient_top_blue_seekbar:hover,
-.gradient_bottom_alpha_seekbar:hover,
-.gradient_bottom_red_seekbar:hover,
-.gradient_bottom_green_seekbar:hover,
-.gradient_bottom_blue_seekbar:hover {
-   opacity: 1;
-}
-
 /* seekbar thumb:chrome **/
 .solid_alpha_seekbar::-webkit-slider-thumb,
 .solid_red_seekbar::-webkit-slider-thumb,
@@ -92,12 +77,10 @@
 .solid_red_seekbar::-moz-range-thumb,
 .solid_green_seekbar::-moz-range-thumb,
 .solid_blue_seekbar::-moz-range-thumb,
-
 .gradient_top_alpha_seekbar::-moz-range-thumb,
 .gradient_top_red_seekbar::-moz-range-thumb,
 .gradient_top_green_seekbar::-moz-range-thumb,
 .gradient_top_blue_seekbar::-moz-range-thumb,
-
 .gradient_bottom_alpha_seekbar::-moz-range-thumb,
 .gradient_bottom_red_seekbar::-moz-range-thumb,
 .gradient_bottom_green_seekbar::-moz-range-thumb,
