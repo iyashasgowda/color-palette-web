@@ -12,8 +12,8 @@ const Swatches = (props) => {
          </div>
 
          <div className='swatch-body'>
-            <div className='swatch-img-chooser' onClick={() => document.querySelector('#cosmetic-file-input').click()}>
-               <input id='cosmetic-file-input' className='cosmetic-file-input' type='file' accept='image/*' onChange={(e) => props.changeSwatch(e)} />
+            <div className='swatch-img-chooser' onClick={() => document.querySelector('#swatch-file-input').click()}>
+               <input id='swatch-file-input' className='cosmetic-file-input' type='file' accept='image/*' onChange={(e) => props.changeSwatch(e)} />
                <div className='logo-info'>
                   <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt='logo' />
                   <p>Choose Image</p>

@@ -472,7 +472,7 @@ body p {
 .container section .material-color .color-shades {
   width: 100%;
   height: auto;
-  padding: 16px 20px 16px 20px;
+  padding: 16px 20px;
   display: -ms-grid;
   display: grid;
   -webkit-transition: 0.6s;
@@ -486,8 +486,8 @@ body p {
   cursor: pointer;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  margin: 16px 20px;
   border-radius: 24px;
-  margin: 16px 20px 16px 20px;
   background-color: var(--card-color);
   -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
           filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
@@ -520,11 +520,13 @@ body p {
   font-size: 20px;
   font-weight: 900;
   margin-bottom: 2px;
+  color: var(--text-color);
 }
 
 .container section .material-color .color-shades .color-shade div:nth-child(2) div p:nth-child(2) {
   font-size: 16px;
   font-weight: 600;
+  color: var(--text-color);
 }
 
 .container section .material-color .color-shades .color-shade div:nth-child(2) img {
@@ -652,6 +654,7 @@ body p {
   font-size: 20px;
   margin-left: 10px;
   font-weight: bold;
+  color: var(--text-color);
 }
 
 .container section .create-color .solid-section .solid-header .solid-alpha-control {
@@ -668,6 +671,7 @@ body p {
   font-size: 20px;
   margin-right: 10px;
   font-weight: bold;
+  color: var(--text-color);
 }
 
 .container section .create-color .solid-section .solid-body {
@@ -961,6 +965,7 @@ body p {
   font-size: 20px;
   margin-left: 10px;
   font-weight: bold;
+  color: var(--text-color);
 }
 
 .container section .create-color .gradient-section .gradient-header .gradient-alpha-control {
@@ -977,6 +982,7 @@ body p {
   font-size: 20px;
   margin-right: 10px;
   font-weight: bold;
+  color: var(--text-color);
 }
 
 .container section .create-color .gradient-section .gradient-body {
@@ -1362,7 +1368,7 @@ body p {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   margin: 12px 0;
-  border-radius: 18px;
+  border-radius: 24px;
   -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
           filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
@@ -1487,6 +1493,192 @@ body p {
   font-size: 20px;
   margin-left: 10px;
   font-weight: bold;
+}
+
+.container section .extract-color .palette-section .palette-body {
+  margin: 48px 48px 0 48px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container section .extract-color .palette-section .palette-body .palette-img-chooser {
+  width: 100%;
+  min-height: 256px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  overflow: hidden;
+  aspect-ratio: 3/1.5;
+  border-radius: 24px;
+  background-color: var(--card-color);
+  -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container section .extract-color .palette-section .palette-body .palette-img-chooser:hover {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.container section .extract-color .palette-section .palette-body .palette-img-chooser .cosmetic-file-input {
+  display: none;
+}
+
+.container section .extract-color .palette-section .palette-body .palette-img-chooser .selected-image {
+  position: fixed;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.container section .extract-color .palette-section .palette-body .palette-img-chooser .logo-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container section .extract-color .palette-section .palette-body .palette-img-chooser .logo-info img {
+  width: 64px;
+  aspect-ratio: 1/1;
+}
+
+.container section .extract-color .palette-section .palette-body .palette-img-chooser .logo-info p {
+  margin-top: 10px;
+  color: #808080;
+  font-weight: 700;
+}
+
+.container section .extract-color .palette-section .palette-body .extracted-palette {
+  width: 100%;
+  margin: 12px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.container section .extract-color .palette-section .palette-body .extracted-palette .palette-item {
+  width: 90%;
+  height: 160px;
+  margin: 12px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  overflow: hidden;
+  border-radius: 24px;
+  background-color: var(--card-color);
+  -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
+}
+
+.container section .extract-color .palette-section .palette-body .extracted-palette .palette-item .color-card {
+  height: 100px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 24px;
+  -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.container section .extract-color .palette-section .palette-body .extracted-palette .palette-item .palette-hex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 4px 0 0 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container section .extract-color .palette-section .palette-body .extracted-palette .palette-item .palette-hex p {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.container section .extract-color .palette-section .palette-body .extracted-palette .palette-item .palette-hex img {
+  width: 24px;
+  height: 24px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin: 0 12px 0 5px;
+}
+
+.container section .extract-color .palette-section .palette-body .extracted-palette .palette-item .palette-hex img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.container section .extract-color .palette-section .palette-body .extracted-palette .palette-item .palette-rgb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 0 0 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container section .extract-color .palette-section .palette-body .extracted-palette .palette-item .palette-rgb p {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.container section .extract-color .palette-section .palette-body .extracted-palette .palette-item .palette-rgb img {
+  width: 24px;
+  height: 24px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin: 0 12px 0 5px;
+}
+
+.container section .extract-color .palette-section .palette-body .extracted-palette .palette-item .palette-rgb img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.container section .extract-color .palette-section .palette-body .extracted-palette .palette-item:hover {
+  -webkit-filter: drop-shadow(0 0px 4px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 0px 4px rgba(0, 0, 0, 0.15));
+}
+
+.container section .extract-color .palette-section .palette-body .extracted-palette .palette-item:hover .color-card {
+  -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+          filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
 }
 
 .container section .extract-color .manual-section {

@@ -1,5 +1,5 @@
 import data from './data.json';
-import Swatch from './swatch.js';
+import Palette from './palette.js';
 
 const hex2rgb = (hex) => `rgb(${hex.match(/\w\w/g).map((x) => +`0x${x}`)})`;
 const hexa2rgba = (hex, alpha) => `rgb(${hex.match(/\w\w/g).map((x) => +`0x${x}`)}, ${alpha})`;
@@ -164,16 +164,22 @@ const getSwatches = (path, result) => {
    const image = new Image();
    image.src = path;
    image.onload = () => {
-      const swatch = new Swatch(image);
-      let swatches = [{ name: 'Dominant', rgb: swatch.getDominantColor() }];
-      swatch.getVibrantColor() != null && swatches.push({ name: 'Vibrant', rgb: swatch.getVibrantColor() });
-      swatch.getLightVibrantColor() != null && swatches.push({ name: 'Vibrant light', rgb: swatch.getLightVibrantColor() });
-      swatch.getDarkVibrantColor() != null && swatches.push({ name: 'Vibrant dark', rgb: swatch.getDarkVibrantColor() });
-      swatch.getMutedColor() != null && swatches.push({ name: 'Muted', rgb: swatch.getMutedColor() });
-      swatch.getLightMutedColor() != null && swatches.push({ name: 'Muted light', rgb: swatch.getLightMutedColor() });
-      swatch.getDarkMutedColor() != null && swatches.push({ name: 'Muted dark', rgb: swatch.getDarkMutedColor() });
+      const palette = new Palette(image);
+      let swatches = [{ name: 'Dominant', rgb: palette.getDominantColor() }];
+      palette.getVibrantColor() != null && swatches.push({ name: 'Vibrant', rgb: palette.getVibrantColor() });
+      palette.getLightVibrantColor() != null && swatches.push({ name: 'Vibrant light', rgb: palette.getLightVibrantColor() });
+      palette.getDarkVibrantColor() != null && swatches.push({ name: 'Vibrant dark', rgb: palette.getDarkVibrantColor() });
+      palette.getMutedColor() != null && swatches.push({ name: 'Muted', rgb: palette.getMutedColor() });
+      palette.getLightMutedColor() != null && swatches.push({ name: 'Muted light', rgb: palette.getLightMutedColor() });
+      palette.getDarkMutedColor() != null && swatches.push({ name: 'Muted dark', rgb: palette.getDarkMutedColor() });
       result(swatches);
    };
 };
 
-export { hex2rgb, rgb2hex, hexa2rgba, rgba2hexa, rgb2hsv, rgb2hsl, rgb2cmyk, copyText, makeToast, changeTheme, updateSlider, validateColor, getSwatches, getTextColor, getCopyIcon };
+const getPalette = (path, count, result) => {
+   const image = new Image();
+   image.src = path;
+   image.onload = () => result(new Palette(image, count));
+};
+
+export { hex2rgb, rgb2hex, hexa2rgba, rgba2hexa, rgb2hsv, rgb2hsl, rgb2cmyk, copyText, makeToast, changeTheme, updateSlider, validateColor, getSwatches, getPalette, getTextColor, getCopyIcon };

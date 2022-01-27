@@ -173,7 +173,7 @@ body {
          .color-shades {
             width: 100%;
             height: auto;
-            padding: 16px 20px 16px 20px;
+            padding: 16px 20px;
 
             display: grid;
             transition: 0.6s;
@@ -183,8 +183,8 @@ body {
             .color-shade {
                cursor: pointer;
                transition: 0.4s;
+               margin: 16px 20px;
                border-radius: 24px;
-               margin: 16px 20px 16px 20px;
                background-color: var(--card-color);
                filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
 
@@ -208,11 +208,13 @@ body {
                         font-size: 20px;
                         font-weight: 900;
                         margin-bottom: 2px;
+                        color: var(--text-color);
                      }
 
                      p:nth-child(2) {
                         font-size: 16px;
                         font-weight: 600;
+                        color: var(--text-color);
                      }
                   }
 
@@ -306,6 +308,7 @@ body {
                      font-size: 20px;
                      margin-left: 10px;
                      font-weight: bold;
+                     color: var(--text-color);
                   }
                }
 
@@ -318,6 +321,7 @@ body {
                      font-size: 20px;
                      margin-right: 10px;
                      font-weight: bold;
+                     color: var(--text-color);
                   }
                }
             }
@@ -527,6 +531,7 @@ body {
                      font-size: 20px;
                      margin-left: 10px;
                      font-weight: bold;
+                     color: var(--text-color);
                   }
                }
 
@@ -539,6 +544,7 @@ body {
                      font-size: 20px;
                      margin-right: 10px;
                      font-weight: bold;
+                     color: var(--text-color);
                   }
                }
             }
@@ -773,7 +779,7 @@ body {
                      width: 100%;
                      transition: 0.3s;
                      margin: 12px 0;
-                     border-radius: 18px;
+                     border-radius: 24px;
                      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 
                      &:hover {
@@ -856,6 +862,142 @@ body {
                      font-size: 20px;
                      margin-left: 10px;
                      font-weight: bold;
+                  }
+               }
+            }
+
+            .palette-body {
+               margin: 48px 48px 0 48px;
+               height: 100%;
+               display: flex;
+               align-items: center;
+               flex-direction: column;
+
+               .palette-img-chooser {
+                  width: 100%;
+                  min-height: 256px;
+                  cursor: pointer;
+                  transition: 0.3s;
+                  overflow: hidden;
+                  aspect-ratio: 3/1.5;
+                  border-radius: 24px;
+                  background-color: var(--card-color);
+                  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+                  @include centerItems();
+
+                  &:hover {
+                     transition: 0.3s ease-in-out;
+                     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+                  }
+
+                  .cosmetic-file-input {
+                     display: none;
+                  }
+
+                  .selected-image {
+                     position: fixed;
+                     max-height: 100%;
+                     max-width: 100%;
+                  }
+
+                  .logo-info {
+                     display: flex;
+                     flex-direction: column;
+                     align-items: center;
+
+                     img {
+                        width: 64px;
+                        aspect-ratio: 1/1;
+                     }
+
+                     p {
+                        margin-top: 10px;
+                        color: #808080;
+                        font-weight: 700;
+                     }
+                  }
+               }
+
+               .extracted-palette {
+                  width: 100%;
+                  margin: 12px 0;
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+
+                  .palette-item {
+                     width: 90%;
+                     height: 160px;
+                     margin: 12px;
+                     transition: 0.3s;
+                     overflow: hidden;
+                     border-radius: 24px;
+                     background-color: var(--card-color);
+                     filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
+
+                     .color-card {
+                        height: 100px;
+                        transition: 0.3s;
+                        border-radius: 24px;
+                        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+                     }
+
+                     .palette-hex {
+                        display: flex;
+                        margin: 4px 0 0 12px;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        p {
+                           font-size: 16px;
+                           font-weight: 700;
+                           color: var(--text-color);
+                        }
+
+                        img {
+                           width: 24px;
+                           height: 24px;
+                           transition: 0.3s;
+                           margin: 0 12px 0 5px;
+
+                           &:hover {
+                              cursor: pointer;
+                              transform: scale(0.9);
+                           }
+                        }
+                     }
+
+                     .palette-rgb {
+                        display: flex;
+                        margin: 0 0 0 12px;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        p {
+                           font-size: 16px;
+                           font-weight: 700;
+                           color: var(--text-color);
+                        }
+
+                        img {
+                           width: 24px;
+                           height: 24px;
+                           transition: 0.3s;
+                           margin: 0 12px 0 5px;
+
+                           &:hover {
+                              cursor: pointer;
+                              transform: scale(0.9);
+                           }
+                        }
+                     }
+
+                     &:hover {
+                        filter: drop-shadow(0 0px 4px rgba(0, 0, 0, 0.15));
+
+                        .color-card {
+                           filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+                        }
+                     }
                   }
                }
             }
