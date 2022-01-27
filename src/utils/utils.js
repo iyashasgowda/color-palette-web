@@ -1,10 +1,15 @@
 import data from './data.json';
+import Swatch from './swatch.js';
 
 const hex2rgb = (hex) => `rgb(${hex.match(/\w\w/g).map((x) => +`0x${x}`)})`;
 const hexa2rgba = (hex, alpha) => `rgb(${hex.match(/\w\w/g).map((x) => +`0x${x}`)}, ${alpha})`;
 
 const rgba2hexa = (r, g, b, a) => `#${(r | (1 << 8)).toString(16).slice(1).toUpperCase() + (g | (1 << 8)).toString(16).slice(1).toUpperCase() + (b | (1 << 8)).toString(16).slice(1).toUpperCase() + (a | (1 << 8)).toString(16).slice(1).toUpperCase()}`;
 const rgb2hex = (r, g, b) => `#${(r | (1 << 8)).toString(16).slice(1).toUpperCase() + (g | (1 << 8)).toString(16).slice(1).toUpperCase() + (b | (1 << 8)).toString(16).slice(1).toUpperCase()}`;
+
+const copyText = (text) => navigator.clipboard.writeText(text.toUpperCase());
+const getTextColor = (rgb) => ((rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000 > 125 ? [0, 0, 0] : [255, 255, 255]);
+const getCopyIcon = (rgb) => ((rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000 > 125 ? `${process.env.PUBLIC_URL}/assets/icons/dark/copy.svg` : `${process.env.PUBLIC_URL}/assets/icons/light/copy.svg`);
 
 const rgb2hsv = (r, g, b) => {
    r /= 255;
@@ -44,8 +49,6 @@ const rgb2cmyk = (r, g, b) => {
    }%, ${Math.round(((1 - b / 255 - Math.min(1 - r / 255, Math.min(1 - g / 255, 1 - b / 255))) / (1 - Math.min(1 - r / 255, Math.min(1 - g / 255, 1 - b / 255)))) * 1000) / 10}%, ${Math.round(Math.min(1 - r / 255, Math.min(1 - g / 255, 1 - b / 255)) * 1000) / 10}%`;
 };
 
-const copyText = (text) => navigator.clipboard.writeText(text.toUpperCase());
-
 let timeout;
 const makeToast = (message) => {
    const toast = document.querySelector('.toast');
@@ -65,7 +68,7 @@ const makeToast = (message) => {
 
 const changeTheme = (darkMode) => {
    let root = document.documentElement;
-   if (!darkMode) {
+   if (darkMode) {
       data.slider.alpha = '#FAFAFA';
       root.style.setProperty('--base-color', '#2D2D2D');
       root.style.setProperty('--background-color', '#000000');
@@ -157,4 +160,20 @@ const validateColor = (code, hex, alpha) => {
    }
 };
 
-export { hex2rgb, rgb2hex, hexa2rgba, rgba2hexa, rgb2hsv, rgb2hsl, rgb2cmyk, copyText, makeToast, changeTheme, updateSlider, validateColor };
+const getSwatches = (path, result) => {
+   const image = new Image();
+   image.src = path;
+   image.onload = () => {
+      const swatch = new Swatch(image);
+      let swatches = [{ name: 'Dominant', rgb: swatch.getDominantColor() }];
+      swatch.getVibrantColor() != null && swatches.push({ name: 'Vibrant', rgb: swatch.getVibrantColor() });
+      swatch.getLightVibrantColor() != null && swatches.push({ name: 'Vibrant light', rgb: swatch.getLightVibrantColor() });
+      swatch.getDarkVibrantColor() != null && swatches.push({ name: 'Vibrant dark', rgb: swatch.getDarkVibrantColor() });
+      swatch.getMutedColor() != null && swatches.push({ name: 'Muted', rgb: swatch.getMutedColor() });
+      swatch.getLightMutedColor() != null && swatches.push({ name: 'Muted light', rgb: swatch.getLightMutedColor() });
+      swatch.getDarkMutedColor() != null && swatches.push({ name: 'Muted dark', rgb: swatch.getDarkMutedColor() });
+      result(swatches);
+   };
+};
+
+export { hex2rgb, rgb2hex, hexa2rgba, rgba2hexa, rgb2hsv, rgb2hsl, rgb2cmyk, copyText, makeToast, changeTheme, updateSlider, validateColor, getSwatches, getTextColor, getCopyIcon };

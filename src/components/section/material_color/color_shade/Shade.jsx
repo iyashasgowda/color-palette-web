@@ -3,7 +3,6 @@ import React from 'react';
 import { copyText, makeToast } from '../../../../utils/utils.js';
 
 const Shade = (props) => {
-   const copy = props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/dark/copy.svg` : `${process.env.PUBLIC_URL}/assets/icons/light/copy.svg`;
    return (
       <div className='color-shade'>
          <div style={{ backgroundColor: props.shade.code }}></div>
@@ -13,7 +12,7 @@ const Shade = (props) => {
                <p>{props.shade.code.toUpperCase()}</p>
             </div>
             <img
-               src={copy}
+               src={`${process.env.PUBLIC_URL}/assets/icons/copy_large.svg`}
                alt='copy'
                onClick={() => {
                   copyText(props.shade.code);

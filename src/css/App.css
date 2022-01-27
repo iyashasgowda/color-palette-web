@@ -615,17 +615,17 @@ body p {
 }
 
 .container section .create-color .solid-section {
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
-  height: 100%;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
   background-color: var(--background-color);
 }
 
@@ -1207,6 +1207,343 @@ body p {
   width: 100%;
   height: 100%;
   margin-top: 1px;
+  overflow: hidden;
+}
+
+.container section .extract-color .swatch-section {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  overflow-y: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  scroll-behavior: smooth !important;
+  background-color: var(--background-color);
+}
+
+.container section .extract-color .swatch-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container section .extract-color .swatch-section::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.container section .extract-color .swatch-section::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(var(--text-color-rgb), 0.8);
+}
+
+.container section .extract-color .swatch-section .swatch-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container section .extract-color .swatch-section .swatch-header .swatch-header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 32px 0 0 32px;
+}
+
+.container section .extract-color .swatch-section .swatch-header .swatch-header-title p {
+  font-size: 20px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.container section .extract-color .swatch-section .swatch-body {
+  margin: 48px 48px 0 48px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container section .extract-color .swatch-section .swatch-body .swatch-img-chooser {
+  width: 100%;
+  min-height: 256px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  overflow: hidden;
+  aspect-ratio: 3/1.5;
+  border-radius: 24px;
+  background-color: var(--card-color);
+  -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container section .extract-color .swatch-section .swatch-body .swatch-img-chooser:hover {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .cosmetic-file-input {
+  display: none;
+}
+
+.container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .selected-image {
+  position: fixed;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .logo-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .logo-info img {
+  width: 64px;
+  aspect-ratio: 1/1;
+}
+
+.container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .logo-info p {
+  margin-top: 10px;
+  color: #808080;
+  font-weight: 700;
+}
+
+.container section .extract-color .swatch-section .swatch-body .extracted-swatches {
+  width: 95%;
+  margin: 12px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container section .extract-color .swatch-section .swatch-body .extracted-swatches .swatch-item {
+  width: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin: 12px 0;
+  border-radius: 18px;
+  -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.container section .extract-color .swatch-section .swatch-body .extracted-swatches .swatch-item:hover {
+  -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.container section .extract-color .swatch-section .swatch-body .extracted-swatches .swatch-item p {
+  margin: 12px 0 0 16px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.container section .extract-color .swatch-section .swatch-body .extracted-swatches .swatch-item .swatch-hex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container section .extract-color .swatch-section .swatch-body .extracted-swatches .swatch-item .swatch-hex p {
+  margin: 0 0 0 16px;
+  font-size: 17px;
+}
+
+.container section .extract-color .swatch-section .swatch-body .extracted-swatches .swatch-item .swatch-hex img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-left: 5px;
+}
+
+.container section .extract-color .swatch-section .swatch-body .extracted-swatches .swatch-item .swatch-hex img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.container section .extract-color .swatch-section .swatch-body .extracted-swatches .swatch-item .swatch-rgb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2px 0 12px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container section .extract-color .swatch-section .swatch-body .extracted-swatches .swatch-item .swatch-rgb p {
+  margin: 0 0 0 16px;
+  font-size: 17px;
+}
+
+.container section .extract-color .swatch-section .swatch-body .extracted-swatches .swatch-item .swatch-rgb img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-left: 5px;
+}
+
+.container section .extract-color .swatch-section .swatch-body .extracted-swatches .swatch-item .swatch-rgb img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.container section .extract-color .palette-section {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 1px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  overflow-y: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  scroll-behavior: smooth !important;
+  background-color: var(--background-color);
+}
+
+.container section .extract-color .palette-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container section .extract-color .palette-section::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.container section .extract-color .palette-section::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(var(--text-color-rgb), 0.8);
+}
+
+.container section .extract-color .palette-section .palette-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container section .extract-color .palette-section .palette-header .palette-header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 32px 0 0 32px;
+}
+
+.container section .extract-color .palette-section .palette-header .palette-header-title p {
+  font-size: 20px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.container section .extract-color .manual-section {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 1px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  overflow-y: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  scroll-behavior: smooth !important;
+  background-color: var(--background-color);
+}
+
+.container section .extract-color .manual-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container section .extract-color .manual-section::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.container section .extract-color .manual-section::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(var(--text-color-rgb), 0.8);
+}
+
+.container section .extract-color .manual-section .manual-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container section .extract-color .manual-section .manual-header .manual-header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 32px 0 0 32px;
+}
+
+.container section .extract-color .manual-section .manual-header .manual-header-title p {
+  font-size: 20px;
+  margin-left: 10px;
+  font-weight: bold;
 }
 
 .container section .harmonize-color {
