@@ -260,6 +260,18 @@ body p {
           user-select: none;
 }
 
+html ul,
+html li,
+html img,
+body ul,
+body li,
+body img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1270,6 +1282,39 @@ body p {
   font-size: 20px;
   margin-left: 10px;
   font-weight: bold;
+  color: var(--text-color);
+}
+
+.container section .extract-color .swatch-section .swatch-header .swatch-reset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 32px 32px 0 0;
+}
+
+.container section .extract-color .swatch-section .swatch-header .swatch-reset p {
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.container section .extract-color .swatch-section .swatch-header .swatch-reset img {
+  height: 28px;
+  width: 28px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+}
+
+.container section .extract-color .swatch-section .swatch-header .swatch-reset img:hover {
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+          filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
 }
 
 .container section .extract-color .swatch-section .swatch-body {
@@ -1317,10 +1362,6 @@ body p {
           filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
-.container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .cosmetic-file-input {
-  display: none;
-}
-
 .container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .selected-image {
   position: fixed;
   max-height: 100%;
@@ -1328,27 +1369,30 @@ body p {
 }
 
 .container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .logo-info {
+  width: 100%;
+  margin: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .logo-info img {
-  width: 64px;
+  width: 40px;
   aspect-ratio: 1/1;
 }
 
 .container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .logo-info p {
-  margin-top: 10px;
-  color: #808080;
   font-weight: 700;
+  color: #808080;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 16px 0 0 8px;
 }
 
 .container section .extract-color .swatch-section .swatch-body .extracted-swatches {
@@ -1438,6 +1482,22 @@ body p {
           transform: scale(0.9);
 }
 
+.container section .extract-color .swatch-section .swatch-body .swatch-extract-info {
+  width: 95%;
+  color: #808080;
+}
+
+.container section .extract-color .swatch-section .swatch-body .swatch-extract-info p {
+  font-weight: 700;
+  font-size: larger;
+}
+
+.container section .extract-color .swatch-section .swatch-body .swatch-extract-info ul li {
+  font-size: large;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
 .container section .extract-color .palette-section {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -1493,6 +1553,39 @@ body p {
   font-size: 20px;
   margin-left: 10px;
   font-weight: bold;
+  color: var(--text-color);
+}
+
+.container section .extract-color .palette-section .palette-header .palette-reset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 32px 32px 0 0;
+}
+
+.container section .extract-color .palette-section .palette-header .palette-reset p {
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.container section .extract-color .palette-section .palette-header .palette-reset img {
+  height: 28px;
+  width: 28px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+}
+
+.container section .extract-color .palette-section .palette-header .palette-reset img:hover {
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+          filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
 }
 
 .container section .extract-color .palette-section .palette-body {
@@ -1540,10 +1633,6 @@ body p {
           filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
-.container section .extract-color .palette-section .palette-body .palette-img-chooser .cosmetic-file-input {
-  display: none;
-}
-
 .container section .extract-color .palette-section .palette-body .palette-img-chooser .selected-image {
   position: fixed;
   max-height: 100%;
@@ -1551,27 +1640,30 @@ body p {
 }
 
 .container section .extract-color .palette-section .palette-body .palette-img-chooser .logo-info {
+  width: 100%;
+  margin: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .container section .extract-color .palette-section .palette-body .palette-img-chooser .logo-info img {
-  width: 64px;
+  width: 40px;
   aspect-ratio: 1/1;
 }
 
 .container section .extract-color .palette-section .palette-body .palette-img-chooser .logo-info p {
-  margin-top: 10px;
-  color: #808080;
   font-weight: 700;
+  color: #808080;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 16px 0 0 8px;
 }
 
 .container section .extract-color .palette-section .palette-body .extracted-palette {
@@ -1681,6 +1773,22 @@ body p {
           filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
 }
 
+.container section .extract-color .palette-section .palette-body .palette-extract-info {
+  width: 95%;
+  color: #808080;
+}
+
+.container section .extract-color .palette-section .palette-body .palette-extract-info p {
+  font-weight: 700;
+  font-size: larger;
+}
+
+.container section .extract-color .palette-section .palette-body .palette-extract-info ul li {
+  font-size: large;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
 .container section .extract-color .manual-section {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -1736,6 +1844,208 @@ body p {
   font-size: 20px;
   margin-left: 10px;
   font-weight: bold;
+  color: var(--text-color);
+}
+
+.container section .extract-color .manual-section .manual-header .manual-reset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 32px 32px 0 0;
+}
+
+.container section .extract-color .manual-section .manual-header .manual-reset p {
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.container section .extract-color .manual-section .manual-header .manual-reset img {
+  height: 28px;
+  width: 28px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+}
+
+.container section .extract-color .manual-section .manual-header .manual-reset img:hover {
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+          filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+}
+
+.container section .extract-color .manual-section .manual-body {
+  margin: 48px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 26px 26px 24px 24px;
+  background-color: var(--card-color);
+  -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background .manual-img-card {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  overflow: hidden;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 24px;
+  background-color: var(--card-color);
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background .manual-img-card .manual-select-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background .manual-img-card canvas {
+  width: 100%;
+  position: absolute;
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background .manual-img-card:hover {
+  -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card {
+  margin: 20px 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: var(--text-color);
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card p {
+  font-size: larger;
+  font-weight: 800;
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-color-hex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-color-hex img {
+  margin-left: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-color-hex img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-choose-image {
+  width: 42px;
+  height: 42px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 50%;
+  background-color: var(--background-color);
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-choose-image img {
+  width: 22px;
+  height: 22px;
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-choose-image:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-color-rgb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-color-rgb img {
+  margin-left: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-color-rgb img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 .container section .harmonize-color {

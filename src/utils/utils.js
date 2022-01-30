@@ -182,4 +182,22 @@ const getPalette = (path, count, result) => {
    image.onload = () => result(new Palette(image, count));
 };
 
-export { hex2rgb, rgb2hex, hexa2rgba, rgba2hexa, rgb2hsv, rgb2hsl, rgb2cmyk, copyText, makeToast, changeTheme, updateSlider, validateColor, getSwatches, getPalette, getTextColor, getCopyIcon };
+const updateCanvas = (path) => {
+   let canvas = document.getElementById('manual-canvas');
+   let context = canvas.getContext('2d');
+   context.clearRect(0, 0, canvas.width, canvas.height);
+
+   let image = new Image();
+   image.onload = () => {
+      var hRatio = canvas.width / image.width;
+      var vRatio = canvas.height / image.height;
+      var ratio = Math.min(hRatio, vRatio);
+      var centerShift_x = (canvas.width - image.width * ratio) / 2;
+      var centerShift_y = (canvas.height - image.height * ratio) / 2;
+
+      context.drawImage(image, 0, 0, image.width, image.height, centerShift_x, centerShift_y, image.width * ratio, image.height * ratio);
+   };
+   image.src = path;
+};
+
+export { hex2rgb, rgb2hex, hexa2rgba, rgba2hexa, rgb2hsv, rgb2hsl, rgb2cmyk, copyText, makeToast, changeTheme, updateSlider, validateColor, getSwatches, getPalette, getTextColor, getCopyIcon, updateCanvas };

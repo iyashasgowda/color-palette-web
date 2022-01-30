@@ -8,7 +8,7 @@ const Extract = (props) => {
       <div className='extract-color'>
          <Swatch darkMode={props.darkMode} swatch={props.swatch} changeSwatch={props.changeSwatch}></Swatch>
          <Palette darkMode={props.darkMode} palette={props.palette} changePalette={props.changePalette}></Palette>
-         <Manual darkMode={props.darkMode}></Manual>
+         <Manual darkMode={props.darkMode} manual={props.manual} changeManual={props.changeManual}></Manual>
       </div>
    );
 };

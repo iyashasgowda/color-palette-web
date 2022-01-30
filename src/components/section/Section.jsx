@@ -25,38 +25,22 @@ const Section = (props) => {
 
    /** Extract swatch colors */
    const [swatch, setSwatch] = useState({ path: '', swatches: [] });
-   const handleSwatchChange = (e) => {
-      if (e.target.files && e.target.files[0]) {
-         const reader = new FileReader();
-         reader.onload = (e) =>
-            getSwatches(e.target.result, (swatches) => {
-               setSwatch({ path: e.target.result, swatches });
-               makeToast(`${swatches.length} swatches extracted :)`);
-            });
-         reader.readAsDataURL(e.target.files[0]);
-      } else makeToast('Selected image is not valid!');
-   };
+   const handleSwatchChange = (swatch) => setSwatch(swatch);
 
    /** Extract palette colors */
    const [palette, setPalette] = useState({ path: '', palette: [] });
-   const handlePaletteChange = (e) => {
-      if (e.target.files && e.target.files[0]) {
-         const reader = new FileReader();
-         reader.onload = (e) =>
-            getPalette(e.target.result, 16, (palette) => {
-               setPalette({ path: e.target.result, palette });
-               makeToast(`${palette.swatches.length} colors extracted :)`);
-            });
-         reader.readAsDataURL(e.target.files[0]);
-      } else makeToast('Selected image is not valid!');
-   };
+   const handlePaletteChange = (palette) => setPalette(palette);
+
+   /** Extract manual colors */
+   const [manual, setManual] = useState({ path: '', rgb: { red: 0, green: 0, blue: 0 } });
+   const handleManualChange = (palette) => setManual(palette);
 
    return (
       <section>
          <Header version={props.version} darkMode={props.darkMode} changeTheme={props.changeTheme} />
          {props.activeMenu === 1 && <MaterialColor activeColor={activeColor} darkMode={props.darkMode} changeColor={handleColorChange} />}
          {props.activeMenu === 2 && <Create darkMode={props.darkMode} solid={solid} gradient={gradient} changeSolid={handleSolidChange} changeGradient={handleGradientChange} />}
-         {props.activeMenu === 3 && <Extract darkMode={props.darkMode} swatch={swatch} palette={palette} changeSwatch={handleSwatchChange} changePalette={handlePaletteChange} />}
+         {props.activeMenu === 3 && <Extract darkMode={props.darkMode} swatch={swatch} palette={palette} manual={manual} changeSwatch={handleSwatchChange} changePalette={handlePaletteChange} changeManual={handleManualChange} />}
          {props.activeMenu === 4 && <Harmonize darkMode={props.darkMode} />}
          {props.activeMenu === 5 && <Saved darkMode={props.darkMode} />}
          <Footer darkMode={props.darkMode} />

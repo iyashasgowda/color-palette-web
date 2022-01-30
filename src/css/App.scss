@@ -27,6 +27,12 @@ body {
       user-select: none;
    }
 
+   ul,
+   li,
+   img {
+      user-select: none;
+   }
+
    transition: 0.3s;
    color: var(--text-color);
    background-color: var(--base-color);
@@ -713,6 +719,32 @@ body {
                      font-size: 20px;
                      margin-left: 10px;
                      font-weight: bold;
+                     color: var(--text-color);
+                  }
+               }
+
+               .swatch-reset {
+                  display: flex;
+                  align-items: center;
+                  margin: 32px 32px 0 0;
+
+                  p {
+                     font-size: 20px;
+                     margin-right: 10px;
+                     font-weight: bold;
+                     color: var(--text-color);
+                  }
+
+                  img {
+                     height: 28px;
+                     width: 28px;
+                     transition: 0.3s;
+                     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+
+                     &:hover {
+                        cursor: pointer;
+                        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+                     }
                   }
                }
             }
@@ -741,10 +773,6 @@ body {
                      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
                   }
 
-                  .cosmetic-file-input {
-                     display: none;
-                  }
-
                   .selected-image {
                      position: fixed;
                      max-height: 100%;
@@ -752,19 +780,22 @@ body {
                   }
 
                   .logo-info {
+                     width: 100%;
+                     margin: 20px;
                      display: flex;
-                     flex-direction: column;
-                     align-items: center;
+                     align-items: flex-start;
+                     align-self: flex-start;
 
                      img {
-                        width: 64px;
+                        width: 40px;
                         aspect-ratio: 1/1;
                      }
 
                      p {
-                        margin-top: 10px;
-                        color: #808080;
                         font-weight: 700;
+                        color: #808080;
+                        align-self: center;
+                        margin: 16px 0 0 8px;
                      }
                   }
                }
@@ -835,6 +866,24 @@ body {
                      }
                   }
                }
+
+               .swatch-extract-info {
+                  width: 95%;
+                  color: #808080;
+
+                  p {
+                     font-weight: 700;
+                     font-size: larger;
+                  }
+
+                  ul {
+                     li {
+                        font-size: large;
+                        font-weight: 600;
+                        margin-top: 12px;
+                     }
+                  }
+               }
             }
          }
 
@@ -862,6 +911,32 @@ body {
                      font-size: 20px;
                      margin-left: 10px;
                      font-weight: bold;
+                     color: var(--text-color);
+                  }
+               }
+
+               .palette-reset {
+                  display: flex;
+                  align-items: center;
+                  margin: 32px 32px 0 0;
+
+                  p {
+                     font-size: 20px;
+                     margin-right: 10px;
+                     font-weight: bold;
+                     color: var(--text-color);
+                  }
+
+                  img {
+                     height: 28px;
+                     width: 28px;
+                     transition: 0.3s;
+                     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+
+                     &:hover {
+                        cursor: pointer;
+                        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+                     }
                   }
                }
             }
@@ -890,10 +965,6 @@ body {
                      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
                   }
 
-                  .cosmetic-file-input {
-                     display: none;
-                  }
-
                   .selected-image {
                      position: fixed;
                      max-height: 100%;
@@ -901,19 +972,22 @@ body {
                   }
 
                   .logo-info {
+                     width: 100%;
+                     margin: 20px;
                      display: flex;
-                     flex-direction: column;
-                     align-items: center;
+                     align-items: flex-start;
+                     align-self: flex-start;
 
                      img {
-                        width: 64px;
+                        width: 40px;
                         aspect-ratio: 1/1;
                      }
 
                      p {
-                        margin-top: 10px;
-                        color: #808080;
                         font-weight: 700;
+                        color: #808080;
+                        align-self: center;
+                        margin: 16px 0 0 8px;
                      }
                   }
                }
@@ -1000,6 +1074,24 @@ body {
                      }
                   }
                }
+
+               .palette-extract-info {
+                  width: 95%;
+                  color: #808080;
+
+                  p {
+                     font-weight: 700;
+                     font-size: larger;
+                  }
+
+                  ul {
+                     li {
+                        font-size: large;
+                        font-weight: 600;
+                        margin-top: 12px;
+                     }
+                  }
+               }
             }
          }
 
@@ -1027,6 +1119,144 @@ body {
                      font-size: 20px;
                      margin-left: 10px;
                      font-weight: bold;
+                     color: var(--text-color);
+                  }
+               }
+
+               .manual-reset {
+                  display: flex;
+                  align-items: center;
+                  margin: 32px 32px 0 0;
+
+                  p {
+                     font-size: 20px;
+                     margin-right: 10px;
+                     font-weight: bold;
+                     color: var(--text-color);
+                  }
+
+                  img {
+                     height: 28px;
+                     width: 28px;
+                     transition: 0.3s;
+                     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
+
+                     &:hover {
+                        cursor: pointer;
+                        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+                     }
+                  }
+               }
+            }
+
+            .manual-body {
+               margin: 48px;
+               height: 100%;
+               display: flex;
+               align-items: center;
+               flex-direction: column;
+
+               .manual-img-background {
+                  display: flex;
+                  flex-direction: column;
+                  width: 100%;
+                  height: 100%;
+                  transition: 0.3s;
+                  border-radius: 26px 26px 24px 24px;
+                  background-color: var(--card-color);
+                  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+                  @include centerItems();
+
+                  .manual-img-card {
+                     width: 100%;
+                     height: 100%;
+                     display: flex;
+                     cursor: pointer;
+                     transition: 0.3s;
+                     overflow: hidden;
+                     align-items: center;
+                     justify-content: center;
+                     border-radius: 24px;
+                     background-color: var(--card-color);
+                     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
+
+                     .manual-select-logo {
+                        width: 40px;
+                        height: 40px;
+                     }
+
+                     canvas {
+                        width: 100%;
+                        position: absolute;
+                     }
+
+                     &:hover {
+                        filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+                     }
+                  }
+
+                  .manual-color-card {
+                     margin: 20px 0;
+                     width: 100%;
+                     display: flex;
+                     color: var(--text-color);
+                     justify-content: space-evenly;
+
+                     p {
+                        font-size: larger;
+                        font-weight: 800;
+                     }
+
+                     .manual-color-hex {
+                        display: flex;
+                        align-items: center;
+
+                        img {
+                           margin-left: 5px;
+                           transition: 0.3s;
+
+                           &:hover {
+                              cursor: pointer;
+                              transform: scale(0.9);
+                           }
+                        }
+                     }
+
+                     .manual-choose-image {
+                        width: 42px;
+                        height: 42px;
+                        transition: 0.3s;
+                        border-radius: 50%;
+                        background-color: var(--background-color);
+                        filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+                        @include centerItems();
+
+                        img {
+                           width: 22px;
+                           height: 22px;
+                        }
+
+                        &:hover {
+                           cursor: pointer;
+                           transform: scale(0.9);
+                           filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+                        }
+                     }
+
+                     .manual-color-rgb {
+                        display: flex;
+                        align-items: center;
+
+                        img {
+                           margin-left: 5px;
+                           transition: 0.3s;
+
+                           &:hover {
+                              cursor: pointer;
+                              transform: scale(0.9);
+                           }
+                        }
+                     }
                   }
                }
             }
