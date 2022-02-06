@@ -11,7 +11,7 @@ const copyText = (text) => navigator.clipboard.writeText(text.toUpperCase());
 const getTextColor = (rgb) => ((rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000 > 125 ? [0, 0, 0] : [255, 255, 255]);
 const getCopyIcon = (rgb) => ((rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000 > 125 ? `${process.env.PUBLIC_URL}/assets/icons/dark/copy.svg` : `${process.env.PUBLIC_URL}/assets/icons/light/copy.svg`);
 
-const rgb2hsv = (r, g, b) => {
+const rgb2hsv_ui = (r, g, b) => {
    r /= 255;
    g /= 255;
    b /= 255;
@@ -20,6 +20,72 @@ const rgb2hsv = (r, g, b) => {
 
    if (minRGB === maxRGB) return `0°, 0%, ${Math.round(((maxRGB + minRGB) / 2) * 1000) / 10}%`;
    return `${Math.round(60 * ((r === minRGB ? 3 : b === minRGB ? 1 : 5) - (r === minRGB ? g - b : b === minRGB ? r - g : b - r) / (maxRGB - minRGB)))}°, ${Math.round(((maxRGB - minRGB) / maxRGB) * 100 * 10) / 10}%, ${Math.round(maxRGB * 100 * 10) / 10}%`;
+};
+
+const rgb2hsv = (rgb) => {
+   let hsv = {};
+   let max = rgb.r > rgb.g ? (rgb.r > rgb.b ? rgb.r : rgb.b) : rgb.g > rgb.b ? rgb.g : rgb.b;
+   let dif = max - (rgb.r < rgb.g ? (rgb.r < rgb.b ? rgb.r : rgb.b) : rgb.g < rgb.b ? rgb.g : rgb.b);
+   hsv.s = max === 0.0 ? 0 : (100 * dif) / max;
+   if (hsv.s === 0) hsv.h = 0;
+   else if (rgb.r === max) hsv.h = (60.0 * (rgb.g - rgb.b)) / dif;
+   else if (rgb.g === max) hsv.h = 120.0 + (60.0 * (rgb.b - rgb.r)) / dif;
+   else if (rgb.b === max) hsv.h = 240.0 + (60.0 * (rgb.r - rgb.g)) / dif;
+   if (hsv.h < 0.0) hsv.h += 360.0;
+   hsv.v = Math.round((max * 100) / 255);
+   hsv.h = Math.round(hsv.h);
+   hsv.s = Math.round(hsv.s);
+   return hsv;
+};
+
+const hsv2rgb = (hsv) => {
+   let rgb = {};
+   if (hsv.s === 0) rgb.r = rgb.g = rgb.b = Math.round(hsv.v * 2.55);
+   else {
+      hsv.h /= 60;
+      hsv.s /= 100;
+      hsv.v /= 100;
+      let i = Math.floor(hsv.h);
+      let f = hsv.h - i;
+      let p = hsv.v * (1 - hsv.s);
+      let q = hsv.v * (1 - hsv.s * f);
+      let t = hsv.v * (1 - hsv.s * (1 - f));
+      switch (i) {
+         case 0:
+            rgb.r = hsv.v;
+            rgb.g = t;
+            rgb.b = p;
+            break;
+         case 1:
+            rgb.r = q;
+            rgb.g = hsv.v;
+            rgb.b = p;
+            break;
+         case 2:
+            rgb.r = p;
+            rgb.g = hsv.v;
+            rgb.b = t;
+            break;
+         case 3:
+            rgb.r = p;
+            rgb.g = q;
+            rgb.b = hsv.v;
+            break;
+         case 4:
+            rgb.r = t;
+            rgb.g = p;
+            rgb.b = hsv.v;
+            break;
+         default:
+            rgb.r = hsv.v;
+            rgb.g = p;
+            rgb.b = q;
+      }
+      rgb.r = Math.round(rgb.r * 255);
+      rgb.g = Math.round(rgb.g * 255);
+      rgb.b = Math.round(rgb.b * 255);
+   }
+   return rgb;
 };
 
 const rgb2hsl = (r, g, b) => {
@@ -200,4 +266,41 @@ const updateCanvas = (path) => {
    image.src = path;
 };
 
-export { hex2rgb, rgb2hex, hexa2rgba, rgba2hexa, rgb2hsv, rgb2hsl, rgb2cmyk, copyText, makeToast, changeTheme, updateSlider, validateColor, getSwatches, getPalette, getTextColor, getCopyIcon, updateCanvas };
+const renderColorWheel = (canvas, size, shade) => {
+   const context = canvas.getContext('2d');
+   canvas.width = size;
+   canvas.height = size;
+
+   let angle = 0;
+   let pivot = 0;
+
+   const radius = size / 2;
+   const rgb = [0, 0, 255];
+   const offset = 4.322;
+
+   while (angle < 360) {
+      const pointer = (pivot + 3 - 1) % 3;
+
+      if (rgb[pivot] < 255) rgb[pivot] = rgb[pivot] + offset > 255 ? 255 : rgb[pivot] + offset;
+      else if (rgb[pointer] > 0) rgb[pointer] = rgb[pointer] > offset ? rgb[pointer] - offset : 0;
+      else if (rgb[pivot] >= 255) {
+         rgb[pivot] = 255;
+         pivot = (pivot + 1) % 3;
+      }
+
+      const grad = context.createRadialGradient(radius, radius, 0, radius, radius, radius);
+      grad.addColorStop(0, shade);
+      grad.addColorStop(1, `rgb(${rgb.map((h) => Math.floor(h)).join(',')})`);
+      context.fillStyle = grad;
+
+      context.beginPath();
+      context.moveTo(radius, radius);
+      context.arc(radius, radius, radius, angle * (Math.PI / 180), 360 * (Math.PI / 180));
+      context.closePath();
+      context.fill();
+      angle++;
+   }
+   return true;
+};
+
+export { hex2rgb, rgb2hex, hexa2rgba, rgba2hexa, rgb2hsv_ui, rgb2hsv, hsv2rgb, rgb2hsl, rgb2cmyk, copyText, makeToast, changeTheme, updateSlider, validateColor, getSwatches, getPalette, getTextColor, getCopyIcon, updateCanvas, renderColorWheel };

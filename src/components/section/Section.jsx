@@ -8,8 +8,6 @@ import Extract from './extract/Extract';
 import Harmonize from './harmonize/Harmonize';
 import Saved from './saved/Saved';
 
-import { makeToast, getSwatches, getPalette } from '../../utils/utils';
-
 const Section = (props) => {
    /** Material color state */
    const [activeColor, setActiveColor] = useState(1);
@@ -35,13 +33,47 @@ const Section = (props) => {
    const [manual, setManual] = useState({ path: '', rgb: { red: 0, green: 0, blue: 0 } });
    const handleManualChange = (palette) => setManual(palette);
 
+   /** Complement colors */
+   const [complement, setComplement] = useState({ r: 0, g: 0, b: 0, checked: false });
+   const handleComplementChange = (complement) => setComplement(complement);
+
+   /** Split complement colors */
+   const [split, setSplit] = useState({ r: 0, g: 0, b: 0, checked: false });
+   const handleSplitChange = (split) => setSplit(split);
+
+   /** Analogous colors */
+   const [analogous, setAnalogous] = useState({ r: 0, g: 0, b: 0, checked: false });
+   const handleAnalogousChange = (analogous) => setAnalogous(analogous);
+
+   /** Triadic colors */
+   const [triadic, setTriadic] = useState({ r: 0, g: 0, b: 0, checked: false });
+   const handleTriadicChange = (triadic) => setTriadic(triadic);
+
+   /** Tetradic colors */
+   const [tetradic, setTetradic] = useState({ r: 0, g: 0, b: 0, checked: false });
+   const handleTetradicChange = (tetradic) => setTetradic(tetradic);
+
    return (
       <section>
          <Header version={props.version} darkMode={props.darkMode} changeTheme={props.changeTheme} />
          {props.activeMenu === 1 && <MaterialColor activeColor={activeColor} darkMode={props.darkMode} changeColor={handleColorChange} />}
          {props.activeMenu === 2 && <Create darkMode={props.darkMode} solid={solid} gradient={gradient} changeSolid={handleSolidChange} changeGradient={handleGradientChange} />}
          {props.activeMenu === 3 && <Extract darkMode={props.darkMode} swatch={swatch} palette={palette} manual={manual} changeSwatch={handleSwatchChange} changePalette={handlePaletteChange} changeManual={handleManualChange} />}
-         {props.activeMenu === 4 && <Harmonize darkMode={props.darkMode} />}
+         {props.activeMenu === 4 && (
+            <Harmonize
+               darkMode={props.darkMode}
+               complement={complement}
+               changeComplement={handleComplementChange}
+               split={split}
+               changeSplit={handleSplitChange}
+               analogous={analogous}
+               changeAnalogous={handleAnalogousChange}
+               triadic={triadic}
+               changeTriadic={handleTriadicChange}
+               tetradic={tetradic}
+               changeTetradic={handleTetradicChange}
+            />
+         )}
          {props.activeMenu === 5 && <Saved darkMode={props.darkMode} />}
          <Footer darkMode={props.darkMode} />
       </section>

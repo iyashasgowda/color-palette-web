@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 
 import data from '../../../utils/data.json';
-import { copyText, makeToast, rgb2hex, rgba2hexa, rgb2hsv, rgb2cmyk, rgb2hsl, updateSlider, validateColor } from '../../../utils/utils';
+import { copyText, makeToast, rgb2hex, rgba2hexa, rgb2hsv_ui, rgb2cmyk, rgb2hsl, updateSlider, validateColor } from '../../../utils/utils';
 
 const Solid = (props) => {
    const [red, green, blue, alpha, checkbox] = [props.solid.red, props.solid.green, props.solid.blue, props.solid.alpha, props.solid.checkbox];
    const solid_icon = props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/solid.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/solid.svg`;
-   const [hex, rgb, hexa, rgba, hsv, hsl, cmyk] = [rgb2hex(red, green, blue), `${red}, ${green}, ${blue}`, rgba2hexa(red, green, blue, alpha), `${red}, ${green}, ${blue}, ${alpha}`, rgb2hsv(red, green, blue), rgb2hsl(red, green, blue), rgb2cmyk(red, green, blue)];
+   const [hex, rgb, hexa, rgba, hsv, hsl, cmyk] = [rgb2hex(red, green, blue), `${red}, ${green}, ${blue}`, rgba2hexa(red, green, blue, alpha), `${red}, ${green}, ${blue}, ${alpha}`, rgb2hsv_ui(red, green, blue), rgb2hsl(red, green, blue), rgb2cmyk(red, green, blue)];
 
    const [modal, setModal] = useState({ hex: false, rgba: false });
    const handleModalClose = () => setModal({ hex: false, rgba: false });
