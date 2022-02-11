@@ -2,6 +2,7 @@ import React from 'react';
 import Item from './Item';
 
 import data from '../../utils/data.json';
+import { makeToast } from '../../utils/utils';
 
 const Menu = ({ activeMenu, darkMode, changeMenu }) => {
    const logo_size = 48;
@@ -18,7 +19,7 @@ const Menu = ({ activeMenu, darkMode, changeMenu }) => {
             </ul>
          </div>
 
-         <img className='settings' src={settings} alt='settings'></img>
+         <img className='settings' src={settings} alt='settings' onClick={() => makeToast('Settings is coming soon :)')}></img>
       </div>
    );
 };

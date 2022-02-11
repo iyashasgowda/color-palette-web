@@ -2,18 +2,22 @@ import React, { useState } from 'react';
 import Menu from './components/menu/Menu';
 import Section from './components/section/Section';
 
-import { changeTheme } from './utils/utils';
-
+import { getCache, setCache, changeTheme } from './utils/utils';
 import app from '../package.json';
 
 const App = () => {
-   const [activeMenu, setActiveMenu] = useState(1);
-   const [darkMode, setDarkMode] = useState(false);
+   const [activeMenu, setActiveMenu] = useState(getCache().menu);
+   const [darkMode, setDarkMode] = useState(getCache().theme);
 
-   const handleMenuChange = (id) => setActiveMenu(id);
+   const handleMenuChange = (id) => {
+      setActiveMenu(id);
+      setCache('menu', id);
+   };
+
    const handleThemeChange = () => {
       setDarkMode(!darkMode);
       changeTheme(darkMode);
+      setCache('theme', !darkMode);
    };
    changeTheme(darkMode);
 

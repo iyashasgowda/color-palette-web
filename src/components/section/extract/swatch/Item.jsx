@@ -1,9 +1,28 @@
 import React from 'react';
+
+import { add } from '../../../../utils/storage';
 import { rgb2hex, getTextColor, getCopyIcon, copyText, makeToast } from '../../../../utils/utils';
 
 const Item = (props) => {
+   const hex = rgb2hex(props.rgb[0], props.rgb[1], props.rgb[2]);
    return (
-      <div className='swatch-item' style={{ backgroundColor: `rgb(${props.rgb})` }}>
+      <div
+         className='swatch-item'
+         style={{ backgroundColor: `rgb(${props.rgb})` }}
+         onDoubleClick={() => {
+            const solid = {
+               key: hex,
+               hex: hex,
+               rgb: props.rgb,
+               timestamp: new Date(),
+            };
+
+            add('solid', solid, (result) => {
+               result.onsuccess = () => makeToast(`${hex} - ${props.rgb[0]}, ${props.rgb[1]}, ${props.rgb[2]} saved :)`);
+               result.onerror = () => makeToast('Color already exist!');
+            });
+         }}
+      >
          <p style={{ color: `rgb(${getTextColor(props.rgb)})` }}>{props.name}</p>
          <div className='swatch-hex'>
             <p style={{ color: `rgba(${getTextColor(props.rgb)}, 0.8)` }}>{`HEX: ${rgb2hex(props.rgb[0], props.rgb[1], props.rgb[2])}`}</p>

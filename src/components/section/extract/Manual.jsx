@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+import { add } from '../../../utils/storage';
 import { copyText, getCopyIcon, getTextColor, makeToast, rgb2hex, updateCanvas } from '../../../utils/utils';
 
 const Manual = (props) => {
@@ -9,6 +10,7 @@ const Manual = (props) => {
    const text_color = getTextColor(rgb_array);
    const copy_icon = getCopyIcon(rgb_array);
 
+   const [isDragging, setIsDragging] = useState(false);
    const changeManual = (e) => {
       if (e.target.files && e.target.files[0]) {
          const reader = new FileReader();
@@ -20,14 +22,25 @@ const Manual = (props) => {
       } else makeToast('Selected image is not valid!');
    };
 
-   const getPixelColor = (e) => {
-      const canvas = document.querySelector('#manual-canvas');
+   const handleDown = () => setIsDragging(true);
+   const handleUp = () => setIsDragging(false);
+   const handleMove = (e) => {
+      if (isDragging) {
+         const rect = e.target.getBoundingClientRect();
+         const x = ((e.clientX - rect.left) / (rect.right - rect.left)) * e.target.width;
+         const y = ((e.clientY - rect.top) / (rect.bottom - rect.top)) * e.target.height;
 
-      const rect = canvas.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / (rect.right - rect.left)) * canvas.width;
-      const y = ((e.clientY - rect.top) / (rect.bottom - rect.top)) * canvas.height;
+         const rgb = e.target.getContext('2d').getImageData(x, y, 1, 1).data;
+         updateManual(props.manual.path, rgb[0], rgb[1], rgb[2]);
+      }
+   };
 
-      const rgb = canvas.getContext('2d').getImageData(x, y, 1, 1).data;
+   const handleClick = (e) => {
+      const rect = e.target.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / (rect.right - rect.left)) * e.target.width;
+      const y = ((e.clientY - rect.top) / (rect.bottom - rect.top)) * e.target.height;
+
+      const rgb = e.target.getContext('2d').getImageData(x, y, 1, 1).data;
       updateManual(props.manual.path, rgb[0], rgb[1], rgb[2]);
    };
 
@@ -68,11 +81,27 @@ const Manual = (props) => {
          </div>
 
          <div className='manual-body'>
-            <div className='manual-img-background' style={{ backgroundColor: `rgb(${manual_rgb})` }}>
+            <div
+               className='manual-img-background'
+               style={{ backgroundColor: `rgb(${manual_rgb})` }}
+               onDoubleClick={() => {
+                  const solid = {
+                     key: manual_hex,
+                     hex: manual_hex,
+                     rgb: rgb_array,
+                     timestamp: new Date(),
+                  };
+
+                  add('solid', solid, (result) => {
+                     result.onsuccess = () => makeToast(`${manual_hex} - ${rgb_array} saved :)`);
+                     result.onerror = () => makeToast('Color already exist!');
+                  });
+               }}
+            >
                <div className='manual-img-card'>
                   <input id='manual-file-input' style={{ display: 'none' }} type='file' accept='image/*' onChange={(e) => changeManual(e)} />
                   {props.manual.path === '' && <img className='manual-select-logo' src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt='logo' />}
-                  <canvas id='manual-canvas' onClick={(e) => getPixelColor(e)}></canvas>
+                  <canvas id='manual-canvas' onClick={(e) => handleClick(e)} onMouseMove={(e) => handleMove(e)} onMouseDown={() => handleDown()} onMouseUp={() => handleUp()}></canvas>
                </div>
 
                <div className='manual-color-card'>

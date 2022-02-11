@@ -2,6 +2,7 @@ import React from 'react';
 import Item from '../palette/Item';
 
 import { makeToast, getPalette } from '../../../../utils/utils';
+import { add } from '../../../../utils/storage';
 
 const Palette = (props) => {
    const is_active = props.palette.path !== '';
@@ -51,6 +52,28 @@ const Palette = (props) => {
                   </div>
                )}
                <img id='selected-image' className='selected-image' src={props.palette.path} alt='' />
+               {is_active && (
+                  <div
+                     className='save-palette'
+                     onClick={(e) => {
+                        e.stopPropagation();
+
+                        const palette = {
+                           key: props.palette.path,
+                           path: props.palette.path,
+                           palette: props.palette.palette.swatches,
+                           timestamp: new Date(),
+                        };
+
+                        add('palette', palette, (result) => {
+                           result.onsuccess = () => makeToast('Palette saved :)');
+                           result.onerror = () => makeToast('Palette already exist!');
+                        });
+                     }}
+                  >
+                     <img src={props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/save.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/save.svg`} alt='save' />
+                  </div>
+               )}
             </div>
 
             <div className='extracted-palette'>{props.palette.palette.swatches !== undefined ? props.palette.palette.swatches.map((item, index) => <Item key={index} rgb={item.getRGB()} />) : <></>}</div>

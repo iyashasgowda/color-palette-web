@@ -332,10 +332,8 @@ body img {
 }
 
 .container .menu div .logo:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-filter: drop-shadow(0 4px 4px rgba(187, 137, 1, 0.4));
-          filter: drop-shadow(0 4px 4px rgba(187, 137, 1, 0.4));
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 .container .menu div ul {
@@ -495,7 +493,6 @@ body img {
 }
 
 .container section .material-color .color-shades .color-shade {
-  cursor: pointer;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   margin: 16px 20px;
@@ -510,10 +507,10 @@ body img {
   height: 74%;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  border-radius: 24px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 24px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -547,6 +544,7 @@ body img {
 }
 
 .container section .material-color .color-shades .color-shade div:nth-child(2) img:hover {
+  cursor: pointer;
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
 }
@@ -556,9 +554,10 @@ body img {
           filter: drop-shadow(0 0px 4px rgba(0, 0, 0, 0.15));
 }
 
-.container section .material-color .color-shades .color-shade:hover div {
-  -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
-          filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+.container section .material-color .color-shades .color-shade:hover div:nth-child(1) {
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
 }
 
 .container section .material-color .color-holder {
@@ -1395,6 +1394,42 @@ body img {
   margin: 16px 0 0 8px;
 }
 
+.container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .save-swatch {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  margin: 12px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 50%;
+  background-color: var(--background-color);
+  -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .save-swatch img {
+  width: 20px;
+  height: 20px;
+}
+
+.container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .save-swatch:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+}
+
 .container section .extract-color .swatch-section .swatch-body .extracted-swatches {
   width: 95%;
   margin: 12px 0;
@@ -1418,6 +1453,7 @@ body img {
 }
 
 .container section .extract-color .swatch-section .swatch-body .extracted-swatches .swatch-item:hover {
+  cursor: pointer;
   -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
           filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
@@ -1666,6 +1702,42 @@ body img {
   margin: 16px 0 0 8px;
 }
 
+.container section .extract-color .palette-section .palette-body .palette-img-chooser .save-palette {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  margin: 12px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 50%;
+  background-color: var(--background-color);
+  -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container section .extract-color .palette-section .palette-body .palette-img-chooser .save-palette img {
+  width: 20px;
+  height: 20px;
+}
+
+.container section .extract-color .palette-section .palette-body .palette-img-chooser .save-palette:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+}
+
 .container section .extract-color .palette-section .palette-body .extracted-palette {
   width: 100%;
   margin: 12px 0;
@@ -1695,6 +1767,10 @@ body img {
   border-radius: 24px;
   -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
           filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.container section .extract-color .palette-section .palette-body .extracted-palette .palette-item .color-card:hover {
+  cursor: pointer;
 }
 
 .container section .extract-color .palette-section .palette-body .extracted-palette .palette-item .palette-hex {
@@ -2048,6 +2124,10 @@ body img {
           transform: scale(0.9);
 }
 
+.container section .extract-color .manual-section .manual-body .manual-img-background:hover {
+  cursor: pointer;
+}
+
 .container section .harmonize-color {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2129,6 +2209,7 @@ body img {
   display: flex;
   width: 100%;
   height: 120px;
+  cursor: pointer;
   overflow: hidden;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -2212,6 +2293,40 @@ body img {
 
 .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode input {
   margin: 4px 0 0 10px;
+}
+
+.container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-complement {
+  width: 34px;
+  height: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-left: 24px;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--background-color);
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+.container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-complement img {
+  width: 20px;
+  height: 20px;
+}
+
+.container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-complement:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
 }
 
 .container section .harmonize-color .complement-container .complement-body .colors-container:hover {
@@ -2336,6 +2451,7 @@ body img {
   display: flex;
   width: 100%;
   height: 120px;
+  cursor: pointer;
   overflow: hidden;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -2420,6 +2536,40 @@ body img {
 
 .container section .harmonize-color .split-container .split-body .colors-container .invert-mode input {
   margin: 4px 0 0 10px;
+}
+
+.container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-split {
+  width: 34px;
+  height: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-left: 24px;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--background-color);
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+.container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-split img {
+  width: 20px;
+  height: 20px;
+}
+
+.container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-split:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
 }
 
 .container section .harmonize-color .split-container .split-body .colors-container:hover {
@@ -2544,6 +2694,7 @@ body img {
   display: flex;
   width: 100%;
   height: 120px;
+  cursor: pointer;
   overflow: hidden;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -2628,6 +2779,40 @@ body img {
 
 .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode input {
   margin: 4px 0 0 10px;
+}
+
+.container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-analogous {
+  width: 34px;
+  height: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-left: 24px;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--background-color);
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+.container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-analogous img {
+  width: 20px;
+  height: 20px;
+}
+
+.container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-analogous:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
 }
 
 .container section .harmonize-color .analogous-container .analogous-body .colors-container:hover {
@@ -2752,6 +2937,7 @@ body img {
   display: flex;
   width: 100%;
   height: 120px;
+  cursor: pointer;
   overflow: hidden;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -2836,6 +3022,40 @@ body img {
 
 .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode input {
   margin: 4px 0 0 10px;
+}
+
+.container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-triadic {
+  width: 34px;
+  height: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-left: 24px;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--background-color);
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+.container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-triadic img {
+  width: 20px;
+  height: 20px;
+}
+
+.container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-triadic:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
 }
 
 .container section .harmonize-color .triadic-container .triadic-body .colors-container:hover {
@@ -2960,6 +3180,7 @@ body img {
   display: flex;
   width: 100%;
   height: 120px;
+  cursor: pointer;
   overflow: hidden;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -3044,6 +3265,40 @@ body img {
 
 .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode input {
   margin: 4px 0 0 10px;
+}
+
+.container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-tetradic {
+  width: 34px;
+  height: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-left: 24px;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--background-color);
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+.container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-tetradic img {
+  width: 20px;
+  height: 20px;
+}
+
+.container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-tetradic:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
 }
 
 .container section .harmonize-color .tetradic-container .tetradic-body .colors-container:hover {

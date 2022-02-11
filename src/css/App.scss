@@ -63,8 +63,7 @@ body {
             transition: 0.3s;
 
             &:hover {
-               transform: scale(1.1);
-               @include iconDropShadow(rgba(187, 137, 1, 0.4));
+               transform: scale(0.9);
             }
          }
 
@@ -187,7 +186,6 @@ body {
             background-color: var(--background-color);
 
             .color-shade {
-               cursor: pointer;
                transition: 0.4s;
                margin: 16px 20px;
                border-radius: 24px;
@@ -199,8 +197,8 @@ body {
                   height: 74%;
 
                   transition: 0.3s;
-                  align-items: center;
                   border-radius: 24px;
+                  align-items: center;
                   justify-content: center;
                   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
                }
@@ -229,6 +227,7 @@ body {
                   }
 
                   img:hover {
+                     cursor: pointer;
                      transform: scale(0.9);
                   }
                }
@@ -236,8 +235,9 @@ body {
                &:hover {
                   filter: drop-shadow(0 0px 4px rgba(0, 0, 0, 0.15));
 
-                  div {
-                     filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+                  div:nth-child(1) {
+                     cursor: pointer;
+                     filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
                   }
                }
             }
@@ -798,6 +798,33 @@ body {
                         margin: 16px 0 0 8px;
                      }
                   }
+
+                  .save-swatch {
+                     position: absolute;
+                     bottom: 0;
+                     right: 0;
+                     width: 32px;
+                     height: 32px;
+                     margin: 12px;
+                     transition: 0.3s;
+                     border-radius: 50%;
+                     background-color: var(--background-color);
+                     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+
+                     img {
+                        width: 20px;
+                        height: 20px;
+                     }
+
+                     &:hover {
+                        transform: scale(0.9);
+                        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+                     }
+                  }
                }
 
                .extracted-swatches {
@@ -814,6 +841,7 @@ body {
                      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 
                      &:hover {
+                        cursor: pointer;
                         filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
                      }
 
@@ -990,6 +1018,33 @@ body {
                         margin: 16px 0 0 8px;
                      }
                   }
+
+                  .save-palette {
+                     position: absolute;
+                     bottom: 0;
+                     right: 0;
+                     width: 32px;
+                     height: 32px;
+                     margin: 12px;
+                     transition: 0.3s;
+                     border-radius: 50%;
+                     background-color: var(--background-color);
+                     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+
+                     img {
+                        width: 20px;
+                        height: 20px;
+                     }
+
+                     &:hover {
+                        transform: scale(0.9);
+                        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+                     }
+                  }
                }
 
                .extracted-palette {
@@ -1013,6 +1068,10 @@ body {
                         transition: 0.3s;
                         border-radius: 24px;
                         filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+
+                        &:hover {
+                           cursor: pointer;
+                        }
                      }
 
                      .palette-hex {
@@ -1258,6 +1317,10 @@ body {
                         }
                      }
                   }
+
+                  &:hover {
+                     cursor: pointer;
+                  }
                }
             }
          }
@@ -1313,6 +1376,7 @@ body {
                      display: flex;
                      width: 100%;
                      height: 120px;
+                     cursor: pointer;
                      overflow: hidden;
                      transition: 0.3s;
                      border-radius: inherit;
@@ -1376,6 +1440,30 @@ body {
 
                      input {
                         margin: 4px 0 0 10px;
+                     }
+
+                     .save-complement {
+                        width: 34px;
+                        height: 34px;
+                        display: flex;
+                        transition: 0.3s;
+                        margin-left: 24px;
+                        border-radius: 50%;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: var(--background-color);
+                        filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+
+                        img {
+                           width: 20px;
+                           height: 20px;
+                        }
+
+                        &:hover {
+                           cursor: pointer;
+                           transform: scale(0.9);
+                           filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+                        }
                      }
                   }
 
@@ -1462,6 +1550,7 @@ body {
                      display: flex;
                      width: 100%;
                      height: 120px;
+                     cursor: pointer;
                      overflow: hidden;
                      transition: 0.3s;
                      border-radius: inherit;
@@ -1526,6 +1615,30 @@ body {
 
                      input {
                         margin: 4px 0 0 10px;
+                     }
+
+                     .save-split {
+                        width: 34px;
+                        height: 34px;
+                        display: flex;
+                        transition: 0.3s;
+                        margin-left: 24px;
+                        border-radius: 50%;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: var(--background-color);
+                        filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+
+                        img {
+                           width: 20px;
+                           height: 20px;
+                        }
+
+                        &:hover {
+                           cursor: pointer;
+                           transform: scale(0.9);
+                           filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+                        }
                      }
                   }
 
@@ -1612,6 +1725,7 @@ body {
                      display: flex;
                      width: 100%;
                      height: 120px;
+                     cursor: pointer;
                      overflow: hidden;
                      transition: 0.3s;
                      border-radius: inherit;
@@ -1676,6 +1790,30 @@ body {
 
                      input {
                         margin: 4px 0 0 10px;
+                     }
+
+                     .save-analogous {
+                        width: 34px;
+                        height: 34px;
+                        display: flex;
+                        transition: 0.3s;
+                        margin-left: 24px;
+                        border-radius: 50%;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: var(--background-color);
+                        filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+
+                        img {
+                           width: 20px;
+                           height: 20px;
+                        }
+
+                        &:hover {
+                           cursor: pointer;
+                           transform: scale(0.9);
+                           filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+                        }
                      }
                   }
 
@@ -1762,6 +1900,7 @@ body {
                      display: flex;
                      width: 100%;
                      height: 120px;
+                     cursor: pointer;
                      overflow: hidden;
                      transition: 0.3s;
                      border-radius: inherit;
@@ -1826,6 +1965,30 @@ body {
 
                      input {
                         margin: 4px 0 0 10px;
+                     }
+
+                     .save-triadic {
+                        width: 34px;
+                        height: 34px;
+                        display: flex;
+                        transition: 0.3s;
+                        margin-left: 24px;
+                        border-radius: 50%;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: var(--background-color);
+                        filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+
+                        img {
+                           width: 20px;
+                           height: 20px;
+                        }
+
+                        &:hover {
+                           cursor: pointer;
+                           transform: scale(0.9);
+                           filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+                        }
                      }
                   }
 
@@ -1912,6 +2075,7 @@ body {
                      display: flex;
                      width: 100%;
                      height: 120px;
+                     cursor: pointer;
                      overflow: hidden;
                      transition: 0.3s;
                      border-radius: inherit;
@@ -1976,6 +2140,30 @@ body {
 
                      input {
                         margin: 4px 0 0 10px;
+                     }
+
+                     .save-tetradic {
+                        width: 34px;
+                        height: 34px;
+                        display: flex;
+                        transition: 0.3s;
+                        margin-left: 24px;
+                        border-radius: 50%;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: var(--background-color);
+                        filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+
+                        img {
+                           width: 20px;
+                           height: 20px;
+                        }
+
+                        &:hover {
+                           cursor: pointer;
+                           transform: scale(0.9);
+                           filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+                        }
                      }
                   }
 

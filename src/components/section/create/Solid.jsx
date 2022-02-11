@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 
 import data from '../../../utils/data.json';
-import { copyText, makeToast, rgb2hex, rgba2hexa, rgb2hsv_ui, rgb2cmyk, rgb2hsl, updateSlider, validateColor } from '../../../utils/utils';
+import { add } from '../../../utils/storage';
+import { copyText, makeToast, hex2rgbArray, rgb2hex, rgba2hexa, rgb2hsv_ui, rgb2cmyk, rgb2hsl, updateSlider, validateColor } from '../../../utils/utils';
 
 const Solid = (props) => {
    const [red, green, blue, alpha, checkbox] = [props.solid.red, props.solid.green, props.solid.blue, props.solid.alpha, props.solid.checkbox];
@@ -52,7 +53,24 @@ const Solid = (props) => {
          </div>
 
          <div className='solid-body'>
-            <div className='solid-color' style={{ backgroundColor: `rgba(${red}, ${green}, ${blue}, ${alpha / 255} )` }} />
+            <div
+               className='solid-color'
+               style={{ backgroundColor: `rgba(${red}, ${green}, ${blue}, ${alpha / 255} )` }}
+               onDoubleClick={() => {
+                  
+                  const solid = {
+                     key: hex,
+                     hex: hex,
+                     rgb: hex2rgbArray(hex),
+                     timestamp: new Date(),
+                  };
+
+                  add('solid', solid, (result) => {
+                     result.onsuccess = () => makeToast(`${hex} - ${rgb} saved :)`);
+                     result.onerror = () => makeToast('Color already exist!');
+                  });
+               }}
+            />
             <div className='solid-control'>
                <div className='solid-attributes'>
                   <div className='solid-hex'>

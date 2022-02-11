@@ -8,18 +8,29 @@ import Extract from './extract/Extract';
 import Harmonize from './harmonize/Harmonize';
 import Saved from './saved/Saved';
 
+import { getCache, setCache } from '../../utils/utils';
+
 const Section = (props) => {
    /** Material color state */
-   const [activeColor, setActiveColor] = useState(1);
-   const handleColorChange = (id) => setActiveColor(id);
+   const [activeColor, setActiveColor] = useState(getCache().material_color);
+   const handleColorChange = (id) => {
+      setActiveColor(id);
+      setCache('material_color', id);
+   };
 
    /** Create solid state */
-   const [solid, setSolid] = useState({ red: 220, green: 40, blue: 80, alpha: 255, checkbox: true });
-   const handleSolidChange = (red, green, blue, alpha, checkbox) => setSolid({ red, green, blue, alpha, checkbox });
+   const [solid, setSolid] = useState(getCache().solid);
+   const handleSolidChange = (red, green, blue, alpha, checkbox) => {
+      setSolid({ red, green, blue, alpha, checkbox });
+      setCache('solid', { red, green, blue, alpha, checkbox });
+   };
 
    /** Create gradient state */
-   const [gradient, setGradient] = useState({ top: { red: 85, green: 210, blue: 132, alpha: 255 }, bottom: { red: 242, green: 207, blue: 7, alpha: 255 }, checkbox: true });
-   const handleGradientChange = (top, bottom, checkbox) => setGradient({ top, bottom, checkbox });
+   const [gradient, setGradient] = useState(getCache().gradient);
+   const handleGradientChange = (top, bottom, checkbox) => {
+      setGradient({ top, bottom, checkbox });
+      setCache('gradient', { top, bottom, checkbox });
+   };
 
    /** Extract swatch colors */
    const [swatch, setSwatch] = useState({ path: '', swatches: [] });
@@ -34,24 +45,39 @@ const Section = (props) => {
    const handleManualChange = (palette) => setManual(palette);
 
    /** Complement colors */
-   const [complement, setComplement] = useState({ r: 0, g: 0, b: 0, checked: false });
-   const handleComplementChange = (complement) => setComplement(complement);
+   const [complement, setComplement] = useState(getCache().complement);
+   const handleComplementChange = (complement) => {
+      setComplement(complement);
+      setCache('complement', complement);
+   };
 
    /** Split complement colors */
-   const [split, setSplit] = useState({ r: 0, g: 0, b: 0, checked: false });
-   const handleSplitChange = (split) => setSplit(split);
+   const [split, setSplit] = useState(getCache().split);
+   const handleSplitChange = (split) => {
+      setSplit(split);
+      setCache('split', split);
+   };
 
    /** Analogous colors */
-   const [analogous, setAnalogous] = useState({ r: 0, g: 0, b: 0, checked: false });
-   const handleAnalogousChange = (analogous) => setAnalogous(analogous);
+   const [analogous, setAnalogous] = useState(getCache().analogous);
+   const handleAnalogousChange = (analogous) => {
+      setAnalogous(analogous);
+      setCache('analogous', analogous);
+   };
 
    /** Triadic colors */
-   const [triadic, setTriadic] = useState({ r: 0, g: 0, b: 0, checked: false });
-   const handleTriadicChange = (triadic) => setTriadic(triadic);
+   const [triadic, setTriadic] = useState(getCache().triadic);
+   const handleTriadicChange = (triadic) => {
+      setTriadic(triadic);
+      setCache('triadic', triadic);
+   };
 
    /** Tetradic colors */
-   const [tetradic, setTetradic] = useState({ r: 0, g: 0, b: 0, checked: false });
-   const handleTetradicChange = (tetradic) => setTetradic(tetradic);
+   const [tetradic, setTetradic] = useState(getCache().tetradic);
+   const handleTetradicChange = (tetradic) => {
+      setTetradic(tetradic);
+      setCache('tetradic', tetradic);
+   };
 
    return (
       <section>

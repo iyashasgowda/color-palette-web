@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 
 import data from '../../../utils/data.json';
-import { copyText, makeToast, rgb2hex, rgba2hexa, updateSlider, validateColor } from '../../../utils/utils';
+import { add } from '../../../utils/storage';
+import { copyText, makeToast, hex2rgbArray, rgb2hex, rgba2hexa, updateSlider, validateColor } from '../../../utils/utils';
 
 const Gradient = (props) => {
    const [top_red, top_green, top_blue, top_alpha, checkbox] = [props.gradient.top.red, props.gradient.top.green, props.gradient.top.blue, props.gradient.top.alpha, props.gradient.checkbox];
@@ -107,7 +108,25 @@ const Gradient = (props) => {
          </div>
 
          <div className='gradient-body'>
-            <div className='gradient-color' style={{ background: gradient }} />
+            <div
+               className='gradient-color'
+               style={{ background: gradient }}
+               onDoubleClick={() => {
+                  const gradient = {
+                     key: `${top_hex}${bottom_hex}`,
+                     top_hex: top_hex,
+                     bottom_hex: bottom_hex,
+                     top_rgb: hex2rgbArray(top_hex),
+                     bottom_rgb: hex2rgbArray(bottom_hex),
+                     timestamp: new Date(),
+                  };
+
+                  add('gradient', gradient, (result) => {
+                     result.onsuccess = () => makeToast('Gradient saved :)');
+                     result.onerror = () => makeToast('Gradient already exist!');
+                  });
+               }}
+            />
             <div className='gradient-control'>
                <div className='gradient-top'>
                   <div className='gradient-top-hex'>

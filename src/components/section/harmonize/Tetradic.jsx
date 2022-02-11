@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import { add } from '../../../utils/storage';
 import { tetradic as tet } from '../../../utils/harmony';
 import { copyText, makeToast, renderColorWheel, rgb2hex } from '../../../utils/utils';
 
@@ -16,7 +17,7 @@ const Tetradic = (props) => {
    useEffect(() => {
       const canvas = document.querySelector('.tetradic-canvas');
       if (!isWheelRendered) if (renderColorWheel(canvas, canvas.width, black_stop ? 'black' : 'white')) setIsWheelRendered(true);
-   });
+   }, [black_stop, isWheelRendered]);
 
    const handleMouseDown = () => setIsDragging(true);
    const handleMouseUp = () => setIsDragging(false);
@@ -62,10 +63,74 @@ const Tetradic = (props) => {
          <div className='tetradic-body'>
             <div className='colors-container'>
                <div className='colors'>
-                  <div className='color-a' style={{ backgroundColor: `rgb(${a_rgb.r}, ${a_rgb.g}, ${a_rgb.b})` }} />
-                  <div className='color-b' style={{ backgroundColor: `rgb(${b_rgb.r}, ${b_rgb.g}, ${b_rgb.b})` }} />
-                  <div className='color-c' style={{ backgroundColor: `rgb(${c_rgb.r}, ${c_rgb.g}, ${c_rgb.b})` }} />
-                  <div className='color-d' style={{ backgroundColor: `rgb(${d_rgb.r}, ${d_rgb.g}, ${d_rgb.b})` }} />
+                  <div
+                     className='color-a'
+                     style={{ backgroundColor: `rgb(${a_rgb.r}, ${a_rgb.g}, ${a_rgb.b})` }}
+                     onDoubleClick={() => {
+                        const solid = {
+                           key: a_hex,
+                           hex: a_hex,
+                           rgb: [a_rgb.r, a_rgb.g, a_rgb.b],
+                           timestamp: new Date(),
+                        };
+
+                        add('solid', solid, (result) => {
+                           result.onsuccess = () => makeToast(`${a_hex} - ${a_rgb.r}, ${a_rgb.g}, ${a_rgb.b} saved :)`);
+                           result.onerror = () => makeToast('Color already exist!');
+                        });
+                     }}
+                  />
+                  <div
+                     className='color-b'
+                     style={{ backgroundColor: `rgb(${b_rgb.r}, ${b_rgb.g}, ${b_rgb.b})` }}
+                     onDoubleClick={() => {
+                        const solid = {
+                           key: b_hex,
+                           hex: b_hex,
+                           rgb: [b_rgb.r, b_rgb.g, b_rgb.b],
+                           timestamp: new Date(),
+                        };
+
+                        add('solid', solid, (result) => {
+                           result.onsuccess = () => makeToast(`${b_hex} - ${b_rgb.r}, ${b_rgb.g}, ${b_rgb.b} saved :)`);
+                           result.onerror = () => makeToast('Color already exist!');
+                        });
+                     }}
+                  />
+                  <div
+                     className='color-c'
+                     style={{ backgroundColor: `rgb(${c_rgb.r}, ${c_rgb.g}, ${c_rgb.b})` }}
+                     onDoubleClick={() => {
+                        const solid = {
+                           key: c_hex,
+                           hex: c_hex,
+                           rgb: [c_rgb.r, c_rgb.g, c_rgb.b],
+                           timestamp: new Date(),
+                        };
+
+                        add('solid', solid, (result) => {
+                           result.onsuccess = () => makeToast(`${c_hex} - ${c_rgb.r}, ${c_rgb.g}, ${c_rgb.b} saved :)`);
+                           result.onerror = () => makeToast('Color already exist!');
+                        });
+                     }}
+                  />
+                  <div
+                     className='color-d'
+                     style={{ backgroundColor: `rgb(${d_rgb.r}, ${d_rgb.g}, ${d_rgb.b})` }}
+                     onDoubleClick={() => {
+                        const solid = {
+                           key: d_hex,
+                           hex: d_hex,
+                           rgb: [d_rgb.r, d_rgb.g, d_rgb.b],
+                           timestamp: new Date(),
+                        };
+
+                        add('solid', solid, (result) => {
+                           result.onsuccess = () => makeToast(`${d_hex} - ${d_rgb.r}, ${d_rgb.g}, ${d_rgb.b} saved :)`);
+                           result.onerror = () => makeToast('Color already exist!');
+                        });
+                     }}
+                  />
                </div>
                <div className='codes'>
                   <div className='code'>
@@ -156,6 +221,30 @@ const Tetradic = (props) => {
                         setIsWheelRendered(false);
                      }}
                   />
+                  <div
+                     className='save-tetradic'
+                     onClick={() => {
+                        const tetradic = {
+                           key: `${a_hex}${b_hex}${c_hex}${d_hex}`,
+                           a_hex: a_hex,
+                           b_hex: b_hex,
+                           c_hex: c_hex,
+                           d_hex: d_hex,
+                           a_rgb: a_rgb,
+                           b_rgb: b_rgb,
+                           c_rgb: c_rgb,
+                           d_rgb: d_rgb,
+                           timestamp: new Date(),
+                        };
+
+                        add('tetradic', tetradic, (result) => {
+                           result.onsuccess = () => makeToast('Tetradic saved :)');
+                           result.onerror = () => makeToast('Tetradic already exist!');
+                        });
+                     }}
+                  >
+                     <img src={props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/save.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/save.svg`} alt='save' />
+                  </div>
                </div>
             </div>
 

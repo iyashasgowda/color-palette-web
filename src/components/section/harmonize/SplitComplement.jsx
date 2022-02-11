@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import { add } from '../../../utils/storage';
 import { splitComplement } from '../../../utils/harmony';
 import { copyText, makeToast, renderColorWheel, rgb2hex } from '../../../utils/utils';
 
@@ -16,7 +17,7 @@ const SplitComplement = (props) => {
    useEffect(() => {
       const canvas = document.querySelector('.split-canvas');
       if (!isWheelRendered) if (renderColorWheel(canvas, canvas.width, black_stop ? 'black' : 'white')) setIsWheelRendered(true);
-   });
+   }, [black_stop, isWheelRendered]);
 
    const handleMouseDown = () => setIsDragging(true);
    const handleMouseUp = () => setIsDragging(false);
@@ -62,9 +63,57 @@ const SplitComplement = (props) => {
          <div className='split-body'>
             <div className='colors-container'>
                <div className='colors'>
-                  <div className='color-a' style={{ backgroundColor: `rgb(${a_rgb.r}, ${a_rgb.g}, ${a_rgb.b})` }} />
-                  <div className='color-b' style={{ backgroundColor: `rgb(${b_rgb.r}, ${b_rgb.g}, ${b_rgb.b})` }} />
-                  <div className='color-c' style={{ backgroundColor: `rgb(${c_rgb.r}, ${c_rgb.g}, ${c_rgb.b})` }} />
+                  <div
+                     className='color-a'
+                     style={{ backgroundColor: `rgb(${a_rgb.r}, ${a_rgb.g}, ${a_rgb.b})` }}
+                     onDoubleClick={() => {
+                        const solid = {
+                           key: a_hex,
+                           hex: a_hex,
+                           rgb: [a_rgb.r, a_rgb.g, a_rgb.b],
+                           timestamp: new Date(),
+                        };
+
+                        add('solid', solid, (result) => {
+                           result.onsuccess = () => makeToast(`${a_hex} - ${a_rgb.r}, ${a_rgb.g}, ${a_rgb.b} saved :)`);
+                           result.onerror = () => makeToast('Color already exist!');
+                        });
+                     }}
+                  />
+                  <div
+                     className='color-b'
+                     style={{ backgroundColor: `rgb(${b_rgb.r}, ${b_rgb.g}, ${b_rgb.b})` }}
+                     onDoubleClick={() => {
+                        const solid = {
+                           key: b_hex,
+                           hex: b_hex,
+                           rgb: [b_rgb.r, b_rgb.g, b_rgb.b],
+                           timestamp: new Date(),
+                        };
+
+                        add('solid', solid, (result) => {
+                           result.onsuccess = () => makeToast(`${b_hex} - ${b_rgb.r}, ${b_rgb.g}, ${b_rgb.b} saved :)`);
+                           result.onerror = () => makeToast('Color already exist!');
+                        });
+                     }}
+                  />
+                  <div
+                     className='color-c'
+                     style={{ backgroundColor: `rgb(${c_rgb.r}, ${c_rgb.g}, ${c_rgb.b})` }}
+                     onDoubleClick={() => {
+                        const solid = {
+                           key: c_hex,
+                           hex: c_hex,
+                           rgb: [c_rgb.r, c_rgb.g, c_rgb.b],
+                           timestamp: new Date(),
+                        };
+
+                        add('solid', solid, (result) => {
+                           result.onsuccess = () => makeToast(`${c_hex} - ${c_rgb.r}, ${c_rgb.g}, ${c_rgb.b} saved :)`);
+                           result.onerror = () => makeToast('Color already exist!');
+                        });
+                     }}
+                  />
                </div>
                <div className='codes'>
                   <div className='code'>
@@ -139,6 +188,28 @@ const SplitComplement = (props) => {
                         setIsWheelRendered(false);
                      }}
                   />
+                  <div
+                     className='save-split'
+                     onClick={() => {
+                        const split = {
+                           key: `${a_hex}${b_hex}${c_hex}`,
+                           a_hex: a_hex,
+                           b_hex: b_hex,
+                           c_hex: c_hex,
+                           a_rgb: a_rgb,
+                           b_rgb: b_rgb,
+                           c_rgb: c_rgb,
+                           timestamp: new Date(),
+                        };
+
+                        add('split', split, (result) => {
+                           result.onsuccess = () => makeToast('Split saved :)');
+                           result.onerror = () => makeToast('Split already exist!');
+                        });
+                     }}
+                  >
+                     <img src={props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/save.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/save.svg`} alt='save' />
+                  </div>
                </div>
             </div>
 

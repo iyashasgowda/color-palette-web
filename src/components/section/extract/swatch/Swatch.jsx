@@ -2,6 +2,7 @@ import React from 'react';
 import Item from './Item';
 
 import { makeToast, getSwatches } from '../../../../utils/utils';
+import { add } from '../../../../utils/storage';
 
 const Swatches = (props) => {
    const is_active = props.swatch.path !== '';
@@ -51,6 +52,28 @@ const Swatches = (props) => {
                   </div>
                )}
                <img id='selected-image' className='selected-image' src={props.swatch.path} alt='' />
+               {is_active && (
+                  <div
+                     className='save-swatch'
+                     onClick={(e) => {
+                        e.stopPropagation();
+
+                        const swatch = {
+                           key: props.swatch.path,
+                           path: props.swatch.path,
+                           swatches: props.swatch.swatches,
+                           timestamp: new Date(),
+                        };
+
+                        add('swatch', swatch, (result) => {
+                           result.onsuccess = () => makeToast('Swatch saved :)');
+                           result.onerror = () => makeToast('Swatch already exist!');
+                        });
+                     }}
+                  >
+                     <img src={props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/save.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/save.svg`} alt='save' />
+                  </div>
+               )}
             </div>
 
             <div className='extracted-swatches'>

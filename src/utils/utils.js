@@ -1,15 +1,90 @@
 import data from './data.json';
 import Palette from './palette.js';
 
+/** Application settings */
+let app_settings = {
+   menu: 1,
+   theme: false,
+   material_color: 1,
+   solid: {
+      red: 220,
+      green: 40,
+      blue: 80,
+      alpha: 255,
+      checkbox: true,
+   },
+   gradient: {
+      top: {
+         red: 85,
+         green: 210,
+         blue: 132,
+         alpha: 255,
+      },
+      bottom: {
+         red: 242,
+         green: 207,
+         blue: 7,
+         alpha: 255,
+      },
+      checkbox: true,
+   },
+   complement: {
+      r: 0,
+      g: 0,
+      b: 0,
+      checked: false,
+   },
+   split: {
+      r: 0,
+      g: 0,
+      b: 0,
+      checked: false,
+   },
+   analogous: {
+      r: 0,
+      g: 0,
+      b: 0,
+      checked: false,
+   },
+   triadic: {
+      r: 0,
+      g: 0,
+      b: 0,
+      checked: false,
+   },
+   tetradic: {
+      r: 0,
+      g: 0,
+      b: 0,
+      checked: false,
+   },
+};
+
+const getCache = () => {
+   const cache = localStorage.getItem('app_settings');
+
+   if (cache !== null) app_settings = JSON.parse(cache);
+   else localStorage.setItem('app_settings', JSON.stringify(app_settings));
+   return app_settings;
+};
+
+const setCache = (key, value) => {
+   const cache = localStorage.getItem('app_settings');
+
+   if (cache !== null) app_settings = JSON.parse(cache);
+   app_settings[key] = value;
+
+   localStorage.setItem('app_settings', JSON.stringify(app_settings));
+   return app_settings;
+};
+
+/** Color utils */
 const hex2rgb = (hex) => `rgb(${hex.match(/\w\w/g).map((x) => +`0x${x}`)})`;
+const hex2rgbArray = (hex) => hex.match(/\w\w/g).map((x) => +`0x${x}`);
 const hexa2rgba = (hex, alpha) => `rgb(${hex.match(/\w\w/g).map((x) => +`0x${x}`)}, ${alpha})`;
 
 const rgba2hexa = (r, g, b, a) => `#${(r | (1 << 8)).toString(16).slice(1).toUpperCase() + (g | (1 << 8)).toString(16).slice(1).toUpperCase() + (b | (1 << 8)).toString(16).slice(1).toUpperCase() + (a | (1 << 8)).toString(16).slice(1).toUpperCase()}`;
 const rgb2hex = (r, g, b) => `#${(r | (1 << 8)).toString(16).slice(1).toUpperCase() + (g | (1 << 8)).toString(16).slice(1).toUpperCase() + (b | (1 << 8)).toString(16).slice(1).toUpperCase()}`;
-
-const copyText = (text) => navigator.clipboard.writeText(text.toUpperCase());
-const getTextColor = (rgb) => ((rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000 > 125 ? [0, 0, 0] : [255, 255, 255]);
-const getCopyIcon = (rgb) => ((rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000 > 125 ? `${process.env.PUBLIC_URL}/assets/icons/dark/copy.svg` : `${process.env.PUBLIC_URL}/assets/icons/light/copy.svg`);
 
 const rgb2hsv_ui = (r, g, b) => {
    r /= 255;
@@ -114,6 +189,11 @@ const rgb2cmyk = (r, g, b) => {
       Math.round(((1 - g / 255 - Math.min(1 - r / 255, Math.min(1 - g / 255, 1 - b / 255))) / (1 - Math.min(1 - r / 255, Math.min(1 - g / 255, 1 - b / 255)))) * 1000) / 10
    }%, ${Math.round(((1 - b / 255 - Math.min(1 - r / 255, Math.min(1 - g / 255, 1 - b / 255))) / (1 - Math.min(1 - r / 255, Math.min(1 - g / 255, 1 - b / 255)))) * 1000) / 10}%, ${Math.round(Math.min(1 - r / 255, Math.min(1 - g / 255, 1 - b / 255)) * 1000) / 10}%`;
 };
+
+/** App utils */
+const copyText = (text) => navigator.clipboard.writeText(text.toUpperCase());
+const getTextColor = (rgb) => ((rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000 > 125 ? [0, 0, 0] : [255, 255, 255]);
+const getCopyIcon = (rgb) => ((rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000 > 125 ? `${process.env.PUBLIC_URL}/assets/icons/dark/copy.svg` : `${process.env.PUBLIC_URL}/assets/icons/light/copy.svg`);
 
 let timeout;
 const makeToast = (message) => {
@@ -303,4 +383,4 @@ const renderColorWheel = (canvas, size, shade) => {
    return true;
 };
 
-export { hex2rgb, rgb2hex, hexa2rgba, rgba2hexa, rgb2hsv_ui, rgb2hsv, hsv2rgb, rgb2hsl, rgb2cmyk, copyText, makeToast, changeTheme, updateSlider, validateColor, getSwatches, getPalette, getTextColor, getCopyIcon, updateCanvas, renderColorWheel };
+export { getCache, setCache, hex2rgb, hex2rgbArray, rgb2hex, hexa2rgba, rgba2hexa, rgb2hsv_ui, rgb2hsv, hsv2rgb, rgb2hsl, rgb2cmyk, copyText, makeToast, changeTheme, updateSlider, validateColor, getSwatches, getPalette, getTextColor, getCopyIcon, updateCanvas, renderColorWheel };
