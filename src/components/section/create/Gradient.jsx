@@ -76,7 +76,7 @@ const Gradient = (props) => {
          <div className='gradient-header'>
             <div className='gradient-header-title'>
                <img src={gradient_icon} alt='gradient'></img>
-               <p>Create gradient color</p>
+               <p>Create gradient</p>
             </div>
 
             <div className='gradient-alpha-control'>
@@ -114,10 +114,10 @@ const Gradient = (props) => {
                onDoubleClick={() => {
                   const gradient = {
                      key: `${top_hex}${bottom_hex}`,
-                     top_hex: top_hex,
-                     bottom_hex: bottom_hex,
-                     top_rgb: hex2rgbArray(top_hex),
-                     bottom_rgb: hex2rgbArray(bottom_hex),
+                     a_hex: top_hex,
+                     b_hex: bottom_hex,
+                     a_rgb: hex2rgbArray(top_hex),
+                     b_rgb: hex2rgbArray(bottom_hex),
                      timestamp: new Date(),
                   };
 

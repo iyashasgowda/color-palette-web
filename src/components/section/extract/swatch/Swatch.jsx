@@ -23,7 +23,7 @@ const Swatches = (props) => {
          <div className='swatch-header'>
             <div className='swatch-header-title'>
                <img src={props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/swatch.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/swatch.svg`} alt='swatch' />
-               <p>Extract swatch colors</p>
+               <p>Extract swatches</p>
             </div>
 
             <div className='swatch-reset'>
@@ -59,7 +59,7 @@ const Swatches = (props) => {
                         e.stopPropagation();
 
                         const swatch = {
-                           key: props.swatch.path,
+                           key: `${Math.random().toString(16).slice(2)}_${e.timeStamp}`,
                            path: props.swatch.path,
                            swatches: props.swatch.swatches,
                            timestamp: new Date(),

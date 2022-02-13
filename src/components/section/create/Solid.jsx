@@ -43,7 +43,7 @@ const Solid = (props) => {
          <div className='solid-header'>
             <div className='solid-header-title'>
                <img src={solid_icon} alt='solid'></img>
-               <p>Create solid color</p>
+               <p>Create solid</p>
             </div>
 
             <div className='solid-alpha-control'>
@@ -57,7 +57,6 @@ const Solid = (props) => {
                className='solid-color'
                style={{ backgroundColor: `rgba(${red}, ${green}, ${blue}, ${alpha / 255} )` }}
                onDoubleClick={() => {
-                  
                   const solid = {
                      key: hex,
                      hex: hex,

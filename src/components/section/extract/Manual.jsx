@@ -60,7 +60,7 @@ const Manual = (props) => {
          <div className='manual-header'>
             <div className='manual-header-title'>
                <img src={props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/manual.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/manual.svg`} alt='swatch' />
-               <p>Manually select colors</p>
+               <p>Extract manually</p>
             </div>
 
             <div className='manual-reset'>

@@ -79,6 +79,27 @@ const Section = (props) => {
       setCache('tetradic', tetradic);
    };
 
+   /** SolGrad colors */
+   const [solgrad, setSolGrad] = useState(getCache().solgrad);
+   const handleSolGradChange = (solgrad) => {
+      setSolGrad(solgrad);
+      setCache('solgrad', solgrad);
+   };
+
+   /** Extraction colors */
+   const [extraction, setExtraction] = useState(getCache().extraction);
+   const handleExtractionChange = (extraction) => {
+      setExtraction(extraction);
+      setCache('extraction', extraction);
+   };
+
+   /** Harmony colors */
+   const [harmony, setHarmony] = useState(getCache().harmony);
+   const handleHarmonyChange = (harmony) => {
+      setHarmony(harmony);
+      setCache('harmony', harmony);
+   };
+
    return (
       <section>
          <Header version={props.version} darkMode={props.darkMode} changeTheme={props.changeTheme} />
@@ -100,7 +121,7 @@ const Section = (props) => {
                changeTetradic={handleTetradicChange}
             />
          )}
-         {props.activeMenu === 5 && <Saved darkMode={props.darkMode} />}
+         {props.activeMenu === 5 && <Saved darkMode={props.darkMode} solgrad={solgrad} changeSolGrad={handleSolGradChange} extraction={extraction} changeExtraction={handleExtractionChange} harmony={harmony} changeHarmony={handleHarmonyChange} />}
          <Footer darkMode={props.darkMode} />
       </section>
    );

@@ -1,8 +1,8 @@
 import React from 'react';
-import Item from '../palette/Item';
+import Item from '../../comms/Solid';
 
-import { makeToast, getPalette } from '../../../../utils/utils';
-import { add } from '../../../../utils/storage';
+import { makeToast, getPalette, rgb2hex } from '../../../utils/utils';
+import { add } from '../../../utils/storage';
 
 const Palette = (props) => {
    const is_active = props.palette.path !== '';
@@ -23,7 +23,7 @@ const Palette = (props) => {
          <div className='palette-header'>
             <div className='palette-header-title'>
                <img src={props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/palette.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/palette.svg`} alt='swatch' />
-               <p>Extract palette colors</p>
+               <p>Extract palette</p>
             </div>
 
             <div className='palette-reset'>
@@ -59,9 +59,9 @@ const Palette = (props) => {
                         e.stopPropagation();
 
                         const palette = {
-                           key: props.palette.path,
+                           key: `${Math.random().toString(16).slice(2)}_${e.timeStamp}`,
                            path: props.palette.path,
-                           palette: props.palette.palette.swatches,
+                           palette: props.palette.palette.swatches.map((item) => [item.red, item.green, item.blue]),
                            timestamp: new Date(),
                         };
 
@@ -76,7 +76,7 @@ const Palette = (props) => {
                )}
             </div>
 
-            <div className='extracted-palette'>{props.palette.palette.swatches !== undefined ? props.palette.palette.swatches.map((item, index) => <Item key={index} rgb={item.getRGB()} />) : <></>}</div>
+            <div className='extracted-palette'>{props.palette.palette.swatches !== undefined ? props.palette.palette.swatches.map((item, index) => <Item key={index} data={{ rgb: item.getRGB(), hex: rgb2hex(item.getRGB()) }} shouldSave={true} />) : <></>}</div>
 
             {!is_active && (
                <div className='palette-extract-info'>

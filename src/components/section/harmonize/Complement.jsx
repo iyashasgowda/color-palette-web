@@ -57,7 +57,7 @@ const Complement = (props) => {
          <div className='complement-header'>
             <div className='complement-header-title'>
                <img src={props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/complement.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/complement.svg`} alt='complement' />
-               <p>Complementary</p>
+               <p>Complement</p>
             </div>
          </div>
 
@@ -163,8 +163,8 @@ const Complement = (props) => {
                            key: `${a_hex}${b_hex}`,
                            a_hex: a_hex,
                            b_hex: b_hex,
-                           a_rgb: a_rgb,
-                           b_rgb: b_rgb,
+                           a_rgb: [a_rgb.r, a_rgb.g, a_rgb.b],
+                           b_rgb: [b_rgb.r, b_rgb.g, b_rgb.b],
                            timestamp: new Date(),
                         };
 

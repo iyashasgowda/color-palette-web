@@ -56,7 +56,7 @@ const SplitComplement = (props) => {
          <div className='split-header'>
             <div className='split-header-title'>
                <img src={props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/split.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/split.svg`} alt='complement' />
-               <p>Split Complementary</p>
+               <p>Split Complement</p>
             </div>
          </div>
 
@@ -196,9 +196,9 @@ const SplitComplement = (props) => {
                            a_hex: a_hex,
                            b_hex: b_hex,
                            c_hex: c_hex,
-                           a_rgb: a_rgb,
-                           b_rgb: b_rgb,
-                           c_rgb: c_rgb,
+                           a_rgb: [a_rgb.r, a_rgb.g, a_rgb.b],
+                           b_rgb: [b_rgb.r, b_rgb.g, b_rgb.b],
+                           c_rgb: [c_rgb.r, c_rgb.g, c_rgb.b],
                            timestamp: new Date(),
                         };
 

@@ -230,10 +230,10 @@ const Tetradic = (props) => {
                            b_hex: b_hex,
                            c_hex: c_hex,
                            d_hex: d_hex,
-                           a_rgb: a_rgb,
-                           b_rgb: b_rgb,
-                           c_rgb: c_rgb,
-                           d_rgb: d_rgb,
+                           a_rgb: [a_rgb.r, a_rgb.g, a_rgb.b],
+                           b_rgb: [b_rgb.r, b_rgb.g, b_rgb.b],
+                           c_rgb: [c_rgb.r, c_rgb.g, c_rgb.b],
+                           d_rgb: [d_rgb.r, d_rgb.g, d_rgb.b],
                            timestamp: new Date(),
                         };
 

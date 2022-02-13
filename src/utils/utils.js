@@ -6,6 +6,9 @@ let app_settings = {
    menu: 1,
    theme: false,
    material_color: 1,
+   solgrad: 1,
+   extraction: 1,
+   harmony: 1,
    solid: {
       red: 220,
       green: 40,

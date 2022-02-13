@@ -1,6 +1,6 @@
 import React from 'react';
 import Swatch from './swatch/Swatch';
-import Palette from './palette/Palette';
+import Palette from './Palette';
 import Manual from './Manual';
 
 const Extract = (props) => {
