@@ -100,6 +100,13 @@ const Section = (props) => {
       setCache('harmony', harmony);
    };
 
+   /** Preset colors */
+   const [preset, setPreset] = useState(getCache().preset);
+   const handlePresetChange = (preset) => {
+      setPreset(preset);
+      setCache('preset', preset);
+   };
+
    return (
       <section>
          <Header version={props.version} darkMode={props.darkMode} changeTheme={props.changeTheme} />
@@ -121,7 +128,9 @@ const Section = (props) => {
                changeTetradic={handleTetradicChange}
             />
          )}
-         {props.activeMenu === 5 && <Saved darkMode={props.darkMode} solgrad={solgrad} changeSolGrad={handleSolGradChange} extraction={extraction} changeExtraction={handleExtractionChange} harmony={harmony} changeHarmony={handleHarmonyChange} />}
+         {props.activeMenu === 5 && (
+            <Saved darkMode={props.darkMode} solgrad={solgrad} changeSolGrad={handleSolGradChange} extraction={extraction} changeExtraction={handleExtractionChange} harmony={harmony} changeHarmony={handleHarmonyChange} preset={preset} changePreset={handlePresetChange} />
+         )}
          <Footer darkMode={props.darkMode} />
       </section>
    );

@@ -909,7 +909,7 @@ body {
             }
 
             .palette-body {
-               margin: 32px 32px 0 32px;
+               margin: 32px 32px 24px 32px;
                display: flex;
                align-items: center;
                flex-direction: column;
@@ -989,7 +989,7 @@ body {
                   gap: 20px;
                   width: 95%;
                   display: grid;
-                  margin: 24px 0;
+                  margin-top: 24px;
                   grid-template-columns: repeat(3, 1fr);
                }
 
@@ -2333,8 +2333,69 @@ body {
             display: flex;
             margin-left: 1px;
             transition: 0.6s;
+            overflow-y: auto;
+            overflow-x: hidden;
             flex-direction: column;
+            scroll-behavior: smooth !important;
             background-color: var(--background-color);
+            @include scrollBar();
+
+            .preset-header {
+               display: flex;
+               justify-content: space-between;
+
+               .preset-header-title {
+                  display: flex;
+                  align-items: center;
+                  margin: 32px 0 0 32px;
+
+                  p {
+                     font-size: 20px;
+                     margin-left: 10px;
+                     font-weight: bold;
+                     color: var(--text-color);
+                  }
+               }
+
+               .preset-options {
+                  display: flex;
+                  align-items: center;
+                  margin: 32px 32px 0 0;
+
+                  select {
+                     outline: none;
+                     border: none;
+                     font-size: 16px;
+                     font-weight: 600;
+                     padding: 6px 10px;
+                     transition: 0.3s;
+                     border-radius: 12px;
+                     color: var(--text-color);
+                     background-color: var(--card-color);
+                     font-family: 'Quicksand', sans-serif;
+                     filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
+
+                     &:hover {
+                        cursor: pointer;
+                        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+                     }
+                  }
+               }
+            }
+
+            .preset-gradient-items {
+               margin: 32px 32px 10px 32px;
+               display: flex;
+               align-items: center;
+               flex-direction: column;
+            }
+
+            .preset-quadrant-items {
+               margin: 32px 32px 10px 32px;
+               display: flex;
+               align-items: center;
+               flex-direction: column;
+            }
          }
       }
 

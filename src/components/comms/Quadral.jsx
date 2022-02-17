@@ -11,15 +11,17 @@ const Quadral = (props) => {
       <div className='quadral-item'>
          <div
             className='color-cards'
-            onDoubleClick={() =>
-               removeOne(props.type, props.data.key, (result) => {
-                  result.onsuccess = () => {
-                     props.removeItem(null);
-                     makeToast(`${props.name} removed!`);
-                  };
-                  result.onerror = () => makeToast(`Could not delete the ${props.type} :(`);
-               })
-            }
+            onDoubleClick={() => {
+               props.shouldRemove
+                  ? removeOne(props.type, props.data.key, (result) => {
+                       result.onsuccess = () => {
+                          props.removeItem(null);
+                          makeToast(`${props.name} removed!`);
+                       };
+                       result.onerror = () => makeToast(`Could not delete the ${props.type} :(`);
+                    })
+                  : makeToast('Preset quadrants cannot be deleted!');
+            }}
          >
             <div className='color-card' style={{ backgroundColor: a_hex }} />
             <div className='color-card' style={{ backgroundColor: b_hex }} />

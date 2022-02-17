@@ -1550,7 +1550,7 @@ body select {
 }
 
 .container section .extract-color .palette-section .palette-body {
-  margin: 32px 32px 0 32px;
+  margin: 32px 32px 24px 32px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1667,7 +1667,7 @@ body select {
   width: 95%;
   display: -ms-grid;
   display: grid;
-  margin: 24px 0;
+  margin-top: 24px;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
 }
@@ -3597,11 +3597,113 @@ body select {
   margin-left: 1px;
   -webkit-transition: 0.6s;
   transition: 0.6s;
+  overflow-y: auto;
+  overflow-x: hidden;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  scroll-behavior: smooth !important;
   background-color: var(--background-color);
+}
+
+.container section .saved-color .preset-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container section .saved-color .preset-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.container section .saved-color .preset-container::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(var(--text-color-rgb), 0.8);
+}
+
+.container section .saved-color .preset-container .preset-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container section .saved-color .preset-container .preset-header .preset-header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 32px 0 0 32px;
+}
+
+.container section .saved-color .preset-container .preset-header .preset-header-title p {
+  font-size: 20px;
+  margin-left: 10px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.container section .saved-color .preset-container .preset-header .preset-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 32px 32px 0 0;
+}
+
+.container section .saved-color .preset-container .preset-header .preset-options select {
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 6px 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 12px;
+  color: var(--text-color);
+  background-color: var(--card-color);
+  font-family: 'Quicksand', sans-serif;
+  -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
+}
+
+.container section .saved-color .preset-container .preset-header .preset-options select:hover {
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+}
+
+.container section .saved-color .preset-container .preset-gradient-items {
+  margin: 32px 32px 10px 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container section .saved-color .preset-container .preset-quadrant-items {
+  margin: 32px 32px 10px 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .container section footer {

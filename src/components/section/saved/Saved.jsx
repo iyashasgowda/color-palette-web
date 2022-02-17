@@ -11,7 +11,7 @@ const Saved = (props) => {
          <SolGrad darkMode={props.darkMode} solgrad={props.solgrad} changeSolGrad={props.changeSolGrad}></SolGrad>
          <Extraction darkMode={props.darkMode} extraction={props.extraction} changeExtraction={props.changeExtraction}></Extraction>
          <Harmony darkMode={props.darkMode} harmony={props.harmony} changeHarmony={props.changeHarmony}></Harmony>
-         <Preset darkMode={props.darkMode}></Preset>
+         <Preset darkMode={props.darkMode} preset={props.preset} changePreset={props.changePreset}></Preset>
       </div>
    );
 };

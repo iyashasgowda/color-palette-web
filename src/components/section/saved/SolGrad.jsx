@@ -55,7 +55,7 @@ const SolGrad = (props) => {
          solgrads = (
             <div className='solgrad-gradient-items'>
                {gradient.map((item) => (
-                  <Gradient key={item.key} data={item} shouldSave={false} removeItem={removeGradient}></Gradient>
+                  <Gradient key={item.key} data={item} shouldSave={false} shouldRemove={true} removeItem={removeGradient}></Gradient>
                ))}
             </div>
          );

@@ -99,7 +99,7 @@ const Harmony = (props) => {
             list = (
                <div className='data-items'>
                   {tetradic.map((item) => (
-                     <Quadral key={item.key} type='tetradic' name='Tetradic' data={item} shouldSave={false} removeItem={changeTetradic}></Quadral>
+                     <Quadral key={item.key} type='tetradic' name='Tetradic' data={item} shouldSave={false} shouldRemove={true} removeItem={changeTetradic}></Quadral>
                   ))}
                </div>
             );

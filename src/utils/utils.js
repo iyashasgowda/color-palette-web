@@ -9,6 +9,7 @@ let app_settings = {
    solgrad: 1,
    extraction: 1,
    harmony: 1,
+   preset: 1,
    solid: {
       red: 220,
       green: 40,

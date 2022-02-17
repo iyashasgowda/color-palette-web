@@ -14,15 +14,17 @@ const Gradient = (props) => {
          <div
             className='color-card'
             style={{ background: gradient }}
-            onDoubleClick={() =>
-               removeOne('gradient', props.data.key, (result) => {
-                  result.onsuccess = () => {
-                     props.removeItem(null);
-                     makeToast(`Gradient removed!`);
-                  };
-                  result.onerror = () => makeToast(`Could not delete the gradient :(`);
-               })
-            }
+            onDoubleClick={() => {
+               props.shouldRemove
+                  ? removeOne('gradient', props.data.key, (result) => {
+                       result.onsuccess = () => {
+                          props.removeItem(null);
+                          makeToast(`Gradient removed!`);
+                       };
+                       result.onerror = () => makeToast(`Could not delete the gradient :(`);
+                    })
+                  : makeToast('Preset gradients cannot be deleted!');
+            }}
          />
          <div className='code-holder'>
             <div className='color-codes'>
