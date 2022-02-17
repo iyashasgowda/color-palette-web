@@ -3328,11 +3328,27 @@ body select {
   margin-left: 1px;
   -webkit-transition: 0.6s;
   transition: 0.6s;
+  overflow-y: auto;
+  overflow-x: hidden;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  scroll-behavior: smooth !important;
   background-color: var(--background-color);
+}
+
+.container section .saved-color .extraction-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container section .saved-color .extraction-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.container section .saved-color .extraction-container::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
 .container section .saved-color .extraction-container .extraction-header {
@@ -4317,7 +4333,7 @@ body select {
   background-color: var(--text-color);
 }
 
-.modal {
+.create-modal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4333,19 +4349,17 @@ body select {
   width: 100%;
   height: 100%;
   z-index: 1;
-  -webkit-transition: 0.3s linear;
-  transition: 0.3s linear;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.modal .modal-container {
+.create-modal .modal-container {
   width: 360px;
   border-radius: 28px 28px 24px 24px;
   color: var(--text-color);
   background-color: var(--text-color);
 }
 
-.modal .modal-container .modal-content {
+.create-modal .modal-container .modal-content {
   border-radius: 24px;
   padding: 16px 20px 20px 20px;
   -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
@@ -4353,7 +4367,7 @@ body select {
   background-color: var(--card-color);
 }
 
-.modal .modal-container .modal-content .modal-header {
+.create-modal .modal-container .modal-content .modal-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4369,20 +4383,20 @@ body select {
           justify-content: space-between;
 }
 
-.modal .modal-container .modal-content .modal-header img {
+.create-modal .modal-container .modal-content .modal-header img {
   width: 20px;
   height: 20px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 
-.modal .modal-container .modal-content .modal-header img:hover {
+.create-modal .modal-container .modal-content .modal-header img:hover {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
   cursor: pointer;
 }
 
-.modal .modal-container .modal-content .modal-body {
+.create-modal .modal-container .modal-content .modal-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4396,7 +4410,7 @@ body select {
           align-items: center;
 }
 
-.modal .modal-container .modal-content .modal-body ul {
+.create-modal .modal-container .modal-content .modal-body ul {
   margin: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -4405,13 +4419,13 @@ body select {
   padding: 0 10px 0 20px;
 }
 
-.modal .modal-container .modal-content .modal-body ul li {
+.create-modal .modal-container .modal-content .modal-body ul li {
   margin-top: 8px;
   font-size: 18px;
   font-weight: 600;
 }
 
-.modal .modal-container .modal-content .modal-body input {
+.create-modal .modal-container .modal-content .modal-body input {
   width: 56%;
   border: none;
   font-size: 22px;
@@ -4423,15 +4437,15 @@ body select {
   border-bottom: 2px solid #808080;
 }
 
-.modal .modal-container .modal-content .modal-body input:focus {
+.create-modal .modal-container .modal-content .modal-body input:focus {
   outline: none;
 }
 
-.modal .modal-container .modal-button {
+.create-modal .modal-container .modal-button {
   padding: 8px 0 12px 0;
 }
 
-.modal .modal-container .modal-button p {
+.create-modal .modal-container .modal-button p {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -4444,9 +4458,152 @@ body select {
   color: var(--background-color);
 }
 
-.modal .modal-container .modal-button p:hover {
+.create-modal .modal-container .modal-button p:hover {
   cursor: pointer;
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
+}
+
+.extract-modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.extract-modal .modal-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: var(--text-color);
+}
+
+.extract-modal .modal-container .extract-image {
+  z-index: 1;
+  width: 128px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
+  border-radius: 32px;
+  -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
+}
+
+.extract-modal .modal-container .extract-image:hover {
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+}
+
+.extract-modal .modal-container .swatch-extracts {
+  width: 380px;
+  height: 640px;
+  padding: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -64px;
+  border-radius: 32px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: var(--card-color);
+  overflow-y: auto;
+  scroll-behavior: smooth !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.extract-modal .modal-container .swatch-extracts::-webkit-scrollbar {
+  display: none;
+}
+
+.extract-modal .modal-container .swatch-extracts .swatch-item {
+  margin-bottom: 12px;
+}
+
+.extract-modal .modal-container .palette-extracts {
+  width: 380px;
+  height: 640px;
+  margin-top: -64px;
+  border-radius: 32px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 12px 12px 24px 12px;
+  background-color: var(--card-color);
+  gap: 12px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  overflow-y: auto;
+  scroll-behavior: smooth !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.extract-modal .modal-container .palette-extracts::-webkit-scrollbar {
+  display: none;
+}
+
+.extract-modal .modal-container .modal-option {
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 50%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--card-color);
+  -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
+}
+
+.extract-modal .modal-container .modal-option img {
+  width: 18px;
+}
+
+.extract-modal .modal-container .modal-option:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+}
+
+.extract-modal .modal-container .close {
+  margin: -20px 0 0 72px;
+}
+
+.extract-modal .modal-container .delete {
+  margin: -40px 72px 0 0;
 }
 /*# sourceMappingURL=App.css.map */

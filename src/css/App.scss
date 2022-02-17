@@ -2162,8 +2162,12 @@ body {
             display: flex;
             margin-left: 1px;
             transition: 0.6s;
+            overflow-y: auto;
+            overflow-x: hidden;
             flex-direction: column;
+            scroll-behavior: smooth !important;
             background-color: var(--background-color);
+            @include scrollBar();
 
             .extraction-header {
                display: flex;
@@ -2880,7 +2884,7 @@ body {
    background-color: var(--text-color);
 }
 
-.modal {
+.create-modal {
    display: flex;
    position: fixed;
    align-items: center;
@@ -2890,7 +2894,6 @@ body {
    width: 100%;
    height: 100%;
    z-index: 1;
-   transition: 0.3s linear;
    background-color: rgba(0, 0, 0, 0.6);
 
    .modal-container {
@@ -2975,6 +2978,120 @@ body {
                transform: scale(0.9);
             }
          }
+      }
+   }
+}
+
+.extract-modal {
+   display: flex;
+   position: fixed;
+   align-items: center;
+   justify-content: center;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+   background-color: rgba(0, 0, 0, 0.6);
+
+   .modal-container {
+      display: flex;
+      flex-direction: column;
+      color: var(--text-color);
+
+      .extract-image {
+         z-index: 1;
+         width: 128px;
+         transition: 0.3s;
+         object-fit: cover;
+         aspect-ratio: 1/1;
+         border-radius: 32px;
+         filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
+
+         &:hover {
+            cursor: pointer;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+         }
+      }
+
+      .swatch-extracts {
+         width: 380px;
+         height: 640px;
+         padding: 12px;
+         display: flex;
+         margin-top: -64px;
+         border-radius: 32px;
+         flex-direction: column;
+         background-color: var(--card-color);
+
+         overflow-y: auto;
+         scroll-behavior: smooth !important;
+
+         -ms-overflow-style: none;
+         scrollbar-width: none;
+
+         &::-webkit-scrollbar {
+            display: none;
+         }
+
+         .swatch-item {
+            margin-bottom: 12px;
+         }
+      }
+
+      .palette-extracts {
+         width: 380px;
+         height: 640px;
+         margin-top: -64px;
+         border-radius: 32px;
+         flex-direction: column;
+         padding: 12px 12px 24px 12px;
+         background-color: var(--card-color);
+
+         gap: 12px;
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+
+         overflow-y: auto;
+         scroll-behavior: smooth !important;
+
+         -ms-overflow-style: none;
+         scrollbar-width: none;
+
+         &::-webkit-scrollbar {
+            display: none;
+         }
+      }
+
+      .modal-option {
+         z-index: 1;
+         width: 40px;
+         height: 40px;
+         display: flex;
+         transition: 0.3s;
+         border-radius: 50%;
+         align-self: center;
+         justify-content: center;
+         background-color: var(--card-color);
+         filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
+
+         img {
+            width: 18px;
+         }
+
+         &:hover {
+            cursor: pointer;
+            transform: scale(0.9);
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+         }
+      }
+
+      .close {
+         margin: -20px 0 0 72px;
+      }
+
+      .delete {
+         margin: -40px 72px 0 0;
       }
    }
 }

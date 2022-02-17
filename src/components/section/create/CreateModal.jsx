@@ -10,7 +10,7 @@ const Modal = (props) => {
    };
 
    return (
-      <div className='modal'>
+      <div className='create-modal'>
          <div className='modal-container'>
             <div className='modal-content'>
                <div className='modal-header'>

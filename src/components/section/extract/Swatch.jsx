@@ -1,8 +1,8 @@
 import React from 'react';
-import Item from './Item';
+import Item from '../../comms/SwatchItem';
 
-import { makeToast, getSwatches } from '../../../../utils/utils';
-import { add } from '../../../../utils/storage';
+import { makeToast, getSwatches } from '../../../utils/utils';
+import { add } from '../../../utils/storage';
 
 const Swatches = (props) => {
    const is_active = props.swatch.path !== '';
@@ -57,14 +57,14 @@ const Swatches = (props) => {
                      className='save-swatch'
                      onClick={(e) => {
                         e.stopPropagation();
-
                         const swatch = {
-                           key: `${Math.random().toString(16).slice(2)}_${e.timeStamp}`,
+                           key: props.swatch.path.length > 32 ? props.swatch.path.slice(props.swatch.path.length - 32) : props.swatch.path,
                            path: props.swatch.path,
                            swatches: props.swatch.swatches,
                            timestamp: new Date(),
                         };
 
+                        console.log(swatch);
                         add('swatch', swatch, (result) => {
                            result.onsuccess = () => makeToast('Swatch saved :)');
                            result.onerror = () => makeToast('Swatch already exist!');
@@ -78,7 +78,7 @@ const Swatches = (props) => {
 
             <div className='extracted-swatches'>
                {props.swatch.swatches.map((item, index) => (
-                  <Item key={index} name={item.name} rgb={item.rgb} />
+                  <Item key={index} name={item.name} rgb={item.rgb} shouldSave={true} />
                ))}
             </div>
 

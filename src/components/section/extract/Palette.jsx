@@ -59,12 +59,13 @@ const Palette = (props) => {
                         e.stopPropagation();
 
                         const palette = {
-                           key: `${Math.random().toString(16).slice(2)}_${e.timeStamp}`,
+                           key: props.palette.path.length > 32 ? props.palette.path.slice(props.palette.path.length - 32) : props.palette.path,
                            path: props.palette.path,
                            palette: props.palette.palette.swatches.map((item) => [item.red, item.green, item.blue]),
                            timestamp: new Date(),
                         };
 
+                        console.log(palette);
                         add('palette', palette, (result) => {
                            result.onsuccess = () => makeToast('Palette saved :)');
                            result.onerror = () => makeToast('Palette already exist!');

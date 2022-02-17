@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Modal from './Modal';
+import Modal from './CreateModal';
 
 import data from '../../../utils/data.json';
 import { add } from '../../../utils/storage';

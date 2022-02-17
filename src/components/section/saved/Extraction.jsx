@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import ExtractModal from '../../comms/ExtractModal';
 
 import { fetchAll, removeOne } from '../../../utils/storage';
 import { makeToast } from '../../../utils/utils';
 
 const Extraction = (props) => {
    const [swatch, setSwatch] = useState(null);
+   const reloadSwatch = () => setSwatch(null);
+
    const [palette, setPalette] = useState(null);
+   const reloadPalette = () => setPalette(null);
+
+   const [modal, setModal] = useState({ swatch: { active: false, index: 0 }, palette: { active: false, index: 0 } });
+   const closeModal = () => setModal({ swatch: { active: false, index: 0 }, palette: { active: false, index: 0 } });
 
    useEffect(() => {
       if (swatch === null && props.extraction === 1) fetchAll('swatch', (result) => (result.onsuccess = (e) => setSwatch(e.target.result)));
@@ -29,11 +36,12 @@ const Extraction = (props) => {
       else
          extraction = (
             <div className='extraction-items'>
-               {swatch.map((item) => (
+               {swatch.map((item, index) => (
                   <img
                      src={item.path}
                      alt='swatch'
                      key={item.key}
+                     onClick={() => setModal({ swatch: { active: true, index: index }, palette: { active: false, index: 0 } })}
                      onDoubleClick={() =>
                         removeOne('swatch', item.key, (result) => {
                            result.onsuccess = () => {
@@ -63,11 +71,12 @@ const Extraction = (props) => {
       else
          extraction = (
             <div className='extraction-items'>
-               {palette.map((item) => (
+               {palette.map((item, index) => (
                   <img
                      src={item.path}
                      alt='palette'
                      key={item.key}
+                     onClick={() => setModal({ swatch: { active: false, index: 0 }, palette: { active: true, index: index } })}
                      onDoubleClick={() =>
                         removeOne('palette', item.key, (result) => {
                            result.onsuccess = () => {
@@ -85,6 +94,14 @@ const Extraction = (props) => {
 
    return (
       <div className='extraction-container'>
+         {modal.swatch.active ? (
+            <ExtractModal darkMode={props.darkMode} swatch={true} data={swatch[modal.swatch.index]} closeModal={closeModal} reloadExtract={reloadSwatch} />
+         ) : modal.palette.active ? (
+            <ExtractModal darkMode={props.darkMode} swatch={false} data={palette[modal.palette.index]} closeModal={closeModal} reloadExtract={reloadPalette} />
+         ) : (
+            <></>
+         )}
+
          <div className='extraction-header'>
             <div className='extraction-header-title'>
                <img src={props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/extraction.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/extraction.svg`} alt='solgrad'></img>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Swatch from './swatch/Swatch';
+import Swatch from './Swatch';
 import Palette from './Palette';
 import Manual from './Manual';
 
