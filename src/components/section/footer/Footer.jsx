@@ -7,6 +7,7 @@ const Footer = ({ darkMode }) => {
    const this_year = new Date().getFullYear();
    const github = darkMode ? `${process.env.PUBLIC_URL}/assets/icons/dark/github.svg` : `${process.env.PUBLIC_URL}/assets/icons/light/github.svg`;
 
+   const goTo = (url) => window.open(url, '_blank');
    return (
       <footer>
          <p>
@@ -36,5 +37,4 @@ const Footer = ({ darkMode }) => {
    );
 };
 
-const goTo = (url) => window.open(url, '_blank');
 export default Footer;

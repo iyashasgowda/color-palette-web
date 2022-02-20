@@ -20,7 +20,7 @@ const ExtractModal = (props) => {
             ) : (
                <div className='palette-extracts'>
                   {props.data.palette.map((item, index) => (
-                     <PaletteItem key={index} data={{ rgb: item, hex: rgb2hex(item) }} shouldSave={false} />
+                     <PaletteItem key={index} data={{ rgb: item, hex: rgb2hex(item[0], item[1], item[2]) }} shouldSave={false} />
                   ))}
                </div>
             )}
