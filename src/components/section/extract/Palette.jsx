@@ -65,7 +65,6 @@ const Palette = (props) => {
                            timestamp: new Date(),
                         };
 
-                        console.log(palette);
                         add('palette', palette, (result) => {
                            result.onsuccess = () => makeToast('Palette saved :)');
                            result.onerror = () => makeToast('Palette already exist!');
@@ -77,7 +76,7 @@ const Palette = (props) => {
                )}
             </div>
 
-            <div className='extracted-palette'>{props.palette.palette.swatches !== undefined ? props.palette.palette.swatches.map((item, index) => <Item key={index} data={{ rgb: item.getRGB(), hex: rgb2hex(item.getRGB()) }} shouldSave={true} />) : <></>}</div>
+            <div className='extracted-palette'>{props.palette.palette.swatches !== undefined ? props.palette.palette.swatches.map((item, index) => <Item key={index} data={{ rgb: item.getRGB(), hex: rgb2hex(item.getRGB()[0], item.getRGB()[1], item.getRGB()[2]) }} shouldSave={true} />) : <></>}</div>
 
             {!is_active && (
                <div className='palette-extract-info'>

@@ -274,6 +274,42 @@ body select {
           user-select: none;
 }
 
+.mobile-warning {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--background-color);
+}
+
+.mobile-warning .warning-body {
+  margin: 32px;
+}
+
+.mobile-warning .warning-body img {
+  width: 48px;
+  height: 48px;
+}
+
+.mobile-warning .warning-body h1 {
+  margin-top: 8px;
+}
+
+.mobile-warning .warning-body p {
+  margin-top: 10px;
+}
+
+.mobile-warning .warning-body p a {
+  font-weight: 600;
+}
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -403,6 +439,7 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -473,12 +510,13 @@ body select {
 }
 
 .container section .material-color {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   width: 100%;
   height: 100%;
   margin-top: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
 }
 
 .container section .material-color .color-shades {
@@ -574,6 +612,22 @@ body select {
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
   background-color: var(--background-color);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.container section .material-color .color-holder::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.container section .material-color .color-holder::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.container section .material-color .color-holder::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
 .container section .material-color .color-holder .color-item {
@@ -1249,6 +1303,7 @@ body select {
 
 .container section .extract-color .swatch-section::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 .container section .extract-color .swatch-section::-webkit-scrollbar-track {
@@ -1256,7 +1311,7 @@ body select {
 }
 
 .container section .extract-color .swatch-section::-webkit-scrollbar-thumb {
-  border-radius: 3px;
+  border-radius: 6px;
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -1480,6 +1535,7 @@ body select {
 
 .container section .extract-color .palette-section::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 .container section .extract-color .palette-section::-webkit-scrollbar-track {
@@ -1487,7 +1543,7 @@ body select {
 }
 
 .container section .extract-color .palette-section::-webkit-scrollbar-thumb {
-  border-radius: 3px;
+  border-radius: 6px;
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -1709,6 +1765,7 @@ body select {
 
 .container section .extract-color .manual-section::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 .container section .extract-color .manual-section::-webkit-scrollbar-track {
@@ -1716,7 +1773,7 @@ body select {
 }
 
 .container section .extract-color .manual-section::-webkit-scrollbar-thumb {
-  border-radius: 3px;
+  border-radius: 6px;
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -1958,6 +2015,23 @@ body select {
   width: 100%;
   height: 100%;
   margin-top: 1px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth !important;
+}
+
+.container section .harmonize-color::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.container section .harmonize-color::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.container section .harmonize-color::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
 .container section .harmonize-color .complement-container {
@@ -3202,6 +3276,7 @@ body select {
 
 .container section .saved-color .solgrad-container::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 .container section .saved-color .solgrad-container::-webkit-scrollbar-track {
@@ -3209,7 +3284,7 @@ body select {
 }
 
 .container section .saved-color .solgrad-container::-webkit-scrollbar-thumb {
-  border-radius: 3px;
+  border-radius: 6px;
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -3340,6 +3415,7 @@ body select {
 
 .container section .saved-color .extraction-container::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 .container section .saved-color .extraction-container::-webkit-scrollbar-track {
@@ -3347,7 +3423,7 @@ body select {
 }
 
 .container section .saved-color .extraction-container::-webkit-scrollbar-thumb {
-  border-radius: 3px;
+  border-radius: 6px;
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -3483,6 +3559,7 @@ body select {
 
 .container section .saved-color .harmony-container::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 .container section .saved-color .harmony-container::-webkit-scrollbar-track {
@@ -3490,7 +3567,7 @@ body select {
 }
 
 .container section .saved-color .harmony-container::-webkit-scrollbar-thumb {
-  border-radius: 3px;
+  border-radius: 6px;
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -3609,6 +3686,7 @@ body select {
 
 .container section .saved-color .preset-container::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 .container section .saved-color .preset-container::-webkit-scrollbar-track {
@@ -3616,7 +3694,7 @@ body select {
 }
 
 .container section .saved-color .preset-container::-webkit-scrollbar-thumb {
-  border-radius: 3px;
+  border-radius: 6px;
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -3823,10 +3901,8 @@ body select {
 
 .solid-item {
   width: 100%;
-  height: 152px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  overflow: hidden;
   border-radius: 24px 24px 20px 20px;
   background-color: var(--card-color);
   -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
@@ -3921,7 +3997,6 @@ body select {
 
 .gradient-item {
   width: 100%;
-  height: 152px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   overflow: hidden;
@@ -4112,7 +4187,6 @@ body select {
 
 .dual-item {
   width: 100%;
-  height: 152px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   overflow: hidden;
@@ -4216,7 +4290,6 @@ body select {
 
 .trial-item {
   width: 100%;
-  height: 152px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   overflow: hidden;
@@ -4320,7 +4393,6 @@ body select {
 
 .quadral-item {
   width: 100%;
-  height: 152px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   overflow: hidden;
@@ -4374,9 +4446,9 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -4451,7 +4523,9 @@ body select {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(var(--background-color-rgb), 0.2);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
 }
 
 .create-modal .modal-container {
@@ -4582,7 +4656,9 @@ body select {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(var(--background-color-rgb), 0.2);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
 }
 
 .extract-modal .modal-container {
@@ -4629,6 +4705,8 @@ body select {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: var(--card-color);
+  -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
   overflow-y: auto;
   scroll-behavior: smooth !important;
   -ms-overflow-style: none;
@@ -4654,6 +4732,8 @@ body select {
           flex-direction: column;
   padding: 12px 12px 24px 12px;
   background-color: var(--card-color);
+  -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
   gap: 12px;
   display: -ms-grid;
   display: grid;
@@ -4707,5 +4787,2117 @@ body select {
 
 .extract-modal .modal-container .delete {
   margin: -40px 72px 0 0;
+}
+
+/* 1536x864 ***/
+@media screen and (max-width: 1536px) and (max-height: 864px) {
+  .container .menu {
+    width: 84px;
+  }
+  .container section .material-color .color-shades .color-shade div:nth-child(1) {
+    height: 72%;
+  }
+  .container section .material-color .color-shades .color-shade div:nth-child(2) {
+    margin: 5px 18px;
+  }
+  .container section .material-color .color-shades .color-shade div:nth-child(2) div p:nth-child(1) {
+    font-size: 18px;
+  }
+  .container section .material-color .color-shades .color-shade div:nth-child(2) img {
+    width: 28px;
+  }
+  .container section .material-color .color-holder {
+    width: 200px;
+    grid-auto-rows: 68px;
+  }
+  .container section .create-color .solid-section .solid-body .solid-color {
+    width: 50%;
+  }
+  .container section .create-color .solid-section .solid-body .solid-control {
+    width: 50%;
+  }
+  .container section .create-color .solid-section .solid-body .solid-control .solid-attributes {
+    margin: 24px;
+  }
+  .container section .create-color .solid-section .solid-body .solid-control .solid-attributes p {
+    font-size: 17px;
+  }
+  .container section .create-color .solid-section .solid-body .solid-control .seekbars {
+    margin-bottom: 56px;
+  }
+  .container section .create-color .solid-section .solid-body .solid-control .seekbars ul:nth-child(2) {
+    margin-right: 10px;
+  }
+  .container section .create-color .gradient-section .gradient-body .gradient-color {
+    width: 50%;
+  }
+  .container section .create-color .gradient-section .gradient-body .gradient-control {
+    width: 50%;
+  }
+  .container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top p,
+  .container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom p {
+    font-size: 17px;
+  }
+  .container section .extract-color .swatch-section .swatch-body .swatch-img-chooser {
+    min-height: 200px;
+  }
+  .container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .logo-info img {
+    width: 32px;
+  }
+  .container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .logo-info p {
+    font-size: 15px;
+    margin: 12px 0 0 8px;
+  }
+  .container section .extract-color .swatch-section .swatch-body .swatch-extract-info p {
+    font-size: medium;
+  }
+  .container section .extract-color .swatch-section .swatch-body .swatch-extract-info ul li {
+    font-size: medium;
+  }
+  .container section .extract-color .palette-section .palette-body .palette-img-chooser {
+    min-height: 200px;
+  }
+  .container section .extract-color .palette-section .palette-body .palette-img-chooser .logo-info img {
+    width: 32px;
+  }
+  .container section .extract-color .palette-section .palette-body .palette-img-chooser .logo-info p {
+    font-size: 15px;
+    margin: 12px 0 0 8px;
+  }
+  .container section .extract-color .palette-section .palette-body .extracted-palette {
+    width: 98%;
+    gap: 18px;
+  }
+  .container section .extract-color .palette-section .palette-body .palette-extract-info p {
+    font-size: medium;
+  }
+  .container section .extract-color .palette-section .palette-body .palette-extract-info ul li {
+    font-size: medium;
+  }
+  .container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card {
+    margin: 16px 0;
+  }
+  .container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card p {
+    font-size: medium;
+  }
+  .container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-color-hex img {
+    width: 24px;
+    height: 24px;
+  }
+  .container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-choose-image {
+    width: 40px;
+    height: 40px;
+  }
+  .container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-choose-image img {
+    width: 20px;
+    height: 20px;
+  }
+  .container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-color-rgb img {
+    width: 24px;
+    height: 24px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container,
+  .container section .harmonize-color .complement-container .split-body .colors-container,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container,
+  .container section .harmonize-color .split-container .complement-body .colors-container,
+  .container section .harmonize-color .split-container .split-body .colors-container,
+  .container section .harmonize-color .split-container .analogous-body .colors-container,
+  .container section .harmonize-color .split-container .triadic-body .colors-container,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container,
+  .container section .harmonize-color .analogous-container .split-body .colors-container,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container,
+  .container section .harmonize-color .triadic-container .split-body .colors-container,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container {
+    margin-bottom: 8px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .colors,
+  .container section .harmonize-color .complement-container .split-body .colors-container .colors,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .colors,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .colors,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .colors,
+  .container section .harmonize-color .split-container .complement-body .colors-container .colors,
+  .container section .harmonize-color .split-container .split-body .colors-container .colors,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .colors,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .colors,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .colors,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .colors,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .colors,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .colors,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .colors,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .colors,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .colors,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .colors,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .colors,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .colors,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .colors,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .colors,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .colors,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .colors,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .colors,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .colors {
+    height: 100px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .codes,
+  .container section .harmonize-color .complement-container .split-body .colors-container .codes,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .codes,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .codes,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .codes,
+  .container section .harmonize-color .split-container .complement-body .colors-container .codes,
+  .container section .harmonize-color .split-container .split-body .colors-container .codes,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .codes,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .codes,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .codes,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .codes,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .codes,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .codes,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .codes,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .codes,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .codes,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .codes,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .codes,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .codes,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .codes,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .codes,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .codes,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .codes,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .codes,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .codes {
+    margin: 10px 0;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .codes div p,
+  .container section .harmonize-color .complement-container .split-body .colors-container .codes div p,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .codes div p,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .codes div p,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .codes div p,
+  .container section .harmonize-color .split-container .complement-body .colors-container .codes div p,
+  .container section .harmonize-color .split-container .split-body .colors-container .codes div p,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .codes div p,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .codes div p,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .codes div p,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .codes div p,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .codes div p,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .codes div p,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .codes div p,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .codes div p,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .codes div p,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .codes div p,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .codes div p,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .codes div p,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .codes div p,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .codes div p,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .codes div p,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .codes div p,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .codes div p,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .codes div p {
+    font-size: small;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .separator,
+  .container section .harmonize-color .complement-container .split-body .colors-container .separator,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .separator,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .separator,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .separator,
+  .container section .harmonize-color .split-container .complement-body .colors-container .separator,
+  .container section .harmonize-color .split-container .split-body .colors-container .separator,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .separator,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .separator,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .separator,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .separator,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .separator,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .separator,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .separator,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .separator,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .separator,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .separator,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .separator,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .separator,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .separator,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .separator,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .separator,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .separator,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .separator,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .separator {
+    margin-top: 12px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .info,
+  .container section .harmonize-color .complement-container .split-body .colors-container .info,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .info,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .info,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .info,
+  .container section .harmonize-color .split-container .complement-body .colors-container .info,
+  .container section .harmonize-color .split-container .split-body .colors-container .info,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .info,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .info,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .info,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .info,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .info,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .info,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .info,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .info,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .info,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .info,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .info,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .info,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .info,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .info,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .info,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .info,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .info,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .info {
+    margin: 12px;
+    font-size: 12px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode {
+    margin: 6px 12px 12px 12px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode p,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode p,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode p,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode p,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode p,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode p,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode p,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode p,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode p,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode p,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode p,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode p,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode p,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode p,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode p,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode p {
+    font-size: medium;
+    font-weight: 700;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode input,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode input,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode input,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode input,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode input,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode input,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode input,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode input,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode input,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode input,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode input,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode input,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode input,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode input,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode input,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode input {
+    margin: 2px 0 0 8px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-tetradic {
+    width: 32px;
+    height: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    margin-left: 20px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-tetradic img {
+    width: 18px;
+    height: 18px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .color-wheel,
+  .container section .harmonize-color .complement-container .split-body .color-wheel,
+  .container section .harmonize-color .complement-container .analogous-body .color-wheel,
+  .container section .harmonize-color .complement-container .triadic-body .color-wheel,
+  .container section .harmonize-color .complement-container .tetradic-body .color-wheel,
+  .container section .harmonize-color .split-container .complement-body .color-wheel,
+  .container section .harmonize-color .split-container .split-body .color-wheel,
+  .container section .harmonize-color .split-container .analogous-body .color-wheel,
+  .container section .harmonize-color .split-container .triadic-body .color-wheel,
+  .container section .harmonize-color .split-container .tetradic-body .color-wheel,
+  .container section .harmonize-color .analogous-container .complement-body .color-wheel,
+  .container section .harmonize-color .analogous-container .split-body .color-wheel,
+  .container section .harmonize-color .analogous-container .analogous-body .color-wheel,
+  .container section .harmonize-color .analogous-container .triadic-body .color-wheel,
+  .container section .harmonize-color .analogous-container .tetradic-body .color-wheel,
+  .container section .harmonize-color .triadic-container .complement-body .color-wheel,
+  .container section .harmonize-color .triadic-container .split-body .color-wheel,
+  .container section .harmonize-color .triadic-container .analogous-body .color-wheel,
+  .container section .harmonize-color .triadic-container .triadic-body .color-wheel,
+  .container section .harmonize-color .triadic-container .tetradic-body .color-wheel,
+  .container section .harmonize-color .tetradic-container .complement-body .color-wheel,
+  .container section .harmonize-color .tetradic-container .split-body .color-wheel,
+  .container section .harmonize-color .tetradic-container .analogous-body .color-wheel,
+  .container section .harmonize-color .tetradic-container .triadic-body .color-wheel,
+  .container section .harmonize-color .tetradic-container .tetradic-body .color-wheel {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .codes {
+    margin: 8px 0;
+  }
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .codes div p {
+    font-size: x-small;
+  }
+  .container section .saved-color .extraction-container .extraction-items {
+    gap: 18px;
+  }
+  .swatch-item p {
+    margin: 10px 0 0 14px;
+    font-size: 18px;
+  }
+  .swatch-item .swatch-hex p,
+  .swatch-item .swatch-rgb p {
+    margin: 0 0 0 14px;
+    font-size: 16px;
+  }
+  .swatch-item .swatch-hex img,
+  .swatch-item .swatch-rgb img {
+    width: 24px;
+    height: 24px;
+    margin-left: 4px;
+  }
+  .solid-item .color-card {
+    height: 84px;
+  }
+  .solid-item .solid-hex {
+    margin: 2px 0 0 0;
+  }
+  .solid-item .solid-hex p {
+    margin-left: 10px;
+    font-size: 13px;
+  }
+  .solid-item .solid-hex img {
+    margin: 0 6px 0 0;
+    width: 20px;
+    height: 20px;
+  }
+  .solid-item .solid-rgb {
+    margin: 0 0 2px 0;
+  }
+  .solid-item .solid-rgb p {
+    margin-left: 10px;
+    font-size: 13px;
+  }
+  .solid-item .solid-rgb img {
+    margin: 0 6px 0 0;
+    width: 20px;
+    height: 20px;
+  }
+  .gradient-item .color-card {
+    height: 84px;
+  }
+  .gradient-item .code-holder {
+    margin: 2px 8px;
+  }
+  .gradient-item .code-holder .color-codes .color-identifier {
+    width: 20px;
+    height: 20px;
+  }
+  .gradient-item .code-holder .color-codes .codes {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .gradient-item .code-holder .color-codes .codes .code p {
+    font-size: 13px;
+  }
+  .gradient-item .code-holder .color-codes .codes .code img {
+    width: 20px;
+    height: 20px;
+  }
+  .extract-modal .modal-container .extract-image {
+    width: 100px;
+    border-radius: 28px;
+  }
+  .extract-modal .modal-container .swatch-extracts {
+    width: 360px;
+    height: 560px;
+    margin-top: -48px;
+  }
+  .extract-modal .modal-container .modal-option {
+    width: 38px;
+    height: 38px;
+  }
+  .extract-modal .modal-container .modal-option img {
+    width: 16px;
+  }
+  .dual-item .color-cards,
+  .trial-item .color-cards {
+    height: 84px;
+  }
+  .dual-item .color-codes,
+  .trial-item .color-codes {
+    margin: 2px 10px;
+  }
+  .dual-item .color-codes .codes .code p,
+  .trial-item .color-codes .codes .code p {
+    font-size: 12px;
+  }
+  .dual-item .color-codes .codes .code img,
+  .trial-item .color-codes .codes .code img {
+    width: 20px;
+    height: 20px;
+  }
+  .quadral-item .color-cards {
+    height: 84px;
+  }
+  .quadral-item .color-codes {
+    margin: 6px 10px;
+  }
+  .quadral-item .color-codes .codes {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .quadral-item .color-codes .codes p {
+    font-size: 12px;
+  }
+}
+
+/* 1440x900 ***/
+@media screen and (max-width: 1440px) and (max-height: 900px) {
+  .container .menu {
+    width: 80px;
+  }
+  .container .menu div .logo {
+    width: 40px;
+    height: 40px;
+  }
+  .container .menu div ul li img {
+    width: 28px;
+    height: 28px;
+  }
+  .container .menu .settings {
+    width: 28px;
+    height: 28px;
+  }
+  .container section .header {
+    height: 90px;
+  }
+  .container section .header div h1 {
+    font-size: 30px;
+  }
+  .container section .header div p {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .container section .header img {
+    width: 28px;
+    height: 28px;
+  }
+  .container section .material-color .color-shades {
+    padding: 24px 20px;
+  }
+  .container section .material-color .color-shades .color-shade {
+    margin: 14px;
+  }
+  .container section .material-color .color-shades .color-shade div:nth-child(1) {
+    height: 73%;
+  }
+  .container section .material-color .color-shades .color-shade div:nth-child(2) {
+    margin: 4px 16px;
+  }
+  .container section .material-color .color-shades .color-shade div:nth-child(2) div p:nth-child(1) {
+    font-size: 18px;
+  }
+  .container section .material-color .color-shades .color-shade div:nth-child(2) img {
+    width: 24px;
+  }
+  .container section .material-color .color-holder {
+    width: 120px;
+    margin-bottom: 1px;
+    grid-auto-rows: 72px;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  .container section .create-color .solid-section .solid-header .solid-header-title img {
+    width: 28px;
+    height: 28px;
+  }
+  .container section .create-color .solid-section .solid-header .solid-header-title p {
+    font-size: 19px;
+  }
+  .container section .create-color .solid-section .solid-header .solid-alpha-control p {
+    font-size: 19px;
+  }
+  .container section .create-color .solid-section .solid-header .solid-alpha-control input {
+    margin-top: 4px;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  .container section .create-color .solid-section .solid-body .solid-color {
+    width: 45%;
+  }
+  .container section .create-color .solid-section .solid-body .solid-control {
+    width: 55%;
+  }
+  .container section .create-color .solid-section .solid-body .solid-control .solid-attributes {
+    margin: 24px;
+  }
+  .container section .create-color .solid-section .solid-body .solid-control .solid-attributes p {
+    font-size: 17px;
+  }
+  .container section .create-color .solid-section .solid-body .solid-control .solid-attributes img {
+    width: 24px;
+    height: 24px;
+  }
+  .container section .create-color .solid-section .solid-body .solid-control .seekbars {
+    margin-bottom: 56px;
+  }
+  .container section .create-color .solid-section .solid-body .solid-control .seekbars ul:nth-child(2) {
+    margin-right: 6px;
+  }
+  .container section .create-color .gradient-section .gradient-header .gradient-header-title img {
+    width: 28px;
+    height: 28px;
+  }
+  .container section .create-color .gradient-section .gradient-header .gradient-header-title p {
+    font-size: 19px;
+  }
+  .container section .create-color .gradient-section .gradient-header .gradient-alpha-control p {
+    font-size: 19px;
+  }
+  .container section .create-color .gradient-section .gradient-header .gradient-alpha-control input {
+    margin-top: 4px;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  .container section .create-color .gradient-section .gradient-body .gradient-color {
+    width: 45%;
+  }
+  .container section .create-color .gradient-section .gradient-body .gradient-control {
+    width: 55%;
+  }
+  .container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top p,
+  .container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom p {
+    font-size: 17px;
+  }
+  .container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top img,
+  .container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom img {
+    width: 24px;
+    height: 24px;
+  }
+  .container section .extract-color .swatch-section .swatch-header .swatch-header-title p {
+    font-size: 19px;
+  }
+  .container section .extract-color .swatch-section .swatch-header .swatch-header-title img {
+    width: 28px;
+    height: 28px;
+  }
+  .container section .extract-color .swatch-section .swatch-header .swatch-reset p {
+    font-size: 19px;
+  }
+  .container section .extract-color .swatch-section .swatch-header .swatch-reset img {
+    width: 24px;
+    height: 24px;
+  }
+  .container section .extract-color .swatch-section .swatch-body .swatch-img-chooser {
+    min-height: 180px;
+  }
+  .container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .logo-info img {
+    width: 32px;
+  }
+  .container section .extract-color .swatch-section .swatch-body .swatch-img-chooser .logo-info p {
+    font-size: 15px;
+    margin: 12px 0 0 8px;
+  }
+  .container section .extract-color .swatch-section .swatch-body .swatch-extract-info p {
+    font-size: medium;
+  }
+  .container section .extract-color .swatch-section .swatch-body .swatch-extract-info ul li {
+    font-size: medium;
+  }
+  .container section .extract-color .palette-section .palette-header .palette-header-title p {
+    font-size: 19px;
+  }
+  .container section .extract-color .palette-section .palette-header .palette-header-title img {
+    width: 28px;
+    height: 28px;
+  }
+  .container section .extract-color .palette-section .palette-header .palette-reset p {
+    font-size: 19px;
+  }
+  .container section .extract-color .palette-section .palette-header .palette-reset img {
+    width: 24px;
+    height: 24px;
+  }
+  .container section .extract-color .palette-section .palette-body .palette-img-chooser {
+    min-height: 180px;
+  }
+  .container section .extract-color .palette-section .palette-body .palette-img-chooser .logo-info img {
+    width: 32px;
+  }
+  .container section .extract-color .palette-section .palette-body .palette-img-chooser .logo-info p {
+    font-size: 15px;
+    margin: 12px 0 0 8px;
+  }
+  .container section .extract-color .palette-section .palette-body .extracted-palette {
+    width: 95%;
+    gap: 20px;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .container section .extract-color .palette-section .palette-body .palette-extract-info p {
+    font-size: medium;
+  }
+  .container section .extract-color .palette-section .palette-body .palette-extract-info ul li {
+    font-size: medium;
+  }
+  .container section .extract-color .manual-section .manual-header .manual-header-title p {
+    font-size: 19px;
+  }
+  .container section .extract-color .manual-section .manual-header .manual-header-title img {
+    width: 28px;
+    height: 28px;
+  }
+  .container section .extract-color .manual-section .manual-header .manual-reset p {
+    font-size: 19px;
+  }
+  .container section .extract-color .manual-section .manual-header .manual-reset img {
+    width: 24px;
+    height: 24px;
+  }
+  .container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card {
+    margin: 16px 0;
+  }
+  .container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card p {
+    font-size: medium;
+  }
+  .container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-color-hex img {
+    width: 24px;
+    height: 24px;
+  }
+  .container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-choose-image {
+    width: 40px;
+    height: 40px;
+  }
+  .container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-choose-image img {
+    width: 20px;
+    height: 20px;
+  }
+  .container section .extract-color .manual-section .manual-body .manual-img-background .manual-color-card .manual-color-rgb img {
+    width: 24px;
+    height: 24px;
+  }
+  .container section .harmonize-color .complement-container .complement-header .complement-header-title p,
+  .container section .harmonize-color .complement-container .complement-header .split-header-title p,
+  .container section .harmonize-color .complement-container .complement-header .analogous-header-title p,
+  .container section .harmonize-color .complement-container .complement-header .triadic-header-title p,
+  .container section .harmonize-color .complement-container .complement-header .tetradic-header-title p,
+  .container section .harmonize-color .complement-container .split-header .complement-header-title p,
+  .container section .harmonize-color .complement-container .split-header .split-header-title p,
+  .container section .harmonize-color .complement-container .split-header .analogous-header-title p,
+  .container section .harmonize-color .complement-container .split-header .triadic-header-title p,
+  .container section .harmonize-color .complement-container .split-header .tetradic-header-title p,
+  .container section .harmonize-color .complement-container .analogous-header .complement-header-title p,
+  .container section .harmonize-color .complement-container .analogous-header .split-header-title p,
+  .container section .harmonize-color .complement-container .analogous-header .analogous-header-title p,
+  .container section .harmonize-color .complement-container .analogous-header .triadic-header-title p,
+  .container section .harmonize-color .complement-container .analogous-header .tetradic-header-title p,
+  .container section .harmonize-color .complement-container .triadic-header .complement-header-title p,
+  .container section .harmonize-color .complement-container .triadic-header .split-header-title p,
+  .container section .harmonize-color .complement-container .triadic-header .analogous-header-title p,
+  .container section .harmonize-color .complement-container .triadic-header .triadic-header-title p,
+  .container section .harmonize-color .complement-container .triadic-header .tetradic-header-title p,
+  .container section .harmonize-color .complement-container .tetradic-header .complement-header-title p,
+  .container section .harmonize-color .complement-container .tetradic-header .split-header-title p,
+  .container section .harmonize-color .complement-container .tetradic-header .analogous-header-title p,
+  .container section .harmonize-color .complement-container .tetradic-header .triadic-header-title p,
+  .container section .harmonize-color .complement-container .tetradic-header .tetradic-header-title p,
+  .container section .harmonize-color .split-container .complement-header .complement-header-title p,
+  .container section .harmonize-color .split-container .complement-header .split-header-title p,
+  .container section .harmonize-color .split-container .complement-header .analogous-header-title p,
+  .container section .harmonize-color .split-container .complement-header .triadic-header-title p,
+  .container section .harmonize-color .split-container .complement-header .tetradic-header-title p,
+  .container section .harmonize-color .split-container .split-header .complement-header-title p,
+  .container section .harmonize-color .split-container .split-header .split-header-title p,
+  .container section .harmonize-color .split-container .split-header .analogous-header-title p,
+  .container section .harmonize-color .split-container .split-header .triadic-header-title p,
+  .container section .harmonize-color .split-container .split-header .tetradic-header-title p,
+  .container section .harmonize-color .split-container .analogous-header .complement-header-title p,
+  .container section .harmonize-color .split-container .analogous-header .split-header-title p,
+  .container section .harmonize-color .split-container .analogous-header .analogous-header-title p,
+  .container section .harmonize-color .split-container .analogous-header .triadic-header-title p,
+  .container section .harmonize-color .split-container .analogous-header .tetradic-header-title p,
+  .container section .harmonize-color .split-container .triadic-header .complement-header-title p,
+  .container section .harmonize-color .split-container .triadic-header .split-header-title p,
+  .container section .harmonize-color .split-container .triadic-header .analogous-header-title p,
+  .container section .harmonize-color .split-container .triadic-header .triadic-header-title p,
+  .container section .harmonize-color .split-container .triadic-header .tetradic-header-title p,
+  .container section .harmonize-color .split-container .tetradic-header .complement-header-title p,
+  .container section .harmonize-color .split-container .tetradic-header .split-header-title p,
+  .container section .harmonize-color .split-container .tetradic-header .analogous-header-title p,
+  .container section .harmonize-color .split-container .tetradic-header .triadic-header-title p,
+  .container section .harmonize-color .split-container .tetradic-header .tetradic-header-title p,
+  .container section .harmonize-color .analogous-container .complement-header .complement-header-title p,
+  .container section .harmonize-color .analogous-container .complement-header .split-header-title p,
+  .container section .harmonize-color .analogous-container .complement-header .analogous-header-title p,
+  .container section .harmonize-color .analogous-container .complement-header .triadic-header-title p,
+  .container section .harmonize-color .analogous-container .complement-header .tetradic-header-title p,
+  .container section .harmonize-color .analogous-container .split-header .complement-header-title p,
+  .container section .harmonize-color .analogous-container .split-header .split-header-title p,
+  .container section .harmonize-color .analogous-container .split-header .analogous-header-title p,
+  .container section .harmonize-color .analogous-container .split-header .triadic-header-title p,
+  .container section .harmonize-color .analogous-container .split-header .tetradic-header-title p,
+  .container section .harmonize-color .analogous-container .analogous-header .complement-header-title p,
+  .container section .harmonize-color .analogous-container .analogous-header .split-header-title p,
+  .container section .harmonize-color .analogous-container .analogous-header .analogous-header-title p,
+  .container section .harmonize-color .analogous-container .analogous-header .triadic-header-title p,
+  .container section .harmonize-color .analogous-container .analogous-header .tetradic-header-title p,
+  .container section .harmonize-color .analogous-container .triadic-header .complement-header-title p,
+  .container section .harmonize-color .analogous-container .triadic-header .split-header-title p,
+  .container section .harmonize-color .analogous-container .triadic-header .analogous-header-title p,
+  .container section .harmonize-color .analogous-container .triadic-header .triadic-header-title p,
+  .container section .harmonize-color .analogous-container .triadic-header .tetradic-header-title p,
+  .container section .harmonize-color .analogous-container .tetradic-header .complement-header-title p,
+  .container section .harmonize-color .analogous-container .tetradic-header .split-header-title p,
+  .container section .harmonize-color .analogous-container .tetradic-header .analogous-header-title p,
+  .container section .harmonize-color .analogous-container .tetradic-header .triadic-header-title p,
+  .container section .harmonize-color .analogous-container .tetradic-header .tetradic-header-title p,
+  .container section .harmonize-color .triadic-container .complement-header .complement-header-title p,
+  .container section .harmonize-color .triadic-container .complement-header .split-header-title p,
+  .container section .harmonize-color .triadic-container .complement-header .analogous-header-title p,
+  .container section .harmonize-color .triadic-container .complement-header .triadic-header-title p,
+  .container section .harmonize-color .triadic-container .complement-header .tetradic-header-title p,
+  .container section .harmonize-color .triadic-container .split-header .complement-header-title p,
+  .container section .harmonize-color .triadic-container .split-header .split-header-title p,
+  .container section .harmonize-color .triadic-container .split-header .analogous-header-title p,
+  .container section .harmonize-color .triadic-container .split-header .triadic-header-title p,
+  .container section .harmonize-color .triadic-container .split-header .tetradic-header-title p,
+  .container section .harmonize-color .triadic-container .analogous-header .complement-header-title p,
+  .container section .harmonize-color .triadic-container .analogous-header .split-header-title p,
+  .container section .harmonize-color .triadic-container .analogous-header .analogous-header-title p,
+  .container section .harmonize-color .triadic-container .analogous-header .triadic-header-title p,
+  .container section .harmonize-color .triadic-container .analogous-header .tetradic-header-title p,
+  .container section .harmonize-color .triadic-container .triadic-header .complement-header-title p,
+  .container section .harmonize-color .triadic-container .triadic-header .split-header-title p,
+  .container section .harmonize-color .triadic-container .triadic-header .analogous-header-title p,
+  .container section .harmonize-color .triadic-container .triadic-header .triadic-header-title p,
+  .container section .harmonize-color .triadic-container .triadic-header .tetradic-header-title p,
+  .container section .harmonize-color .triadic-container .tetradic-header .complement-header-title p,
+  .container section .harmonize-color .triadic-container .tetradic-header .split-header-title p,
+  .container section .harmonize-color .triadic-container .tetradic-header .analogous-header-title p,
+  .container section .harmonize-color .triadic-container .tetradic-header .triadic-header-title p,
+  .container section .harmonize-color .triadic-container .tetradic-header .tetradic-header-title p,
+  .container section .harmonize-color .tetradic-container .complement-header .complement-header-title p,
+  .container section .harmonize-color .tetradic-container .complement-header .split-header-title p,
+  .container section .harmonize-color .tetradic-container .complement-header .analogous-header-title p,
+  .container section .harmonize-color .tetradic-container .complement-header .triadic-header-title p,
+  .container section .harmonize-color .tetradic-container .complement-header .tetradic-header-title p,
+  .container section .harmonize-color .tetradic-container .split-header .complement-header-title p,
+  .container section .harmonize-color .tetradic-container .split-header .split-header-title p,
+  .container section .harmonize-color .tetradic-container .split-header .analogous-header-title p,
+  .container section .harmonize-color .tetradic-container .split-header .triadic-header-title p,
+  .container section .harmonize-color .tetradic-container .split-header .tetradic-header-title p,
+  .container section .harmonize-color .tetradic-container .analogous-header .complement-header-title p,
+  .container section .harmonize-color .tetradic-container .analogous-header .split-header-title p,
+  .container section .harmonize-color .tetradic-container .analogous-header .analogous-header-title p,
+  .container section .harmonize-color .tetradic-container .analogous-header .triadic-header-title p,
+  .container section .harmonize-color .tetradic-container .analogous-header .tetradic-header-title p,
+  .container section .harmonize-color .tetradic-container .triadic-header .complement-header-title p,
+  .container section .harmonize-color .tetradic-container .triadic-header .split-header-title p,
+  .container section .harmonize-color .tetradic-container .triadic-header .analogous-header-title p,
+  .container section .harmonize-color .tetradic-container .triadic-header .triadic-header-title p,
+  .container section .harmonize-color .tetradic-container .triadic-header .tetradic-header-title p,
+  .container section .harmonize-color .tetradic-container .tetradic-header .complement-header-title p,
+  .container section .harmonize-color .tetradic-container .tetradic-header .split-header-title p,
+  .container section .harmonize-color .tetradic-container .tetradic-header .analogous-header-title p,
+  .container section .harmonize-color .tetradic-container .tetradic-header .triadic-header-title p,
+  .container section .harmonize-color .tetradic-container .tetradic-header .tetradic-header-title p {
+    font-size: 19px;
+  }
+  .container section .harmonize-color .complement-container .complement-header .complement-header-title img,
+  .container section .harmonize-color .complement-container .complement-header .split-header-title img,
+  .container section .harmonize-color .complement-container .complement-header .analogous-header-title img,
+  .container section .harmonize-color .complement-container .complement-header .triadic-header-title img,
+  .container section .harmonize-color .complement-container .complement-header .tetradic-header-title img,
+  .container section .harmonize-color .complement-container .split-header .complement-header-title img,
+  .container section .harmonize-color .complement-container .split-header .split-header-title img,
+  .container section .harmonize-color .complement-container .split-header .analogous-header-title img,
+  .container section .harmonize-color .complement-container .split-header .triadic-header-title img,
+  .container section .harmonize-color .complement-container .split-header .tetradic-header-title img,
+  .container section .harmonize-color .complement-container .analogous-header .complement-header-title img,
+  .container section .harmonize-color .complement-container .analogous-header .split-header-title img,
+  .container section .harmonize-color .complement-container .analogous-header .analogous-header-title img,
+  .container section .harmonize-color .complement-container .analogous-header .triadic-header-title img,
+  .container section .harmonize-color .complement-container .analogous-header .tetradic-header-title img,
+  .container section .harmonize-color .complement-container .triadic-header .complement-header-title img,
+  .container section .harmonize-color .complement-container .triadic-header .split-header-title img,
+  .container section .harmonize-color .complement-container .triadic-header .analogous-header-title img,
+  .container section .harmonize-color .complement-container .triadic-header .triadic-header-title img,
+  .container section .harmonize-color .complement-container .triadic-header .tetradic-header-title img,
+  .container section .harmonize-color .complement-container .tetradic-header .complement-header-title img,
+  .container section .harmonize-color .complement-container .tetradic-header .split-header-title img,
+  .container section .harmonize-color .complement-container .tetradic-header .analogous-header-title img,
+  .container section .harmonize-color .complement-container .tetradic-header .triadic-header-title img,
+  .container section .harmonize-color .complement-container .tetradic-header .tetradic-header-title img,
+  .container section .harmonize-color .split-container .complement-header .complement-header-title img,
+  .container section .harmonize-color .split-container .complement-header .split-header-title img,
+  .container section .harmonize-color .split-container .complement-header .analogous-header-title img,
+  .container section .harmonize-color .split-container .complement-header .triadic-header-title img,
+  .container section .harmonize-color .split-container .complement-header .tetradic-header-title img,
+  .container section .harmonize-color .split-container .split-header .complement-header-title img,
+  .container section .harmonize-color .split-container .split-header .split-header-title img,
+  .container section .harmonize-color .split-container .split-header .analogous-header-title img,
+  .container section .harmonize-color .split-container .split-header .triadic-header-title img,
+  .container section .harmonize-color .split-container .split-header .tetradic-header-title img,
+  .container section .harmonize-color .split-container .analogous-header .complement-header-title img,
+  .container section .harmonize-color .split-container .analogous-header .split-header-title img,
+  .container section .harmonize-color .split-container .analogous-header .analogous-header-title img,
+  .container section .harmonize-color .split-container .analogous-header .triadic-header-title img,
+  .container section .harmonize-color .split-container .analogous-header .tetradic-header-title img,
+  .container section .harmonize-color .split-container .triadic-header .complement-header-title img,
+  .container section .harmonize-color .split-container .triadic-header .split-header-title img,
+  .container section .harmonize-color .split-container .triadic-header .analogous-header-title img,
+  .container section .harmonize-color .split-container .triadic-header .triadic-header-title img,
+  .container section .harmonize-color .split-container .triadic-header .tetradic-header-title img,
+  .container section .harmonize-color .split-container .tetradic-header .complement-header-title img,
+  .container section .harmonize-color .split-container .tetradic-header .split-header-title img,
+  .container section .harmonize-color .split-container .tetradic-header .analogous-header-title img,
+  .container section .harmonize-color .split-container .tetradic-header .triadic-header-title img,
+  .container section .harmonize-color .split-container .tetradic-header .tetradic-header-title img,
+  .container section .harmonize-color .analogous-container .complement-header .complement-header-title img,
+  .container section .harmonize-color .analogous-container .complement-header .split-header-title img,
+  .container section .harmonize-color .analogous-container .complement-header .analogous-header-title img,
+  .container section .harmonize-color .analogous-container .complement-header .triadic-header-title img,
+  .container section .harmonize-color .analogous-container .complement-header .tetradic-header-title img,
+  .container section .harmonize-color .analogous-container .split-header .complement-header-title img,
+  .container section .harmonize-color .analogous-container .split-header .split-header-title img,
+  .container section .harmonize-color .analogous-container .split-header .analogous-header-title img,
+  .container section .harmonize-color .analogous-container .split-header .triadic-header-title img,
+  .container section .harmonize-color .analogous-container .split-header .tetradic-header-title img,
+  .container section .harmonize-color .analogous-container .analogous-header .complement-header-title img,
+  .container section .harmonize-color .analogous-container .analogous-header .split-header-title img,
+  .container section .harmonize-color .analogous-container .analogous-header .analogous-header-title img,
+  .container section .harmonize-color .analogous-container .analogous-header .triadic-header-title img,
+  .container section .harmonize-color .analogous-container .analogous-header .tetradic-header-title img,
+  .container section .harmonize-color .analogous-container .triadic-header .complement-header-title img,
+  .container section .harmonize-color .analogous-container .triadic-header .split-header-title img,
+  .container section .harmonize-color .analogous-container .triadic-header .analogous-header-title img,
+  .container section .harmonize-color .analogous-container .triadic-header .triadic-header-title img,
+  .container section .harmonize-color .analogous-container .triadic-header .tetradic-header-title img,
+  .container section .harmonize-color .analogous-container .tetradic-header .complement-header-title img,
+  .container section .harmonize-color .analogous-container .tetradic-header .split-header-title img,
+  .container section .harmonize-color .analogous-container .tetradic-header .analogous-header-title img,
+  .container section .harmonize-color .analogous-container .tetradic-header .triadic-header-title img,
+  .container section .harmonize-color .analogous-container .tetradic-header .tetradic-header-title img,
+  .container section .harmonize-color .triadic-container .complement-header .complement-header-title img,
+  .container section .harmonize-color .triadic-container .complement-header .split-header-title img,
+  .container section .harmonize-color .triadic-container .complement-header .analogous-header-title img,
+  .container section .harmonize-color .triadic-container .complement-header .triadic-header-title img,
+  .container section .harmonize-color .triadic-container .complement-header .tetradic-header-title img,
+  .container section .harmonize-color .triadic-container .split-header .complement-header-title img,
+  .container section .harmonize-color .triadic-container .split-header .split-header-title img,
+  .container section .harmonize-color .triadic-container .split-header .analogous-header-title img,
+  .container section .harmonize-color .triadic-container .split-header .triadic-header-title img,
+  .container section .harmonize-color .triadic-container .split-header .tetradic-header-title img,
+  .container section .harmonize-color .triadic-container .analogous-header .complement-header-title img,
+  .container section .harmonize-color .triadic-container .analogous-header .split-header-title img,
+  .container section .harmonize-color .triadic-container .analogous-header .analogous-header-title img,
+  .container section .harmonize-color .triadic-container .analogous-header .triadic-header-title img,
+  .container section .harmonize-color .triadic-container .analogous-header .tetradic-header-title img,
+  .container section .harmonize-color .triadic-container .triadic-header .complement-header-title img,
+  .container section .harmonize-color .triadic-container .triadic-header .split-header-title img,
+  .container section .harmonize-color .triadic-container .triadic-header .analogous-header-title img,
+  .container section .harmonize-color .triadic-container .triadic-header .triadic-header-title img,
+  .container section .harmonize-color .triadic-container .triadic-header .tetradic-header-title img,
+  .container section .harmonize-color .triadic-container .tetradic-header .complement-header-title img,
+  .container section .harmonize-color .triadic-container .tetradic-header .split-header-title img,
+  .container section .harmonize-color .triadic-container .tetradic-header .analogous-header-title img,
+  .container section .harmonize-color .triadic-container .tetradic-header .triadic-header-title img,
+  .container section .harmonize-color .triadic-container .tetradic-header .tetradic-header-title img,
+  .container section .harmonize-color .tetradic-container .complement-header .complement-header-title img,
+  .container section .harmonize-color .tetradic-container .complement-header .split-header-title img,
+  .container section .harmonize-color .tetradic-container .complement-header .analogous-header-title img,
+  .container section .harmonize-color .tetradic-container .complement-header .triadic-header-title img,
+  .container section .harmonize-color .tetradic-container .complement-header .tetradic-header-title img,
+  .container section .harmonize-color .tetradic-container .split-header .complement-header-title img,
+  .container section .harmonize-color .tetradic-container .split-header .split-header-title img,
+  .container section .harmonize-color .tetradic-container .split-header .analogous-header-title img,
+  .container section .harmonize-color .tetradic-container .split-header .triadic-header-title img,
+  .container section .harmonize-color .tetradic-container .split-header .tetradic-header-title img,
+  .container section .harmonize-color .tetradic-container .analogous-header .complement-header-title img,
+  .container section .harmonize-color .tetradic-container .analogous-header .split-header-title img,
+  .container section .harmonize-color .tetradic-container .analogous-header .analogous-header-title img,
+  .container section .harmonize-color .tetradic-container .analogous-header .triadic-header-title img,
+  .container section .harmonize-color .tetradic-container .analogous-header .tetradic-header-title img,
+  .container section .harmonize-color .tetradic-container .triadic-header .complement-header-title img,
+  .container section .harmonize-color .tetradic-container .triadic-header .split-header-title img,
+  .container section .harmonize-color .tetradic-container .triadic-header .analogous-header-title img,
+  .container section .harmonize-color .tetradic-container .triadic-header .triadic-header-title img,
+  .container section .harmonize-color .tetradic-container .triadic-header .tetradic-header-title img,
+  .container section .harmonize-color .tetradic-container .tetradic-header .complement-header-title img,
+  .container section .harmonize-color .tetradic-container .tetradic-header .split-header-title img,
+  .container section .harmonize-color .tetradic-container .tetradic-header .analogous-header-title img,
+  .container section .harmonize-color .tetradic-container .tetradic-header .triadic-header-title img,
+  .container section .harmonize-color .tetradic-container .tetradic-header .tetradic-header-title img {
+    width: 28px;
+    height: 28px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container,
+  .container section .harmonize-color .complement-container .split-body .colors-container,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container,
+  .container section .harmonize-color .split-container .complement-body .colors-container,
+  .container section .harmonize-color .split-container .split-body .colors-container,
+  .container section .harmonize-color .split-container .analogous-body .colors-container,
+  .container section .harmonize-color .split-container .triadic-body .colors-container,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container,
+  .container section .harmonize-color .analogous-container .split-body .colors-container,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container,
+  .container section .harmonize-color .triadic-container .split-body .colors-container,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container {
+    margin-bottom: 8px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .colors,
+  .container section .harmonize-color .complement-container .split-body .colors-container .colors,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .colors,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .colors,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .colors,
+  .container section .harmonize-color .split-container .complement-body .colors-container .colors,
+  .container section .harmonize-color .split-container .split-body .colors-container .colors,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .colors,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .colors,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .colors,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .colors,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .colors,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .colors,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .colors,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .colors,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .colors,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .colors,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .colors,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .colors,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .colors,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .colors,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .colors,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .colors,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .colors,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .colors {
+    height: 100px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .codes,
+  .container section .harmonize-color .complement-container .split-body .colors-container .codes,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .codes,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .codes,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .codes,
+  .container section .harmonize-color .split-container .complement-body .colors-container .codes,
+  .container section .harmonize-color .split-container .split-body .colors-container .codes,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .codes,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .codes,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .codes,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .codes,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .codes,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .codes,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .codes,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .codes,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .codes,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .codes,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .codes,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .codes,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .codes,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .codes,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .codes,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .codes,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .codes,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .codes {
+    margin: 10px 0;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .codes div p,
+  .container section .harmonize-color .complement-container .split-body .colors-container .codes div p,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .codes div p,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .codes div p,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .codes div p,
+  .container section .harmonize-color .split-container .complement-body .colors-container .codes div p,
+  .container section .harmonize-color .split-container .split-body .colors-container .codes div p,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .codes div p,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .codes div p,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .codes div p,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .codes div p,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .codes div p,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .codes div p,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .codes div p,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .codes div p,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .codes div p,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .codes div p,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .codes div p,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .codes div p,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .codes div p,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .codes div p,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .codes div p,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .codes div p,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .codes div p,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .codes div p {
+    font-size: small;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .separator,
+  .container section .harmonize-color .complement-container .split-body .colors-container .separator,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .separator,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .separator,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .separator,
+  .container section .harmonize-color .split-container .complement-body .colors-container .separator,
+  .container section .harmonize-color .split-container .split-body .colors-container .separator,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .separator,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .separator,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .separator,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .separator,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .separator,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .separator,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .separator,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .separator,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .separator,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .separator,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .separator,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .separator,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .separator,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .separator,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .separator,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .separator,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .separator,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .separator {
+    margin-top: 12px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .info,
+  .container section .harmonize-color .complement-container .split-body .colors-container .info,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .info,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .info,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .info,
+  .container section .harmonize-color .split-container .complement-body .colors-container .info,
+  .container section .harmonize-color .split-container .split-body .colors-container .info,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .info,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .info,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .info,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .info,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .info,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .info,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .info,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .info,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .info,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .info,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .info,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .info,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .info,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .info,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .info,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .info,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .info,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .info {
+    margin: 12px;
+    font-size: 12px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode {
+    margin: 6px 12px 12px 12px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode p,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode p,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode p,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode p,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode p,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode p,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode p,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode p,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode p,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode p,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode p,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode p,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode p,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode p,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode p,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode p,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode p {
+    font-size: medium;
+    font-weight: 700;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode input,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode input,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode input,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode input,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode input,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode input,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode input,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode input,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode input,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode input,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode input,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode input,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode input,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode input,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode input,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode input,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode input {
+    margin: 2px 0 0 8px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-tetradic,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-complement,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-split,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-analogous,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-triadic,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-tetradic {
+    width: 32px;
+    height: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    margin-left: 20px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .complement-container .split-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .complement-container .analogous-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .complement-container .triadic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .complement-container .tetradic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .split-container .complement-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .split-container .split-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .split-container .analogous-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .split-container .triadic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .split-container .tetradic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .analogous-container .complement-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .analogous-container .split-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .analogous-container .triadic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .analogous-container .tetradic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .triadic-container .complement-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .triadic-container .split-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .triadic-container .analogous-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .triadic-container .tetradic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .tetradic-container .complement-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .tetradic-container .split-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .tetradic-container .analogous-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .tetradic-container .triadic-body .colors-container .invert-mode .save-tetradic img,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-complement img,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-split img,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-analogous img,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-triadic img,
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode .save-tetradic img {
+    width: 18px;
+    height: 18px;
+  }
+  .container section .harmonize-color .complement-container .complement-body .color-wheel,
+  .container section .harmonize-color .complement-container .split-body .color-wheel,
+  .container section .harmonize-color .complement-container .analogous-body .color-wheel,
+  .container section .harmonize-color .complement-container .triadic-body .color-wheel,
+  .container section .harmonize-color .complement-container .tetradic-body .color-wheel,
+  .container section .harmonize-color .split-container .complement-body .color-wheel,
+  .container section .harmonize-color .split-container .split-body .color-wheel,
+  .container section .harmonize-color .split-container .analogous-body .color-wheel,
+  .container section .harmonize-color .split-container .triadic-body .color-wheel,
+  .container section .harmonize-color .split-container .tetradic-body .color-wheel,
+  .container section .harmonize-color .analogous-container .complement-body .color-wheel,
+  .container section .harmonize-color .analogous-container .split-body .color-wheel,
+  .container section .harmonize-color .analogous-container .analogous-body .color-wheel,
+  .container section .harmonize-color .analogous-container .triadic-body .color-wheel,
+  .container section .harmonize-color .analogous-container .tetradic-body .color-wheel,
+  .container section .harmonize-color .triadic-container .complement-body .color-wheel,
+  .container section .harmonize-color .triadic-container .split-body .color-wheel,
+  .container section .harmonize-color .triadic-container .analogous-body .color-wheel,
+  .container section .harmonize-color .triadic-container .triadic-body .color-wheel,
+  .container section .harmonize-color .triadic-container .tetradic-body .color-wheel,
+  .container section .harmonize-color .tetradic-container .complement-body .color-wheel,
+  .container section .harmonize-color .tetradic-container .split-body .color-wheel,
+  .container section .harmonize-color .tetradic-container .analogous-body .color-wheel,
+  .container section .harmonize-color .tetradic-container .triadic-body .color-wheel,
+  .container section .harmonize-color .tetradic-container .tetradic-body .color-wheel {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .codes {
+    margin: 8px 0;
+  }
+  .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .codes div p {
+    font-size: 11px;
+  }
+  .container section .saved-color .solgrad-container .solgrad-header .solgrad-header-title p,
+  .container section .saved-color .solgrad-container .solgrad-header .extraction-header-title p,
+  .container section .saved-color .solgrad-container .solgrad-header .harmony-header-title p,
+  .container section .saved-color .solgrad-container .solgrad-header .preset-header-title p,
+  .container section .saved-color .solgrad-container .extraction-header .solgrad-header-title p,
+  .container section .saved-color .solgrad-container .extraction-header .extraction-header-title p,
+  .container section .saved-color .solgrad-container .extraction-header .harmony-header-title p,
+  .container section .saved-color .solgrad-container .extraction-header .preset-header-title p,
+  .container section .saved-color .solgrad-container .harmony-header .solgrad-header-title p,
+  .container section .saved-color .solgrad-container .harmony-header .extraction-header-title p,
+  .container section .saved-color .solgrad-container .harmony-header .harmony-header-title p,
+  .container section .saved-color .solgrad-container .harmony-header .preset-header-title p,
+  .container section .saved-color .solgrad-container .preset-header .solgrad-header-title p,
+  .container section .saved-color .solgrad-container .preset-header .extraction-header-title p,
+  .container section .saved-color .solgrad-container .preset-header .harmony-header-title p,
+  .container section .saved-color .solgrad-container .preset-header .preset-header-title p,
+  .container section .saved-color .extraction-container .solgrad-header .solgrad-header-title p,
+  .container section .saved-color .extraction-container .solgrad-header .extraction-header-title p,
+  .container section .saved-color .extraction-container .solgrad-header .harmony-header-title p,
+  .container section .saved-color .extraction-container .solgrad-header .preset-header-title p,
+  .container section .saved-color .extraction-container .extraction-header .solgrad-header-title p,
+  .container section .saved-color .extraction-container .extraction-header .extraction-header-title p,
+  .container section .saved-color .extraction-container .extraction-header .harmony-header-title p,
+  .container section .saved-color .extraction-container .extraction-header .preset-header-title p,
+  .container section .saved-color .extraction-container .harmony-header .solgrad-header-title p,
+  .container section .saved-color .extraction-container .harmony-header .extraction-header-title p,
+  .container section .saved-color .extraction-container .harmony-header .harmony-header-title p,
+  .container section .saved-color .extraction-container .harmony-header .preset-header-title p,
+  .container section .saved-color .extraction-container .preset-header .solgrad-header-title p,
+  .container section .saved-color .extraction-container .preset-header .extraction-header-title p,
+  .container section .saved-color .extraction-container .preset-header .harmony-header-title p,
+  .container section .saved-color .extraction-container .preset-header .preset-header-title p,
+  .container section .saved-color .harmony-container .solgrad-header .solgrad-header-title p,
+  .container section .saved-color .harmony-container .solgrad-header .extraction-header-title p,
+  .container section .saved-color .harmony-container .solgrad-header .harmony-header-title p,
+  .container section .saved-color .harmony-container .solgrad-header .preset-header-title p,
+  .container section .saved-color .harmony-container .extraction-header .solgrad-header-title p,
+  .container section .saved-color .harmony-container .extraction-header .extraction-header-title p,
+  .container section .saved-color .harmony-container .extraction-header .harmony-header-title p,
+  .container section .saved-color .harmony-container .extraction-header .preset-header-title p,
+  .container section .saved-color .harmony-container .harmony-header .solgrad-header-title p,
+  .container section .saved-color .harmony-container .harmony-header .extraction-header-title p,
+  .container section .saved-color .harmony-container .harmony-header .harmony-header-title p,
+  .container section .saved-color .harmony-container .harmony-header .preset-header-title p,
+  .container section .saved-color .harmony-container .preset-header .solgrad-header-title p,
+  .container section .saved-color .harmony-container .preset-header .extraction-header-title p,
+  .container section .saved-color .harmony-container .preset-header .harmony-header-title p,
+  .container section .saved-color .harmony-container .preset-header .preset-header-title p,
+  .container section .saved-color .preset-container .solgrad-header .solgrad-header-title p,
+  .container section .saved-color .preset-container .solgrad-header .extraction-header-title p,
+  .container section .saved-color .preset-container .solgrad-header .harmony-header-title p,
+  .container section .saved-color .preset-container .solgrad-header .preset-header-title p,
+  .container section .saved-color .preset-container .extraction-header .solgrad-header-title p,
+  .container section .saved-color .preset-container .extraction-header .extraction-header-title p,
+  .container section .saved-color .preset-container .extraction-header .harmony-header-title p,
+  .container section .saved-color .preset-container .extraction-header .preset-header-title p,
+  .container section .saved-color .preset-container .harmony-header .solgrad-header-title p,
+  .container section .saved-color .preset-container .harmony-header .extraction-header-title p,
+  .container section .saved-color .preset-container .harmony-header .harmony-header-title p,
+  .container section .saved-color .preset-container .harmony-header .preset-header-title p,
+  .container section .saved-color .preset-container .preset-header .solgrad-header-title p,
+  .container section .saved-color .preset-container .preset-header .extraction-header-title p,
+  .container section .saved-color .preset-container .preset-header .harmony-header-title p,
+  .container section .saved-color .preset-container .preset-header .preset-header-title p {
+    font-size: 19px;
+  }
+  .container section .saved-color .solgrad-container .solgrad-header .solgrad-header-title img,
+  .container section .saved-color .solgrad-container .solgrad-header .extraction-header-title img,
+  .container section .saved-color .solgrad-container .solgrad-header .harmony-header-title img,
+  .container section .saved-color .solgrad-container .solgrad-header .preset-header-title img,
+  .container section .saved-color .solgrad-container .extraction-header .solgrad-header-title img,
+  .container section .saved-color .solgrad-container .extraction-header .extraction-header-title img,
+  .container section .saved-color .solgrad-container .extraction-header .harmony-header-title img,
+  .container section .saved-color .solgrad-container .extraction-header .preset-header-title img,
+  .container section .saved-color .solgrad-container .harmony-header .solgrad-header-title img,
+  .container section .saved-color .solgrad-container .harmony-header .extraction-header-title img,
+  .container section .saved-color .solgrad-container .harmony-header .harmony-header-title img,
+  .container section .saved-color .solgrad-container .harmony-header .preset-header-title img,
+  .container section .saved-color .solgrad-container .preset-header .solgrad-header-title img,
+  .container section .saved-color .solgrad-container .preset-header .extraction-header-title img,
+  .container section .saved-color .solgrad-container .preset-header .harmony-header-title img,
+  .container section .saved-color .solgrad-container .preset-header .preset-header-title img,
+  .container section .saved-color .extraction-container .solgrad-header .solgrad-header-title img,
+  .container section .saved-color .extraction-container .solgrad-header .extraction-header-title img,
+  .container section .saved-color .extraction-container .solgrad-header .harmony-header-title img,
+  .container section .saved-color .extraction-container .solgrad-header .preset-header-title img,
+  .container section .saved-color .extraction-container .extraction-header .solgrad-header-title img,
+  .container section .saved-color .extraction-container .extraction-header .extraction-header-title img,
+  .container section .saved-color .extraction-container .extraction-header .harmony-header-title img,
+  .container section .saved-color .extraction-container .extraction-header .preset-header-title img,
+  .container section .saved-color .extraction-container .harmony-header .solgrad-header-title img,
+  .container section .saved-color .extraction-container .harmony-header .extraction-header-title img,
+  .container section .saved-color .extraction-container .harmony-header .harmony-header-title img,
+  .container section .saved-color .extraction-container .harmony-header .preset-header-title img,
+  .container section .saved-color .extraction-container .preset-header .solgrad-header-title img,
+  .container section .saved-color .extraction-container .preset-header .extraction-header-title img,
+  .container section .saved-color .extraction-container .preset-header .harmony-header-title img,
+  .container section .saved-color .extraction-container .preset-header .preset-header-title img,
+  .container section .saved-color .harmony-container .solgrad-header .solgrad-header-title img,
+  .container section .saved-color .harmony-container .solgrad-header .extraction-header-title img,
+  .container section .saved-color .harmony-container .solgrad-header .harmony-header-title img,
+  .container section .saved-color .harmony-container .solgrad-header .preset-header-title img,
+  .container section .saved-color .harmony-container .extraction-header .solgrad-header-title img,
+  .container section .saved-color .harmony-container .extraction-header .extraction-header-title img,
+  .container section .saved-color .harmony-container .extraction-header .harmony-header-title img,
+  .container section .saved-color .harmony-container .extraction-header .preset-header-title img,
+  .container section .saved-color .harmony-container .harmony-header .solgrad-header-title img,
+  .container section .saved-color .harmony-container .harmony-header .extraction-header-title img,
+  .container section .saved-color .harmony-container .harmony-header .harmony-header-title img,
+  .container section .saved-color .harmony-container .harmony-header .preset-header-title img,
+  .container section .saved-color .harmony-container .preset-header .solgrad-header-title img,
+  .container section .saved-color .harmony-container .preset-header .extraction-header-title img,
+  .container section .saved-color .harmony-container .preset-header .harmony-header-title img,
+  .container section .saved-color .harmony-container .preset-header .preset-header-title img,
+  .container section .saved-color .preset-container .solgrad-header .solgrad-header-title img,
+  .container section .saved-color .preset-container .solgrad-header .extraction-header-title img,
+  .container section .saved-color .preset-container .solgrad-header .harmony-header-title img,
+  .container section .saved-color .preset-container .solgrad-header .preset-header-title img,
+  .container section .saved-color .preset-container .extraction-header .solgrad-header-title img,
+  .container section .saved-color .preset-container .extraction-header .extraction-header-title img,
+  .container section .saved-color .preset-container .extraction-header .harmony-header-title img,
+  .container section .saved-color .preset-container .extraction-header .preset-header-title img,
+  .container section .saved-color .preset-container .harmony-header .solgrad-header-title img,
+  .container section .saved-color .preset-container .harmony-header .extraction-header-title img,
+  .container section .saved-color .preset-container .harmony-header .harmony-header-title img,
+  .container section .saved-color .preset-container .harmony-header .preset-header-title img,
+  .container section .saved-color .preset-container .preset-header .solgrad-header-title img,
+  .container section .saved-color .preset-container .preset-header .extraction-header-title img,
+  .container section .saved-color .preset-container .preset-header .harmony-header-title img,
+  .container section .saved-color .preset-container .preset-header .preset-header-title img {
+    width: 28px;
+    height: 28px;
+  }
+  .container section .saved-color .solgrad-container .solgrad-header .solgrad-options select,
+  .container section .saved-color .solgrad-container .solgrad-header .extraction-options select,
+  .container section .saved-color .solgrad-container .solgrad-header .harmony-options select,
+  .container section .saved-color .solgrad-container .solgrad-header .preset-options select,
+  .container section .saved-color .solgrad-container .extraction-header .solgrad-options select,
+  .container section .saved-color .solgrad-container .extraction-header .extraction-options select,
+  .container section .saved-color .solgrad-container .extraction-header .harmony-options select,
+  .container section .saved-color .solgrad-container .extraction-header .preset-options select,
+  .container section .saved-color .solgrad-container .harmony-header .solgrad-options select,
+  .container section .saved-color .solgrad-container .harmony-header .extraction-options select,
+  .container section .saved-color .solgrad-container .harmony-header .harmony-options select,
+  .container section .saved-color .solgrad-container .harmony-header .preset-options select,
+  .container section .saved-color .solgrad-container .preset-header .solgrad-options select,
+  .container section .saved-color .solgrad-container .preset-header .extraction-options select,
+  .container section .saved-color .solgrad-container .preset-header .harmony-options select,
+  .container section .saved-color .solgrad-container .preset-header .preset-options select,
+  .container section .saved-color .extraction-container .solgrad-header .solgrad-options select,
+  .container section .saved-color .extraction-container .solgrad-header .extraction-options select,
+  .container section .saved-color .extraction-container .solgrad-header .harmony-options select,
+  .container section .saved-color .extraction-container .solgrad-header .preset-options select,
+  .container section .saved-color .extraction-container .extraction-header .solgrad-options select,
+  .container section .saved-color .extraction-container .extraction-header .extraction-options select,
+  .container section .saved-color .extraction-container .extraction-header .harmony-options select,
+  .container section .saved-color .extraction-container .extraction-header .preset-options select,
+  .container section .saved-color .extraction-container .harmony-header .solgrad-options select,
+  .container section .saved-color .extraction-container .harmony-header .extraction-options select,
+  .container section .saved-color .extraction-container .harmony-header .harmony-options select,
+  .container section .saved-color .extraction-container .harmony-header .preset-options select,
+  .container section .saved-color .extraction-container .preset-header .solgrad-options select,
+  .container section .saved-color .extraction-container .preset-header .extraction-options select,
+  .container section .saved-color .extraction-container .preset-header .harmony-options select,
+  .container section .saved-color .extraction-container .preset-header .preset-options select,
+  .container section .saved-color .harmony-container .solgrad-header .solgrad-options select,
+  .container section .saved-color .harmony-container .solgrad-header .extraction-options select,
+  .container section .saved-color .harmony-container .solgrad-header .harmony-options select,
+  .container section .saved-color .harmony-container .solgrad-header .preset-options select,
+  .container section .saved-color .harmony-container .extraction-header .solgrad-options select,
+  .container section .saved-color .harmony-container .extraction-header .extraction-options select,
+  .container section .saved-color .harmony-container .extraction-header .harmony-options select,
+  .container section .saved-color .harmony-container .extraction-header .preset-options select,
+  .container section .saved-color .harmony-container .harmony-header .solgrad-options select,
+  .container section .saved-color .harmony-container .harmony-header .extraction-options select,
+  .container section .saved-color .harmony-container .harmony-header .harmony-options select,
+  .container section .saved-color .harmony-container .harmony-header .preset-options select,
+  .container section .saved-color .harmony-container .preset-header .solgrad-options select,
+  .container section .saved-color .harmony-container .preset-header .extraction-options select,
+  .container section .saved-color .harmony-container .preset-header .harmony-options select,
+  .container section .saved-color .harmony-container .preset-header .preset-options select,
+  .container section .saved-color .preset-container .solgrad-header .solgrad-options select,
+  .container section .saved-color .preset-container .solgrad-header .extraction-options select,
+  .container section .saved-color .preset-container .solgrad-header .harmony-options select,
+  .container section .saved-color .preset-container .solgrad-header .preset-options select,
+  .container section .saved-color .preset-container .extraction-header .solgrad-options select,
+  .container section .saved-color .preset-container .extraction-header .extraction-options select,
+  .container section .saved-color .preset-container .extraction-header .harmony-options select,
+  .container section .saved-color .preset-container .extraction-header .preset-options select,
+  .container section .saved-color .preset-container .harmony-header .solgrad-options select,
+  .container section .saved-color .preset-container .harmony-header .extraction-options select,
+  .container section .saved-color .preset-container .harmony-header .harmony-options select,
+  .container section .saved-color .preset-container .harmony-header .preset-options select,
+  .container section .saved-color .preset-container .preset-header .solgrad-options select,
+  .container section .saved-color .preset-container .preset-header .extraction-options select,
+  .container section .saved-color .preset-container .preset-header .harmony-options select,
+  .container section .saved-color .preset-container .preset-header .preset-options select {
+    font-size: 15px;
+  }
+  .container section .saved-color .extraction-container .extraction-items {
+    gap: 18px;
+  }
+  .swatch-item p {
+    margin: 10px 0 0 14px;
+    font-size: 18px;
+  }
+  .swatch-item .swatch-hex p,
+  .swatch-item .swatch-rgb p {
+    margin: 0 0 0 14px;
+    font-size: 16px;
+  }
+  .swatch-item .swatch-hex img,
+  .swatch-item .swatch-rgb img {
+    width: 24px;
+    height: 24px;
+    margin-left: 4px;
+  }
+  .solid-item .color-card {
+    height: 84px;
+  }
+  .solid-item .solid-hex {
+    margin: 2px 0 0 0;
+  }
+  .solid-item .solid-hex p {
+    margin-left: 8px;
+    font-size: 14px;
+  }
+  .solid-item .solid-hex img {
+    margin: 0 8px 0 0;
+    width: 22px;
+    height: 22px;
+  }
+  .solid-item .solid-rgb {
+    margin: 0 0 2px 0;
+  }
+  .solid-item .solid-rgb p {
+    margin-left: 8px;
+    font-size: 14px;
+  }
+  .solid-item .solid-rgb img {
+    margin: 0 8px 0 0;
+    width: 22px;
+    height: 22px;
+  }
+  .gradient-item .color-card {
+    height: 84px;
+  }
+  .gradient-item .code-holder {
+    margin: 2px 8px;
+  }
+  .gradient-item .code-holder .color-codes .color-identifier {
+    width: 20px;
+    height: 20px;
+  }
+  .gradient-item .code-holder .color-codes .codes {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .gradient-item .code-holder .color-codes .codes .code p {
+    font-size: 13px;
+  }
+  .gradient-item .code-holder .color-codes .codes .code img {
+    width: 20px;
+    height: 20px;
+  }
+  .extract-modal .modal-container .extract-image {
+    width: 94px;
+    border-radius: 28px;
+  }
+  .extract-modal .modal-container .swatch-extracts {
+    width: 340px;
+    height: 540px;
+    margin-top: -48px;
+  }
+  .extract-modal .modal-container .palette-extracts {
+    width: 340px;
+    height: 540px;
+    margin-top: -48px;
+  }
+  .extract-modal .modal-container .modal-option {
+    width: 38px;
+    height: 38px;
+  }
+  .extract-modal .modal-container .modal-option img {
+    width: 16px;
+  }
+  .dual-item .color-cards {
+    height: 84px;
+  }
+  .dual-item .color-codes {
+    margin: 2px 12px;
+  }
+  .dual-item .color-codes .codes .code p {
+    font-size: 14px;
+  }
+  .dual-item .color-codes .codes .code img {
+    width: 22px;
+    height: 22px;
+  }
+  .trial-item .color-cards {
+    height: 84px;
+  }
+  .trial-item .color-codes {
+    margin: 2px 8px;
+  }
+  .trial-item .color-codes .codes .code p {
+    font-size: 11px;
+  }
+  .trial-item .color-codes .codes .code img {
+    width: 18px;
+    height: 18px;
+  }
+  .quadral-item .color-cards {
+    height: 84px;
+  }
+  .quadral-item .color-codes {
+    margin: 6px 8px;
+  }
+  .quadral-item .color-codes .codes {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .quadral-item .color-codes .codes p {
+    font-size: 12px;
+  }
 }
 /*# sourceMappingURL=App.css.map */

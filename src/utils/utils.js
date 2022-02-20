@@ -199,6 +199,9 @@ const copyText = (text) => navigator.clipboard.writeText(text.toUpperCase());
 const getTextColor = (rgb) => ((rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000 > 125 ? [0, 0, 0] : [255, 255, 255]);
 const getCopyIcon = (rgb) => ((rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000 > 125 ? `${process.env.PUBLIC_URL}/assets/icons/dark/copy.svg` : `${process.env.PUBLIC_URL}/assets/icons/light/copy.svg`);
 
+const isMobileDevice = () =>
+   navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i);
+
 let timeout;
 const makeToast = (message) => {
    const toast = document.querySelector('.toast');
@@ -387,4 +390,4 @@ const renderColorWheel = (canvas, size, shade) => {
    return true;
 };
 
-export { getCache, setCache, hex2rgb, hex2rgbArray, rgb2hex, hexa2rgba, rgba2hexa, rgb2hsv_ui, rgb2hsv, hsv2rgb, rgb2hsl, rgb2cmyk, copyText, makeToast, changeTheme, updateSlider, validateColor, getSwatches, getPalette, getTextColor, getCopyIcon, updateCanvas, renderColorWheel };
+export { isMobileDevice, getCache, setCache, hex2rgb, hex2rgbArray, rgb2hex, hexa2rgba, rgba2hexa, rgb2hsv_ui, rgb2hsv, hsv2rgb, rgb2hsl, rgb2cmyk, copyText, makeToast, changeTheme, updateSlider, validateColor, getSwatches, getPalette, getTextColor, getCopyIcon, updateCanvas, renderColorWheel };

@@ -48,7 +48,7 @@ const SolGrad = (props) => {
       else if (gradient.length === 0)
          solgrads = (
             <div className='solgrad-loading'>
-               <p className='loading'>Nothing found :(</p>
+               <p className='loading'>No gradients found :(</p>
             </div>
          );
       else

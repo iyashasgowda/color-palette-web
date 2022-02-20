@@ -39,6 +39,36 @@ body {
    background-color: var(--base-color);
 }
 
+.mobile-warning {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: var(--background-color);
+
+   .warning-body {
+      margin: 32px;
+
+      img {
+         width: 48px;
+         height: 48px;
+      }
+
+      h1 {
+         margin-top: 8px;
+      }
+
+      p {
+         margin-top: 10px;
+
+         a {
+            font-weight: 600;
+         }
+      }
+   }
+}
+
 .container {
    display: flex;
    align-items: flex-start;
@@ -121,6 +151,7 @@ body {
 
    section {
       display: flex;
+      overflow: hidden;
       flex-direction: column;
 
       width: 100vw;
@@ -171,10 +202,12 @@ body {
       }
 
       .material-color {
-         display: flex;
          width: 100%;
          height: 100%;
          margin-top: 1px;
+
+         display: flex;
+         overflow: hidden;
 
          .color-shades {
             width: 100%;
@@ -254,6 +287,10 @@ body {
             grid-auto-rows: 72px;
             grid-template-columns: repeat(2, 1fr);
             background-color: var(--background-color);
+
+            overflow-y: auto;
+            overflow-x: hidden;
+            @include scrollBar();
 
             .color-item {
                display: flex;
@@ -1190,6 +1227,10 @@ body {
          width: 100%;
          height: 100%;
          margin-top: 1px;
+         overflow-x: auto;
+         overflow-y: hidden;
+         scroll-behavior: smooth !important;
+         @include scrollBar();
 
          .complement-container {
             width: 100%;
@@ -2490,9 +2531,7 @@ body {
 
 .solid-item {
    width: 100%;
-   height: 152px;
    transition: 0.3s;
-   overflow: hidden;
    border-radius: 24px 24px 20px 20px;
    background-color: var(--card-color);
    filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
@@ -2566,7 +2605,6 @@ body {
 
 .gradient-item {
    width: 100%;
-   height: 152px;
    transition: 0.3s;
    overflow: hidden;
    margin-bottom: 20px;
@@ -2710,7 +2748,6 @@ body {
 
 .dual-item {
    width: 100%;
-   height: 152px;
    transition: 0.3s;
    overflow: hidden;
    margin-bottom: 20px;
@@ -2784,7 +2821,6 @@ body {
 
 .trial-item {
    width: 100%;
-   height: 152px;
    transition: 0.3s;
    overflow: hidden;
    margin-bottom: 20px;
@@ -2858,7 +2894,6 @@ body {
 
 .quadral-item {
    width: 100%;
-   height: 152px;
    transition: 0.3s;
    overflow: hidden;
    margin-bottom: 20px;
@@ -2893,7 +2928,7 @@ body {
 
       .codes {
          display: flex;
-         align-items: center;
+         align-items: flex-start;
          flex-direction: column;
 
          p {
@@ -2955,7 +2990,8 @@ body {
    width: 100%;
    height: 100%;
    z-index: 1;
-   background-color: rgba(0, 0, 0, 0.6);
+   background-color: rgba(var(--background-color-rgb), 0.2);
+   backdrop-filter: blur(12px);
 
    .modal-container {
       width: 360px;
@@ -3053,7 +3089,8 @@ body {
    width: 100%;
    height: 100%;
    z-index: 1;
-   background-color: rgba(0, 0, 0, 0.6);
+   background-color: rgba(var(--background-color-rgb), 0.2);
+   backdrop-filter: blur(12px);
 
    .modal-container {
       display: flex;
@@ -3084,6 +3121,7 @@ body {
          border-radius: 32px;
          flex-direction: column;
          background-color: var(--card-color);
+         filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
 
          overflow-y: auto;
          scroll-behavior: smooth !important;
@@ -3108,6 +3146,7 @@ body {
          flex-direction: column;
          padding: 12px 12px 24px 12px;
          background-color: var(--card-color);
+         filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
 
          gap: 12px;
          display: grid;
@@ -3153,6 +3192,1162 @@ body {
 
       .delete {
          margin: -40px 72px 0 0;
+      }
+   }
+}
+
+/* 1536x864 ***/
+@media screen and (max-width: 1536px) and (max-height: 864px) {
+   .container {
+      .menu {
+         width: 84px;
+      }
+
+      section {
+         .material-color {
+            .color-shades {
+               .color-shade {
+                  div:nth-child(1) {
+                     height: 72%;
+                  }
+
+                  div:nth-child(2) {
+                     margin: 5px 18px;
+
+                     div {
+                        p:nth-child(1) {
+                           font-size: 18px;
+                        }
+                     }
+
+                     img {
+                        width: 28px;
+                     }
+                  }
+               }
+            }
+
+            .color-holder {
+               width: 200px;
+               grid-auto-rows: 68px;
+            }
+         }
+
+         .create-color {
+            .solid-section {
+               .solid-body {
+                  .solid-color {
+                     width: 50%;
+                  }
+
+                  .solid-control {
+                     width: 50%;
+
+                     .solid-attributes {
+                        margin: 24px;
+
+                        p {
+                           font-size: 17px;
+                        }
+                     }
+
+                     .seekbars {
+                        margin-bottom: 56px;
+
+                        ul:nth-child(2) {
+                           margin-right: 10px;
+                        }
+                     }
+                  }
+               }
+            }
+
+            .gradient-section {
+               .gradient-body {
+                  .gradient-color {
+                     width: 50%;
+                  }
+
+                  .gradient-control {
+                     width: 50%;
+
+                     .gradient-top,
+                     .gradient-bottom {
+                        p {
+                           font-size: 17px;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+
+         .extract-color {
+            .swatch-section {
+               .swatch-body {
+                  .swatch-img-chooser {
+                     min-height: 200px;
+
+                     .logo-info {
+                        img {
+                           width: 32px;
+                        }
+
+                        p {
+                           font-size: 15px;
+                           margin: 12px 0 0 8px;
+                        }
+                     }
+                  }
+
+                  .swatch-extract-info {
+                     p {
+                        font-size: medium;
+                     }
+
+                     ul {
+                        li {
+                           font-size: medium;
+                        }
+                     }
+                  }
+               }
+            }
+
+            .palette-section {
+               .palette-body {
+                  .palette-img-chooser {
+                     min-height: 200px;
+
+                     .logo-info {
+                        img {
+                           width: 32px;
+                        }
+
+                        p {
+                           font-size: 15px;
+                           margin: 12px 0 0 8px;
+                        }
+                     }
+                  }
+
+                  .extracted-palette {
+                     width: 98%;
+                     gap: 18px;
+                  }
+
+                  .palette-extract-info {
+                     p {
+                        font-size: medium;
+                     }
+
+                     ul {
+                        li {
+                           font-size: medium;
+                        }
+                     }
+                  }
+               }
+            }
+
+            .manual-section {
+               .manual-body {
+                  .manual-img-background {
+                     .manual-color-card {
+                        margin: 16px 0;
+
+                        p {
+                           font-size: medium;
+                        }
+
+                        .manual-color-hex {
+                           img {
+                              width: 24px;
+                              height: 24px;
+                           }
+                        }
+
+                        .manual-choose-image {
+                           width: 40px;
+                           height: 40px;
+
+                           img {
+                              width: 20px;
+                              height: 20px;
+                           }
+                        }
+
+                        .manual-color-rgb {
+                           img {
+                              width: 24px;
+                              height: 24px;
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+
+         .harmonize-color {
+            .complement-container,
+            .split-container,
+            .analogous-container,
+            .triadic-container,
+            .tetradic-container {
+               .complement-body,
+               .split-body,
+               .analogous-body,
+               .triadic-body,
+               .tetradic-body {
+                  .colors-container {
+                     margin-bottom: 8px;
+
+                     .colors {
+                        height: 100px;
+                     }
+
+                     .codes {
+                        margin: 10px 0;
+
+                        div {
+                           p {
+                              font-size: small;
+                           }
+                        }
+                     }
+
+                     .separator {
+                        margin-top: 12px;
+                     }
+
+                     .info {
+                        margin: 12px;
+                        font-size: 12px;
+                     }
+
+                     .invert-mode {
+                        margin: 6px 12px 12px 12px;
+
+                        p {
+                           font-size: medium;
+                           font-weight: 700;
+                        }
+
+                        input {
+                           margin: 2px 0 0 8px;
+                        }
+
+                        .save-complement,
+                        .save-split,
+                        .save-analogous,
+                        .save-triadic,
+                        .save-tetradic {
+                           width: 32px;
+                           height: 32px;
+                           display: flex;
+                           transition: 0.3s;
+                           margin-left: 20px;
+
+                           img {
+                              width: 18px;
+                              height: 18px;
+                           }
+                        }
+                     }
+                  }
+
+                  .color-wheel {
+                     transform: scale(0.9);
+                  }
+               }
+            }
+
+            .tetradic-container {
+               .tetradic-body {
+                  .colors-container {
+                     .codes {
+                        margin: 8px 0;
+
+                        div {
+                           p {
+                              font-size: x-small;
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+
+         .saved-color {
+            .extraction-container {
+               .extraction-items {
+                  gap: 18px;
+               }
+            }
+         }
+      }
+   }
+
+   .swatch-item {
+      p {
+         margin: 10px 0 0 14px;
+         font-size: 18px;
+      }
+
+      .swatch-hex,
+      .swatch-rgb {
+         p {
+            margin: 0 0 0 14px;
+            font-size: 16px;
+         }
+
+         img {
+            width: 24px;
+            height: 24px;
+            margin-left: 4px;
+         }
+      }
+   }
+
+   .solid-item {
+      .color-card {
+         height: 84px;
+      }
+
+      .solid-hex {
+         margin: 2px 0 0 0;
+
+         p {
+            margin-left: 10px;
+            font-size: 13px;
+         }
+
+         img {
+            margin: 0 6px 0 0;
+            width: 20px;
+            height: 20px;
+         }
+      }
+
+      .solid-rgb {
+         margin: 0 0 2px 0;
+
+         p {
+            margin-left: 10px;
+            font-size: 13px;
+         }
+
+         img {
+            margin: 0 6px 0 0;
+            width: 20px;
+            height: 20px;
+         }
+      }
+   }
+
+   .gradient-item {
+      .color-card {
+         height: 84px;
+      }
+
+      .code-holder {
+         margin: 2px 8px;
+
+         .color-codes {
+            .color-identifier {
+               width: 20px;
+               height: 20px;
+            }
+
+            .codes {
+               margin-left: 10px;
+               margin-right: 10px;
+
+               .code {
+                  p {
+                     font-size: 13px;
+                  }
+
+                  img {
+                     width: 20px;
+                     height: 20px;
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   .extract-modal {
+      .modal-container {
+         .extract-image {
+            width: 100px;
+            border-radius: 28px;
+         }
+
+         .swatch-extracts {
+            width: 360px;
+            height: 560px;
+            margin-top: -48px;
+         }
+
+         .modal-option {
+            width: 38px;
+            height: 38px;
+
+            img {
+               width: 16px;
+            }
+         }
+      }
+   }
+
+   .dual-item,
+   .trial-item {
+      .color-cards {
+         height: 84px;
+      }
+
+      .color-codes {
+         margin: 2px 10px;
+
+         .codes {
+            .code {
+               p {
+                  font-size: 12px;
+               }
+
+               img {
+                  width: 20px;
+                  height: 20px;
+               }
+            }
+         }
+      }
+   }
+
+   .quadral-item {
+      .color-cards {
+         height: 84px;
+      }
+
+      .color-codes {
+         margin: 6px 10px;
+
+         .codes {
+            align-items: flex-start;
+            p {
+               font-size: 12px;
+            }
+         }
+      }
+   }
+}
+
+/* 1440x900 ***/
+@media screen and (max-width: 1440px) and (max-height: 900px) {
+   .container {
+      .menu {
+         width: 80px;
+
+         div {
+            .logo {
+               width: 40px;
+               height: 40px;
+            }
+
+            ul {
+               li {
+                  img {
+                     width: 28px;
+                     height: 28px;
+                  }
+               }
+            }
+         }
+
+         .settings {
+            width: 28px;
+            height: 28px;
+         }
+      }
+
+      section {
+         .header {
+            height: 90px;
+
+            div {
+               h1 {
+                  font-size: 30px;
+               }
+
+               p {
+                  font-size: 13px;
+                  margin-bottom: 6px;
+               }
+            }
+
+            img {
+               width: 28px;
+               height: 28px;
+            }
+         }
+
+         .material-color {
+            .color-shades {
+               padding: 24px 20px;
+
+               .color-shade {
+                  margin: 14px;
+
+                  div:nth-child(1) {
+                     height: 73%;
+                  }
+
+                  div:nth-child(2) {
+                     margin: 4px 16px;
+
+                     div {
+                        p:nth-child(1) {
+                           font-size: 18px;
+                        }
+                     }
+
+                     img {
+                        width: 24px;
+                     }
+                  }
+               }
+            }
+
+            .color-holder {
+               width: 120px;
+               margin-bottom: 1px;
+               grid-auto-rows: 72px;
+               grid-template-columns: repeat(1, 1fr);
+            }
+         }
+
+         .create-color {
+            .solid-section {
+               .solid-header {
+                  .solid-header-title {
+                     img {
+                        width: 28px;
+                        height: 28px;
+                     }
+                     p {
+                        font-size: 19px;
+                     }
+                  }
+
+                  .solid-alpha-control {
+                     p {
+                        font-size: 19px;
+                     }
+
+                     input {
+                        margin-top: 4px;
+                        transform: scale(0.9);
+                     }
+                  }
+               }
+
+               .solid-body {
+                  .solid-color {
+                     width: 45%;
+                  }
+
+                  .solid-control {
+                     width: 55%;
+
+                     .solid-attributes {
+                        margin: 24px;
+
+                        p {
+                           font-size: 17px;
+                        }
+
+                        img {
+                           width: 24px;
+                           height: 24px;
+                        }
+                     }
+
+                     .seekbars {
+                        margin-bottom: 56px;
+
+                        ul:nth-child(2) {
+                           margin-right: 6px;
+                        }
+                     }
+                  }
+               }
+            }
+
+            .gradient-section {
+               .gradient-header {
+                  .gradient-header-title {
+                     img {
+                        width: 28px;
+                        height: 28px;
+                     }
+                     p {
+                        font-size: 19px;
+                     }
+                  }
+
+                  .gradient-alpha-control {
+                     p {
+                        font-size: 19px;
+                     }
+
+                     input {
+                        margin-top: 4px;
+                        transform: scale(0.9);
+                     }
+                  }
+               }
+               .gradient-body {
+                  .gradient-color {
+                     width: 45%;
+                  }
+
+                  .gradient-control {
+                     width: 55%;
+
+                     .gradient-top,
+                     .gradient-bottom {
+                        p {
+                           font-size: 17px;
+                        }
+
+                        img {
+                           width: 24px;
+                           height: 24px;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+
+         .extract-color {
+            .swatch-section {
+               .swatch-header {
+                  .swatch-header-title {
+                     p {
+                        font-size: 19px;
+                     }
+
+                     img {
+                        width: 28px;
+                        height: 28px;
+                     }
+                  }
+
+                  .swatch-reset {
+                     p {
+                        font-size: 19px;
+                     }
+
+                     img {
+                        width: 24px;
+                        height: 24px;
+                     }
+                  }
+               }
+
+               .swatch-body {
+                  .swatch-img-chooser {
+                     min-height: 180px;
+
+                     .logo-info {
+                        img {
+                           width: 32px;
+                        }
+
+                        p {
+                           font-size: 15px;
+                           margin: 12px 0 0 8px;
+                        }
+                     }
+                  }
+
+                  .swatch-extract-info {
+                     p {
+                        font-size: medium;
+                     }
+
+                     ul {
+                        li {
+                           font-size: medium;
+                        }
+                     }
+                  }
+               }
+            }
+
+            .palette-section {
+               .palette-header {
+                  .palette-header-title {
+                     p {
+                        font-size: 19px;
+                     }
+
+                     img {
+                        width: 28px;
+                        height: 28px;
+                     }
+                  }
+
+                  .palette-reset {
+                     p {
+                        font-size: 19px;
+                     }
+
+                     img {
+                        width: 24px;
+                        height: 24px;
+                     }
+                  }
+               }
+
+               .palette-body {
+                  .palette-img-chooser {
+                     min-height: 180px;
+
+                     .logo-info {
+                        img {
+                           width: 32px;
+                        }
+
+                        p {
+                           font-size: 15px;
+                           margin: 12px 0 0 8px;
+                        }
+                     }
+                  }
+
+                  .extracted-palette {
+                     width: 95%;
+                     gap: 20px;
+                     grid-template-columns: repeat(2, 1fr);
+                  }
+
+                  .palette-extract-info {
+                     p {
+                        font-size: medium;
+                     }
+
+                     ul {
+                        li {
+                           font-size: medium;
+                        }
+                     }
+                  }
+               }
+            }
+
+            .manual-section {
+               .manual-header {
+                  .manual-header-title {
+                     p {
+                        font-size: 19px;
+                     }
+
+                     img {
+                        width: 28px;
+                        height: 28px;
+                     }
+                  }
+
+                  .manual-reset {
+                     p {
+                        font-size: 19px;
+                     }
+
+                     img {
+                        width: 24px;
+                        height: 24px;
+                     }
+                  }
+               }
+
+               .manual-body {
+                  .manual-img-background {
+                     .manual-color-card {
+                        margin: 16px 0;
+
+                        p {
+                           font-size: medium;
+                        }
+
+                        .manual-color-hex {
+                           img {
+                              width: 24px;
+                              height: 24px;
+                           }
+                        }
+
+                        .manual-choose-image {
+                           width: 40px;
+                           height: 40px;
+
+                           img {
+                              width: 20px;
+                              height: 20px;
+                           }
+                        }
+
+                        .manual-color-rgb {
+                           img {
+                              width: 24px;
+                              height: 24px;
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+
+         .harmonize-color {
+            .complement-container,
+            .split-container,
+            .analogous-container,
+            .triadic-container,
+            .tetradic-container {
+               .complement-header,
+               .split-header,
+               .analogous-header,
+               .triadic-header,
+               .tetradic-header {
+                  .complement-header-title,
+                  .split-header-title,
+                  .analogous-header-title,
+                  .triadic-header-title,
+                  .tetradic-header-title {
+                     p {
+                        font-size: 19px;
+                     }
+
+                     img {
+                        width: 28px;
+                        height: 28px;
+                     }
+                  }
+               }
+               .complement-body,
+               .split-body,
+               .analogous-body,
+               .triadic-body,
+               .tetradic-body {
+                  .colors-container {
+                     margin-bottom: 8px;
+
+                     .colors {
+                        height: 100px;
+                     }
+
+                     .codes {
+                        margin: 10px 0;
+
+                        div {
+                           p {
+                              font-size: small;
+                           }
+                        }
+                     }
+
+                     .separator {
+                        margin-top: 12px;
+                     }
+
+                     .info {
+                        margin: 12px;
+                        font-size: 12px;
+                     }
+
+                     .invert-mode {
+                        margin: 6px 12px 12px 12px;
+
+                        p {
+                           font-size: medium;
+                           font-weight: 700;
+                        }
+
+                        input {
+                           margin: 2px 0 0 8px;
+                        }
+
+                        .save-complement,
+                        .save-split,
+                        .save-analogous,
+                        .save-triadic,
+                        .save-tetradic {
+                           width: 32px;
+                           height: 32px;
+                           display: flex;
+                           transition: 0.3s;
+                           margin-left: 20px;
+
+                           img {
+                              width: 18px;
+                              height: 18px;
+                           }
+                        }
+                     }
+                  }
+
+                  .color-wheel {
+                     transform: scale(0.9);
+                  }
+               }
+            }
+
+            .tetradic-container {
+               .tetradic-body {
+                  .colors-container {
+                     .codes {
+                        margin: 8px 0;
+
+                        div {
+                           p {
+                              font-size: 11px;
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+
+         .saved-color {
+            .solgrad-container,
+            .extraction-container,
+            .harmony-container,
+            .preset-container {
+               .solgrad-header,
+               .extraction-header,
+               .harmony-header,
+               .preset-header {
+                  .solgrad-header-title,
+                  .extraction-header-title,
+                  .harmony-header-title,
+                  .preset-header-title {
+                     p {
+                        font-size: 19px;
+                     }
+
+                     img {
+                        width: 28px;
+                        height: 28px;
+                     }
+                  }
+
+                  .solgrad-options,
+                  .extraction-options,
+                  .harmony-options,
+                  .preset-options {
+                     select {
+                        font-size: 15px;
+                     }
+                  }
+               }
+            }
+            .extraction-container {
+               .extraction-items {
+                  gap: 18px;
+               }
+            }
+         }
+      }
+   }
+
+   .swatch-item {
+      p {
+         margin: 10px 0 0 14px;
+         font-size: 18px;
+      }
+
+      .swatch-hex,
+      .swatch-rgb {
+         p {
+            margin: 0 0 0 14px;
+            font-size: 16px;
+         }
+
+         img {
+            width: 24px;
+            height: 24px;
+            margin-left: 4px;
+         }
+      }
+   }
+
+   .solid-item {
+      .color-card {
+         height: 84px;
+      }
+
+      .solid-hex {
+         margin: 2px 0 0 0;
+
+         p {
+            margin-left: 8px;
+            font-size: 14px;
+         }
+
+         img {
+            margin: 0 8px 0 0;
+            width: 22px;
+            height: 22px;
+         }
+      }
+
+      .solid-rgb {
+         margin: 0 0 2px 0;
+
+         p {
+            margin-left: 8px;
+            font-size: 14px;
+         }
+
+         img {
+            margin: 0 8px 0 0;
+            width: 22px;
+            height: 22px;
+         }
+      }
+   }
+
+   .gradient-item {
+      .color-card {
+         height: 84px;
+      }
+
+      .code-holder {
+         margin: 2px 8px;
+
+         .color-codes {
+            .color-identifier {
+               width: 20px;
+               height: 20px;
+            }
+
+            .codes {
+               margin-left: 10px;
+               margin-right: 10px;
+
+               .code {
+                  p {
+                     font-size: 13px;
+                  }
+
+                  img {
+                     width: 20px;
+                     height: 20px;
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   .extract-modal {
+      .modal-container {
+         .extract-image {
+            width: 94px;
+            border-radius: 28px;
+         }
+
+         .swatch-extracts {
+            width: 340px;
+            height: 540px;
+            margin-top: -48px;
+         }
+
+         .palette-extracts {
+            width: 340px;
+            height: 540px;
+            margin-top: -48px;
+         }
+
+         .modal-option {
+            width: 38px;
+            height: 38px;
+
+            img {
+               width: 16px;
+            }
+         }
+      }
+   }
+
+   .dual-item {
+      .color-cards {
+         height: 84px;
+      }
+
+      .color-codes {
+         margin: 2px 12px;
+
+         .codes {
+            .code {
+               p {
+                  font-size: 14px;
+               }
+
+               img {
+                  width: 22px;
+                  height: 22px;
+               }
+            }
+         }
+      }
+   }
+
+   .trial-item {
+      .color-cards {
+         height: 84px;
+      }
+
+      .color-codes {
+         margin: 2px 8px;
+
+         .codes {
+            .code {
+               p {
+                  font-size: 11px;
+               }
+
+               img {
+                  width: 18px;
+                  height: 18px;
+               }
+            }
+         }
+      }
+   }
+
+   .quadral-item {
+      .color-cards {
+         height: 84px;
+      }
+
+      .color-codes {
+         margin: 6px 8px;
+
+         .codes {
+            align-items: flex-start;
+
+            p {
+               font-size: 12px;
+            }
+         }
       }
    }
 }

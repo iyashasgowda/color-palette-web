@@ -30,7 +30,7 @@ const Extraction = (props) => {
       else if (swatch.length === 0)
          extraction = (
             <div className='extraction-loading'>
-               <p className='loading'>Nothing found :(</p>
+               <p className='loading'>No swatches found :(</p>
             </div>
          );
       else
@@ -65,7 +65,7 @@ const Extraction = (props) => {
       else if (palette.length === 0)
          extraction = (
             <div className='extraction-loading'>
-               <p className='loading'>No palette found :(</p>
+               <p className='loading'>No palettes found :(</p>
             </div>
          );
       else

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Menu from './components/menu/Menu';
 import Section from './components/section/Section';
+import Warning from './components/comms/Warning';
 
-import { getCache, setCache, changeTheme } from './utils/utils';
+import { getCache, setCache, changeTheme, isMobileDevice } from './utils/utils';
 import app from '../package.json';
 
 const App = () => {
@@ -24,8 +25,14 @@ const App = () => {
    return (
       <>
          <div className='container'>
-            <Menu activeMenu={activeMenu} darkMode={darkMode} changeMenu={handleMenuChange} />
-            <Section activeMenu={activeMenu} darkMode={darkMode} version={app.version} changeTheme={handleThemeChange} />
+            {isMobileDevice() ? (
+               <Warning />
+            ) : (
+               <>
+                  <Menu activeMenu={activeMenu} darkMode={darkMode} changeMenu={handleMenuChange} />
+                  <Section activeMenu={activeMenu} darkMode={darkMode} version={app.version} changeTheme={handleThemeChange} />
+               </>
+            )}
          </div>
       </>
    );
