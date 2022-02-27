@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## License
+
+Source code is licensed under the [Apache License 2.0](https://github.com/iyashasgowda/color-palette/blob/master/LICENSE)
+
+Contents of this site are © 2022 Yashas Gowda. All rights reserved.
