@@ -1,3 +1,5 @@
+@import url('https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/cascadia-code.min.css');
+
 html,
 body {
    margin: 32px;
@@ -40,4 +42,25 @@ a:hover {
 .italic {
    font-weight: bold;
    font-style: italic;
+}
+
+@media screen and (max-width: 600px) {
+   body {
+      margin: 0;
+   }
+
+   h1 {
+      font-size: x-large;
+   }
+
+   h2 {
+      font-size: large;
+   }
+
+   p,
+   li,
+   a {
+      font-size: small;
+      line-height: 1.2rem;
+   }
 }
