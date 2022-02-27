@@ -73,4 +73,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 Source code is licensed under the [Apache License 2.0](https://github.com/iyashasgowda/color-palette/blob/master/LICENSE)
 
-Contents of this site are © 2021 Yashas Gowda. All rights reserved.
+Contents of this site are © 2022 Yashas Gowda. All rights reserved.
