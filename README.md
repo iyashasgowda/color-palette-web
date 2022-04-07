@@ -1,8 +1,5 @@
 # Getting Started with Create React App
 
-## Request ID [Open Source Support Program] = 05042022/9146735
-## Email ID [Open Source Support Program] = yashas348@gmail.com
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
