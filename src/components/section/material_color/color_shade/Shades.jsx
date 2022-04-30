@@ -4,6 +4,7 @@ import { makeToast } from '../../../../utils/utils';
 import data from '../../../../utils/data.json';
 
 const Shades = (props) => {
+   makeToast(data.colors.find((item) => item.id === props.activeColor).name.toUpperCase())
    return (
       <div className='color-shades'>
          {data.shades
@@ -11,7 +12,6 @@ const Shades = (props) => {
             ?.data.map((shade) => (
                <Shade key={shade.id} shade={shade} darkMode={props.darkMode} />
             ))}
-         {makeToast(data.colors.find((item) => item.id === props.activeColor).name.toUpperCase())}
       </div>
    );
 };

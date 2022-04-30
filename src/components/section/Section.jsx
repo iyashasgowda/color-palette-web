@@ -20,9 +20,9 @@ const Section = (props) => {
 
    /** Create solid state */
    const [solid, setSolid] = useState(getCache().solid);
-   const handleSolidChange = (red, green, blue, alpha, checkbox) => {
-      setSolid({ red, green, blue, alpha, checkbox });
-      setCache('solid', { red, green, blue, alpha, checkbox });
+   const handleSolidChange = (solid) => {
+      setSolid(solid);
+      setCache('solid', solid);
    };
 
    /** Create gradient state */
