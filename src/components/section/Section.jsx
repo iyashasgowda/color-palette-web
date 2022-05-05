@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Header from './header/Header';
 import Footer from './footer/Footer';
 
@@ -8,7 +8,7 @@ import Extract from './extract/Extract';
 import Harmonize from './harmonize/Harmonize';
 import Saved from './saved/Saved';
 
-import { getCache, setCache } from '../../utils/utils';
+import {getCache, setCache} from '../../utils/utils';
 
 const Section = (props) => {
    /** Material color state */
@@ -27,9 +27,9 @@ const Section = (props) => {
 
    /** Create gradient state */
    const [gradient, setGradient] = useState(getCache().gradient);
-   const handleGradientChange = (top, bottom, checkbox) => {
-      setGradient({ top, bottom, checkbox });
-      setCache('gradient', { top, bottom, checkbox });
+   const handleGradientChange = (gradient) => {
+      setGradient(gradient);
+      setCache('gradient', gradient);
    };
 
    /** Extract swatch colors */

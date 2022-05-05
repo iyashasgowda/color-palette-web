@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,UAAU,CAAV,UAAU;EACP,EAAE;IACC,SAAS,EAAE,eAAe;IAC1B,OAAO,EAAE,CAAC;;EAEb,IAAI;IACD,SAAS,EAAE,aAAa;IACxB,OAAO,EAAE,CAAC",
-    "sources": [
-        "anim.scss"
-    ],
-    "names": [],
-    "file": "anim.css"
-}
+{"version":3,"sourceRoot":"","sources":["anim.scss"],"names":[],"mappings":"AAAA;EACG;IACG;IACA;;EAEH;IACG;IACA","file":"anim.css"}
