@@ -251,6 +251,91 @@ const updateSlider = (id, color) => {
     element.style.background = `linear-gradient(90deg, ${hexa2rgba(color, 1)} ${progress}%, ${hexa2rgba(color, 0.2)} ${progress}%)`;
 };
 
+const getSwatches = (path, result) => {
+    const image = new Image();
+    image.crossOrigin = 'anonymous';
+    image.onload = () => {
+        const palette = new Palette(image);
+        let swatches = [{name: 'Dominant', rgb: palette.getDominantColor()}];
+        palette.getVibrantColor() != null && swatches.push({name: 'Vibrant', rgb: palette.getVibrantColor()});
+        palette.getLightVibrantColor() != null && swatches.push({
+            name: 'Vibrant light',
+            rgb: palette.getLightVibrantColor()
+        });
+        palette.getDarkVibrantColor() != null && swatches.push({
+            name: 'Vibrant dark',
+            rgb: palette.getDarkVibrantColor()
+        });
+        palette.getMutedColor() != null && swatches.push({name: 'Muted', rgb: palette.getMutedColor()});
+        palette.getLightMutedColor() != null && swatches.push({name: 'Muted light', rgb: palette.getLightMutedColor()});
+        palette.getDarkMutedColor() != null && swatches.push({name: 'Muted dark', rgb: palette.getDarkMutedColor()});
+        result(swatches);
+    };
+    image.src = path;
+};
+
+const getPalette = (path, count, result) => {
+    const image = new Image();
+    image.crossOrigin = 'anonymous';
+    image.onload = () => result(new Palette(image, count));
+    image.src = path;
+};
+
+const updateCanvas = (path) => {
+    let canvas = document.getElementById('manual-canvas');
+    let context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    let image = new Image();
+    image.onload = () => {
+        let hRatio = canvas.width / image.width;
+        let vRatio = canvas.height / image.height;
+        let ratio = Math.min(hRatio, vRatio);
+        let centerShift_x = (canvas.width - image.width * ratio) / 2;
+        let centerShift_y = (canvas.height - image.height * ratio) / 2;
+
+        context.drawImage(image, 0, 0, image.width, image.height, centerShift_x, centerShift_y, image.width * ratio, image.height * ratio);
+    };
+    image.src = path;
+};
+
+const renderColorWheel = (canvas, size, shade) => {
+    const context = canvas.getContext('2d');
+    canvas.width = size;
+    canvas.height = size;
+
+    let angle = 0;
+    let pivot = 0;
+
+    const radius = size / 2;
+    const rgb = [0, 0, 255];
+    const offset = 4.322;
+
+    while (angle < 360) {
+        const pointer = (pivot + 3 - 1) % 3;
+
+        if (rgb[pivot] < 255) rgb[pivot] = rgb[pivot] + offset > 255 ? 255 : rgb[pivot] + offset;
+        else if (rgb[pointer] > 0) rgb[pointer] = rgb[pointer] > offset ? rgb[pointer] - offset : 0;
+        else if (rgb[pivot] >= 255) {
+            rgb[pivot] = 255;
+            pivot = (pivot + 1) % 3;
+        }
+
+        const grad = context.createRadialGradient(radius, radius, 0, radius, radius, radius);
+        grad.addColorStop(0, shade);
+        grad.addColorStop(1, `rgb(${rgb.map((h) => Math.floor(h)).join(',')})`);
+        context.fillStyle = grad;
+
+        context.beginPath();
+        context.moveTo(radius, radius);
+        context.arc(radius, radius, radius, angle * (Math.PI / 180), 360 * (Math.PI / 180));
+        context.closePath();
+        context.fill();
+        angle++;
+    }
+    return true;
+};
+
 const validateColor = (code, hex, alpha) => {
     try {
         if (hex) {
@@ -314,93 +399,11 @@ const validateColor = (code, hex, alpha) => {
 
 const validateUrl = (url, result) => {
     const image = new Image();
+    image.crossOrigin = 'anonymous';
     image.onload = () => result(true);
     image.onerror = () => result(false);
     image.src = url;
 }
-
-const getSwatches = (path, result) => {
-    const image = new Image();
-    image.onload = () => {
-        const palette = new Palette(image);
-        let swatches = [{name: 'Dominant', rgb: palette.getDominantColor()}];
-        palette.getVibrantColor() != null && swatches.push({name: 'Vibrant', rgb: palette.getVibrantColor()});
-        palette.getLightVibrantColor() != null && swatches.push({
-            name: 'Vibrant light',
-            rgb: palette.getLightVibrantColor()
-        });
-        palette.getDarkVibrantColor() != null && swatches.push({
-            name: 'Vibrant dark',
-            rgb: palette.getDarkVibrantColor()
-        });
-        palette.getMutedColor() != null && swatches.push({name: 'Muted', rgb: palette.getMutedColor()});
-        palette.getLightMutedColor() != null && swatches.push({name: 'Muted light', rgb: palette.getLightMutedColor()});
-        palette.getDarkMutedColor() != null && swatches.push({name: 'Muted dark', rgb: palette.getDarkMutedColor()});
-        result(swatches);
-    };
-    image.src = path;
-};
-
-const getPalette = (path, count, result) => {
-    const image = new Image();
-    image.onload = () => result(new Palette(image, count));
-    image.src = path;
-};
-
-const updateCanvas = (path) => {
-    let canvas = document.getElementById('manual-canvas');
-    let context = canvas.getContext('2d');
-    context.clearRect(0, 0, canvas.width, canvas.height);
-
-    let image = new Image();
-    image.onload = () => {
-        let hRatio = canvas.width / image.width;
-        let vRatio = canvas.height / image.height;
-        let ratio = Math.min(hRatio, vRatio);
-        let centerShift_x = (canvas.width - image.width * ratio) / 2;
-        let centerShift_y = (canvas.height - image.height * ratio) / 2;
-
-        context.drawImage(image, 0, 0, image.width, image.height, centerShift_x, centerShift_y, image.width * ratio, image.height * ratio);
-    };
-    image.src = path;
-};
-
-const renderColorWheel = (canvas, size, shade) => {
-    const context = canvas.getContext('2d');
-    canvas.width = size;
-    canvas.height = size;
-
-    let angle = 0;
-    let pivot = 0;
-
-    const radius = size / 2;
-    const rgb = [0, 0, 255];
-    const offset = 4.322;
-
-    while (angle < 360) {
-        const pointer = (pivot + 3 - 1) % 3;
-
-        if (rgb[pivot] < 255) rgb[pivot] = rgb[pivot] + offset > 255 ? 255 : rgb[pivot] + offset;
-        else if (rgb[pointer] > 0) rgb[pointer] = rgb[pointer] > offset ? rgb[pointer] - offset : 0;
-        else if (rgb[pivot] >= 255) {
-            rgb[pivot] = 255;
-            pivot = (pivot + 1) % 3;
-        }
-
-        const grad = context.createRadialGradient(radius, radius, 0, radius, radius, radius);
-        grad.addColorStop(0, shade);
-        grad.addColorStop(1, `rgb(${rgb.map((h) => Math.floor(h)).join(',')})`);
-        context.fillStyle = grad;
-
-        context.beginPath();
-        context.moveTo(radius, radius);
-        context.arc(radius, radius, radius, angle * (Math.PI / 180), 360 * (Math.PI / 180));
-        context.closePath();
-        context.fill();
-        angle++;
-    }
-    return true;
-};
 
 export {
     isMobileDevice,
@@ -419,12 +422,12 @@ export {
     makeToast,
     changeTheme,
     updateSlider,
-    validateColor,
-    validateUrl,
     getSwatches,
     getPalette,
     getTextColor,
     getCopyIcon,
     updateCanvas,
-    renderColorWheel
+    renderColorWheel,
+    validateColor,
+    validateUrl
 };
