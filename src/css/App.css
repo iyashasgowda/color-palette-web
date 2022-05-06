@@ -53,13 +53,11 @@
 .gradient_bottom_green_seekbar::-webkit-slider-thumb,
 .gradient_bottom_blue_seekbar::-webkit-slider-thumb {
   -webkit-appearance: none;
-  -webkit-transition: 0.2s;
   appearance: none;
   width: 15px;
   height: 15px;
   border: none;
   cursor: pointer;
-  transition: 0.2s;
   border-radius: 50%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -120,7 +118,6 @@
   height: 16px;
   border: none;
   cursor: pointer;
-  transition: 0.2s;
   border-radius: 50%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -670,9 +667,6 @@ body select {
 }
 .container section .create-color .solid-section .solid-body .solid-control .seekbars ul:nth-child(2) li input[type=range] {
   width: 88%;
-}
-.container section .create-color .solid-section .solid-body .solid-control .seekbars ul:nth-child(2) li input[type=range]:nth-child(1) {
-  transition: 0.5s;
 }
 .container section .create-color .gradient-section {
   display: flex;
