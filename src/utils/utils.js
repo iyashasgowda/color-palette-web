@@ -314,7 +314,6 @@ const validateColor = (code, hex, alpha) => {
 
 const validateUrl = (url, result) => {
     const image = new Image();
-    image.crossOrigin = "Anonymous";
     image.onload = () => result(true);
     image.onerror = () => result(false);
     image.src = url;
@@ -322,8 +321,6 @@ const validateUrl = (url, result) => {
 
 const getSwatches = (path, result) => {
     const image = new Image();
-    image.crossOrigin = "Anonymous";
-    image.src = path;
     image.onload = () => {
         const palette = new Palette(image);
         let swatches = [{name: 'Dominant', rgb: palette.getDominantColor()}];
@@ -341,13 +338,13 @@ const getSwatches = (path, result) => {
         palette.getDarkMutedColor() != null && swatches.push({name: 'Muted dark', rgb: palette.getDarkMutedColor()});
         result(swatches);
     };
+    image.src = path;
 };
 
 const getPalette = (path, count, result) => {
     const image = new Image();
-    image.crossOrigin = "Anonymous";
-    image.src = path;
     image.onload = () => result(new Palette(image, count));
+    image.src = path;
 };
 
 const updateCanvas = (path) => {
@@ -356,7 +353,6 @@ const updateCanvas = (path) => {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     let image = new Image();
-    image.crossOrigin = "Anonymous";
     image.onload = () => {
         let hRatio = canvas.width / image.width;
         let vRatio = canvas.height / image.height;
