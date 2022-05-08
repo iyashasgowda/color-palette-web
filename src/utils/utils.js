@@ -287,6 +287,7 @@ const updateCanvas = (path) => {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     let image = new Image();
+    image.crossOrigin = 'anonymous';
     image.onload = () => {
         let hRatio = canvas.width / image.width;
         let vRatio = canvas.height / image.height;
@@ -397,14 +398,6 @@ const validateColor = (code, hex, alpha) => {
     }
 };
 
-const validateUrl = (url, result) => {
-    const image = new Image();
-    image.crossOrigin = 'anonymous';
-    image.onload = () => result(true);
-    image.onerror = () => result(false);
-    image.src = url;
-}
-
 export {
     isMobileDevice,
     getCache,
@@ -428,6 +421,5 @@ export {
     getCopyIcon,
     updateCanvas,
     renderColorWheel,
-    validateColor,
-    validateUrl
+    validateColor
 };

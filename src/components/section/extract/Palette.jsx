@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Item from '../../comms/Solid';
 
-import {getPalette, makeToast, rgb2hex, validateUrl} from '../../../utils/utils';
+import {getPalette, makeToast, rgb2hex} from '../../../utils/utils';
 import {add} from '../../../utils/storage';
 import Modal from "../../comms/UrlModal";
 
@@ -26,17 +26,13 @@ const Palette = (props) => {
         } else makeToast('Selected image is not valid!');
     };
     const resetPalette = (e) => e.target.value = null;
-    const handleUrlInput = (url) => {
-        validateUrl(url, (valid) => {
-            if (valid) {
-                setModal(false);
+    const handleUrlInput = (proxy_url, url) => {
+        setModal(false);
 
-                getPalette(url, 16, (palette) => {
-                    props.changePalette({path: url, palette});
-                    makeToast(`${palette.swatches.length} colors extracted :)`);
-                });
-            } else makeToast('Image url is not valid!');
-        })
+        getPalette(proxy_url, 16, (palette) => {
+            props.changePalette({path: url, palette});
+            makeToast(`${palette.swatches.length} colors extracted :)`);
+        });
     }
 
     return (

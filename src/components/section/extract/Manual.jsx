@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import {add} from '../../../utils/storage';
-import {copyText, getCopyIcon, getTextColor, makeToast, rgb2hex, updateCanvas, validateUrl} from '../../../utils/utils';
+import {copyText, getCopyIcon, getTextColor, makeToast, rgb2hex, updateCanvas} from '../../../utils/utils';
 import Modal from "../../comms/UrlModal";
 
 const Manual = (props) => {
@@ -47,15 +47,11 @@ const Manual = (props) => {
             },
         });
     };
-    const handleUrlInput = (url) => {
-        validateUrl(url, (valid) => {
-            if (valid) {
-                setModal(false);
+    const handleUrlInput = (proxy_url, url) => {
+        setModal(false);
 
-                updateManual(url, props.manual.rgb.red, props.manual.rgb.green, props.manual.rgb.blue);
-                updateCanvas(url);
-            } else makeToast('Image url is not valid!');
-        })
+        updateManual(url, props.manual.rgb.red, props.manual.rgb.green, props.manual.rgb.blue);
+        updateCanvas(proxy_url);
     }
 
     const handleDown = () => setIsDragging(true);
