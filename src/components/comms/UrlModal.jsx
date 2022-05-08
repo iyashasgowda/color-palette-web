@@ -5,8 +5,27 @@ const UrlModal = (props) => {
     const close_icon = props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/dark/close.svg` : `${process.env.PUBLIC_URL}/assets/icons/light/close.svg`;
 
     const [url, setUrl] = useState('');
+    const [gettingImage, setGettingImage] = useState(false);
+
     const validateUrl = () => {
-        url.trim() === '' ? makeToast('Image url cannot be empty!') : props.inputUrl(url);
+        if (url.trim() !== '') {
+            setGettingImage(true);
+            const btn = document.querySelector('#apply-btn');
+            btn.innerHTML = 'Hold on...'
+            const proxy_url = `https://cors-anywhere.herokuapp.com/${url}`;
+
+            const image = new Image();
+            image.crossOrigin = 'anonymous';
+            image.onload = () => props.inputUrl(proxy_url, url);
+            image.onerror = () => {
+                setGettingImage(false);
+                makeToast('Image url is invalid!');
+            }
+            image.src = proxy_url;
+        } else {
+            setGettingImage(false);
+            makeToast('Image url cannot be empty!');
+        }
     }
 
     return (
@@ -25,7 +44,10 @@ const UrlModal = (props) => {
                 </div>
 
                 <div className='modal-button'>
-                    <p onClick={() => validateUrl()}>APPLY</p>
+                    <p id='apply-btn' onClick={() => {
+                        if (gettingImage) makeToast('Please wait while we fetch the image!');
+                        else validateUrl();
+                    }}>APPLY</p>
                 </div>
             </div>
         </div>

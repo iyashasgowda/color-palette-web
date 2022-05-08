@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Item from '../../comms/SwatchItem';
 import Modal from '../../comms/UrlModal';
 
-import {getSwatches, makeToast, validateUrl} from '../../../utils/utils';
+import {getSwatches, makeToast} from '../../../utils/utils';
 import {add} from '../../../utils/storage';
 
 const Swatches = (props) => {
@@ -26,17 +26,13 @@ const Swatches = (props) => {
     };
     const resetSwatch = (e) => e.target.value = null;
 
-    const handleUrlInput = (url) => {
-        validateUrl(url, (valid) => {
-            if (valid) {
-                setModal(false);
+    const handleUrlInput = (proxy_url, url) => {
+        setModal(false);
 
-                getSwatches(url, (swatches) => {
-                    props.changeSwatch({path: url, swatches});
-                    makeToast(`${swatches.length} colors extracted :)`);
-                });
-            } else makeToast('Image url is not valid!');
-        })
+        getSwatches(proxy_url, (swatches) => {
+            props.changeSwatch({path: url, swatches});
+            makeToast(`${swatches.length} colors extracted :)`);
+        });
     }
 
     return (
