@@ -23,89 +23,89 @@ const Section = (props) => {
     const handleSolidChange = useCallback((solid) => {
         setSolid(solid);
         setCache('solid', solid);
-    }, [solid]);
+    }, []);
 
     /** Create gradient state */
     const [gradient, setGradient] = useState(getCache().gradient);
     const handleGradientChange = useCallback((gradient) => {
         setGradient(gradient);
         setCache('gradient', gradient);
-    }, [gradient]);
+    }, []);
 
     /** Extract swatch colors */
     const [swatch, setSwatch] = useState({path: '', swatches: []});
-    const handleSwatchChange = useCallback((swatch) => setSwatch(swatch), [swatch]);
+    const handleSwatchChange = useCallback((swatch) => setSwatch(swatch), []);
 
     /** Extract palette colors */
     const [palette, setPalette] = useState({path: '', palette: []});
-    const handlePaletteChange = useCallback((palette) => setPalette(palette), [palette]);
+    const handlePaletteChange = useCallback((palette) => setPalette(palette), []);
 
     /** Extract manual colors */
     const [manual, setManual] = useState({path: '', rgb: {red: 0, green: 0, blue: 0}});
-    const handleManualChange = useCallback((palette) => setManual(palette), [manual]);
+    const handleManualChange = useCallback((palette) => setManual(palette), []);
 
     /** Complement colors */
     const [complement, setComplement] = useState(getCache().complement);
     const handleComplementChange = useCallback((complement) => {
         setComplement(complement);
         setCache('complement', complement);
-    }, [complement]);
+    }, []);
 
     /** Split complement colors */
     const [split, setSplit] = useState(getCache().split);
     const handleSplitChange = useCallback((split) => {
         setSplit(split);
         setCache('split', split);
-    }, [split]);
+    }, []);
 
     /** Analogous colors */
     const [analogous, setAnalogous] = useState(getCache().analogous);
     const handleAnalogousChange = useCallback((analogous) => {
         setAnalogous(analogous);
         setCache('analogous', analogous);
-    }, [analogous]);
+    }, []);
 
     /** Triadic colors */
     const [triadic, setTriadic] = useState(getCache().triadic);
     const handleTriadicChange = useCallback((triadic) => {
         setTriadic(triadic);
         setCache('triadic', triadic);
-    }, [triadic]);
+    }, []);
 
     /** Tetradic colors */
     const [tetradic, setTetradic] = useState(getCache().tetradic);
     const handleTetradicChange = useCallback((tetradic) => {
         setTetradic(tetradic);
         setCache('tetradic', tetradic);
-    }, [tetradic]);
+    }, []);
 
     /** SolGrad colors */
     const [solgrad, setSolGrad] = useState(getCache().solgrad);
     const handleSolGradChange = useCallback((solgrad) => {
         setSolGrad(solgrad);
         setCache('solgrad', solgrad);
-    }, [solgrad]);
+    }, []);
 
     /** Extraction colors */
     const [extraction, setExtraction] = useState(getCache().extraction);
     const handleExtractionChange = useCallback((extraction) => {
         setExtraction(extraction);
         setCache('extraction', extraction);
-    }, [extraction]);
+    }, []);
 
     /** Harmony colors */
     const [harmony, setHarmony] = useState(getCache().harmony);
     const handleHarmonyChange = useCallback((harmony) => {
         setHarmony(harmony);
         setCache('harmony', harmony);
-    }, [harmony]);
+    }, []);
 
     /** Preset colors */
     const [preset, setPreset] = useState(getCache().preset);
     const handlePresetChange = useCallback((preset) => {
         setPreset(preset);
         setCache('preset', preset);
-    }, [preset]);
+    }, []);
 
     return (
         <section>

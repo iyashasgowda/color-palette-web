@@ -14,7 +14,7 @@
    },
    "scripts": {
       "predeploy": "npm run build",
-      "deploy": "gh-pages -d build",
+      "deploy": "gh-pages -d build -r https://github.com/iyashasgowda/color-palette",
       "start": "react-scripts start",
       "build": "react-scripts build",
       "test": "react-scripts test",
