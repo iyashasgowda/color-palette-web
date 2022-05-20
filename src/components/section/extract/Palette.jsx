@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {memo, useState} from 'react';
 import Item from '../../comms/Solid';
 
 import {getPalette, makeToast, rgb2hex} from '../../../utils/utils';
@@ -20,7 +20,7 @@ const Palette = (props) => {
             reader.onload = (e) =>
                 getPalette(e.target.result, 16, (palette) => {
                     props.changePalette({path: e.target.result, palette});
-                    makeToast(`${palette.swatches.length} colors extracted :)`);
+                    makeToast(`${palette.swatches.length} colors extracted.`);
                 });
             reader.readAsDataURL(e.target.files[0]);
         } else makeToast('Selected image is not valid!');
@@ -31,7 +31,7 @@ const Palette = (props) => {
 
         getPalette(proxy_url, 16, (palette) => {
             props.changePalette({path: url, palette});
-            makeToast(`${palette.swatches.length} colors extracted :)`);
+            makeToast(`${palette.swatches.length} colors extracted.`);
         });
     }
 
@@ -91,7 +91,7 @@ const Palette = (props) => {
                                 };
 
                                 add('palette', palette, (result) => {
-                                    result.onsuccess = () => makeToast('Palette saved :)');
+                                    result.onsuccess = () => makeToast('Palette saved.');
                                     result.onerror = () => makeToast('Palette already exist!');
                                 });
                             }}
@@ -134,4 +134,4 @@ const Palette = (props) => {
     );
 };
 
-export default Palette;
+export default memo(Palette);

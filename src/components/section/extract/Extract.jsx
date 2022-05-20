@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import Swatch from './Swatch';
 import Palette from './Palette';
 import Manual from './Manual';
@@ -13,4 +13,4 @@ const Extract = (props) => {
     );
 };
 
-export default Extract;
+export default memo(Extract);

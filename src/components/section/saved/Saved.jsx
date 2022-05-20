@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 
 import SolGrad from './SolGrad';
 import Extraction from './Extraction';
@@ -16,4 +16,4 @@ const Saved = (props) => {
    );
 };
 
-export default Saved;
+export default memo(Saved);

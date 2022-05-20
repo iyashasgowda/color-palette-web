@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {memo, useState} from 'react';
 import {makeToast} from "../../utils/utils";
 
 const UrlModal = (props) => {
@@ -54,4 +54,4 @@ const UrlModal = (props) => {
     );
 };
 
-export default UrlModal;
+export default memo(UrlModal);

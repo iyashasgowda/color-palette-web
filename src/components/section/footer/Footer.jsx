@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 
 import author from '../../../utils/author.json';
 
@@ -15,26 +15,36 @@ const Footer = ({ darkMode }) => {
          </p>
          <ul>
             <li>
-               <img onClick={() => goTo(author.linkedin)} src={`${process.env.PUBLIC_URL}/assets/icons/social/linkedin.svg`} alt='linkedin' width={icon_size} height={icon_size}></img>
+               <img onClick={() => goTo(author.linkedin)}
+                    src={`${process.env.PUBLIC_URL}/assets/icons/social/linkedin.svg`} alt='linkedin' width={icon_size}
+                    height={icon_size}/>
             </li>
             <li>
-               <img onClick={() => goTo(author.github)} src={github} alt='github' width={icon_size} height={icon_size}></img>
+               <img onClick={() => goTo(author.github)} src={github} alt='github' width={icon_size} height={icon_size}/>
             </li>
             <li>
-               <img onClick={() => goTo(author.instagram)} src={`${process.env.PUBLIC_URL}/assets/icons/social/instagram.svg`} alt='instagram' width={icon_size} height={icon_size}></img>
+               <img onClick={() => goTo(author.instagram)}
+                    src={`${process.env.PUBLIC_URL}/assets/icons/social/instagram.svg`} alt='instagram'
+                    width={icon_size} height={icon_size}/>
             </li>
             <li>
-               <img onClick={() => goTo(author.facebook)} src={`${process.env.PUBLIC_URL}/assets/icons/social/facebook.svg`} alt='facebook' width={icon_size} height={icon_size}></img>
+               <img onClick={() => goTo(author.facebook)}
+                    src={`${process.env.PUBLIC_URL}/assets/icons/social/facebook.svg`} alt='facebook' width={icon_size}
+                    height={icon_size}/>
             </li>
             <li>
-               <img onClick={() => goTo(author.twitter)} src={`${process.env.PUBLIC_URL}/assets/icons/social/twitter.svg`} alt='twitter' width={icon_size} height={icon_size}></img>
+               <img onClick={() => goTo(author.twitter)}
+                    src={`${process.env.PUBLIC_URL}/assets/icons/social/twitter.svg`} alt='twitter' width={icon_size}
+                    height={icon_size}/>
             </li>
             <li>
-               <img onClick={() => goTo(author.playstore)} src={`${process.env.PUBLIC_URL}/assets/icons/social/playstore.svg`} alt='playstore' width={icon_size} height={icon_size}></img>
+               <img onClick={() => goTo(author.playstore)}
+                    src={`${process.env.PUBLIC_URL}/assets/icons/social/playstore.svg`} alt='playstore'
+                    width={icon_size} height={icon_size}/>
             </li>
          </ul>
       </footer>
    );
 };
 
-export default Footer;
+export default memo(Footer);

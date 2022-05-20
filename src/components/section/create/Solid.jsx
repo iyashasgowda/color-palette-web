@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {memo, useEffect, useState} from 'react';
 import Modal from './CreateModal';
 
 import data from '../../../utils/data.json';
@@ -35,7 +35,7 @@ const Solid = (props) => {
                 blue: user_input[2],
                 alpha: user_input[3]
             }) : props.changeSolid({...props.solid, red: user_input[0], green: user_input[1], blue: user_input[2]});
-            makeToast(`${color} applied :)`);
+            makeToast(`${color} applied.`);
         }
     };
 
@@ -84,7 +84,7 @@ const Solid = (props) => {
                         };
 
                         add('solid', solid, (result) => {
-                            result.onsuccess = () => makeToast(`${hex} - ${rgb} saved :)`);
+                            result.onsuccess = () => makeToast(`${hex} - ${rgb} saved.`);
                             result.onerror = () => makeToast('Color already exist!');
                         });
                     }}
@@ -99,7 +99,7 @@ const Solid = (props) => {
                                 <img
                                     src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
                                     alt='copy'
-                                    onClick={() => copyText(`${checkbox ? hex_alpha : hex}`).then(() => makeToast(`${checkbox ? hex_alpha : hex} copied :)`))}
+                                    onClick={() => copyText(`${checkbox ? hex_alpha : hex}`).then(() => makeToast(`${checkbox ? hex_alpha : hex} copied.`))}
                                 />
                             </div>
                         </div>
@@ -112,7 +112,7 @@ const Solid = (props) => {
                                 <img
                                     src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
                                     alt='copy'
-                                    onClick={() => copyText(`${checkbox ? rgba : rgb}`).then(() => makeToast(`${checkbox ? rgba : rgb} copied :)`))}
+                                    onClick={() => copyText(`${checkbox ? rgba : rgb}`).then(() => makeToast(`${checkbox ? rgba : rgb} copied.`))}
                                 />
                             </div>
                         </div>
@@ -122,7 +122,7 @@ const Solid = (props) => {
                             <img
                                 src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
                                 alt='copy'
-                                onClick={() => copyText(hsv).then(() => makeToast(`${hsv} copied :)`))}
+                                onClick={() => copyText(hsv).then(() => makeToast(`${hsv} copied.`))}
                             />
                         </div>
 
@@ -131,7 +131,7 @@ const Solid = (props) => {
                             <img
                                 src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
                                 alt='copy'
-                                onClick={() => copyText(hsl).then(() => makeToast(`${hsl} copied :)`))}
+                                onClick={() => copyText(hsl).then(() => makeToast(`${hsl} copied.`))}
                             />
                         </div>
 
@@ -140,7 +140,7 @@ const Solid = (props) => {
                             <img
                                 src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
                                 alt='copy'
-                                onClick={() => copyText(cmyk).then(() => makeToast(`${cmyk} copied :)`))}
+                                onClick={() => copyText(cmyk).then(() => makeToast(`${cmyk} copied.`))}
                             />
                         </div>
                     </div>
@@ -218,4 +218,4 @@ const Solid = (props) => {
     );
 };
 
-export default Solid;
+export default memo(Solid);

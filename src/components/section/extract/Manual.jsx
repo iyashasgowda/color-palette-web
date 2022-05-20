@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {memo, useState} from 'react';
 
 import {add} from '../../../utils/storage';
 import {copyText, getCopyIcon, getTextColor, makeToast, rgb2hex, updateCanvas} from '../../../utils/utils';
@@ -103,7 +103,7 @@ const Manual = (props) => {
                         };
 
                         add('solid', solid, (result) => {
-                            result.onsuccess = () => makeToast(`${manual_hex} - ${rgb_array} saved :)`);
+                            result.onsuccess = () => makeToast(`${manual_hex} - ${rgb_array} saved.`);
                             result.onerror = () => makeToast('Color already exist!');
                         });
                     }}
@@ -134,7 +134,7 @@ const Manual = (props) => {
                                 style={{opacity: 0.8}}
                                 src={copy_icon}
                                 alt='copy'
-                                onClick={() => copyText(manual_hex).then(() => makeToast(`${manual_hex} copied :)`))}
+                                onClick={() => copyText(manual_hex).then(() => makeToast(`${manual_hex} copied.`))}
                             />
                         </div>
                         <div className='manual-choose-image'
@@ -149,7 +149,7 @@ const Manual = (props) => {
                                 style={{opacity: 0.8}}
                                 src={copy_icon}
                                 alt='copy'
-                                onClick={() => copyText(manual_rgb).then(() => makeToast(`${manual_rgb} copied :)`))}
+                                onClick={() => copyText(manual_rgb).then(() => makeToast(`${manual_rgb} copied.`))}
                             />
                         </div>
                     </div>
@@ -159,4 +159,4 @@ const Manual = (props) => {
     );
 };
 
-export default Manual;
+export default memo(Manual);

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {memo, useState} from 'react';
 import Item from '../../comms/SwatchItem';
 import Modal from '../../comms/UrlModal';
 
@@ -19,7 +19,7 @@ const Swatches = (props) => {
             reader.onload = (e) =>
                 getSwatches(e.target.result, (swatches) => {
                     props.changeSwatch({path: e.target.result, swatches});
-                    makeToast(`${swatches.length} swatches extracted :)`);
+                    makeToast(`${swatches.length} swatches extracted.`);
                 });
             reader.readAsDataURL(e.target.files[0]);
         } else makeToast('Selected image is not valid!');
@@ -31,7 +31,7 @@ const Swatches = (props) => {
 
         getSwatches(proxy_url, (swatches) => {
             props.changeSwatch({path: url, swatches});
-            makeToast(`${swatches.length} colors extracted :)`);
+            makeToast(`${swatches.length} colors extracted.`);
         });
     }
 
@@ -90,7 +90,7 @@ const Swatches = (props) => {
                                 };
 
                                 add('swatch', swatch, (result) => {
-                                    result.onsuccess = () => makeToast('Swatch saved :)');
+                                    result.onsuccess = () => makeToast('Swatch saved.');
                                     result.onerror = () => makeToast('Swatch already exist!');
                                 });
                             }}
@@ -132,4 +132,4 @@ const Swatches = (props) => {
     );
 };
 
-export default Swatches;
+export default memo(Swatches);

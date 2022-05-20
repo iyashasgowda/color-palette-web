@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {memo, useEffect, useState} from 'react';
 import Modal from './CreateModal';
 
 import data from '../../../utils/data.json';
@@ -47,7 +47,7 @@ const Gradient = (props) => {
                 },
             ];
             props.changeGradient({...props.gradient, top: top_rgba, bottom: bottom_rgba});
-            makeToast(`${color} applied :)`);
+            makeToast(`${color} applied.`);
         }
     };
 
@@ -110,7 +110,7 @@ const Gradient = (props) => {
                         };
 
                         add('gradient', gradient, (result) => {
-                            result.onsuccess = () => makeToast('Gradient saved :)');
+                            result.onsuccess = () => makeToast('Gradient saved.');
                             result.onerror = () => makeToast('Gradient already exist!');
                         });
                     }}
@@ -131,7 +131,7 @@ const Gradient = (props) => {
                                 <img
                                     src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
                                     alt='copy'
-                                    onClick={() => copyText(`${checkbox ? top_hex_alpha : top_hex}`).then(() => makeToast(`${checkbox ? top_hex_alpha : top_hex} copied :)`))}
+                                    onClick={() => copyText(`${checkbox ? top_hex_alpha : top_hex}`).then(() => makeToast(`${checkbox ? top_hex_alpha : top_hex} copied.`))}
                                 />
                             </div>
                         </div>
@@ -150,7 +150,7 @@ const Gradient = (props) => {
                                 <img
                                     src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
                                     alt='copy'
-                                    onClick={() => copyText(`${checkbox ? top_rgba : top_rgb}`).then(() => makeToast(`${checkbox ? top_rgba : top_rgb} copied :)`))}
+                                    onClick={() => copyText(`${checkbox ? top_rgba : top_rgb}`).then(() => makeToast(`${checkbox ? top_rgba : top_rgb} copied.`))}
                                 />
                             </div>
                         </div>
@@ -251,7 +251,7 @@ const Gradient = (props) => {
                                 <img
                                     src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
                                     alt='copy'
-                                    onClick={() => copyText(`${checkbox ? bottom_hex_alpha : bottom_hex}`).then(() => makeToast(`${checkbox ? bottom_hex_alpha : bottom_hex} copied :)`))}
+                                    onClick={() => copyText(`${checkbox ? bottom_hex_alpha : bottom_hex}`).then(() => makeToast(`${checkbox ? bottom_hex_alpha : bottom_hex} copied.`))}
                                 />
                             </div>
                         </div>
@@ -270,7 +270,7 @@ const Gradient = (props) => {
                                 <img
                                     src={`${process.env.PUBLIC_URL}/assets/icons/copy.svg`}
                                     alt='copy'
-                                    onClick={() => copyText(`${checkbox ? bottom_rgba : bottom_rgb}`).then(() => makeToast(`${checkbox ? bottom_rgba : bottom_rgb} copied :)`))}
+                                    onClick={() => copyText(`${checkbox ? bottom_rgba : bottom_rgb}`).then(() => makeToast(`${checkbox ? bottom_rgba : bottom_rgb} copied.`))}
                                 />
                             </div>
                         </div>
@@ -361,4 +361,4 @@ const Gradient = (props) => {
     );
 };
 
-export default Gradient;
+export default memo(Gradient);
