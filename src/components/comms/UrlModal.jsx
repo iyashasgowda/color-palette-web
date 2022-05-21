@@ -8,22 +8,30 @@ const UrlModal = (props) => {
     const [gettingImage, setGettingImage] = useState(false);
 
     const validateUrl = () => {
+        const btn = document.querySelector('#apply-btn');
+
         if (url.trim() !== '') {
             setGettingImage(true);
-            const btn = document.querySelector('#apply-btn');
             btn.innerHTML = 'Hold on...'
-            const proxy_url = `https://cors-anywhere.herokuapp.com/${url}`;
 
-            const image = new Image();
-            image.crossOrigin = 'anonymous';
-            image.onload = () => props.inputUrl(proxy_url, url);
-            image.onerror = () => {
-                setGettingImage(false);
-                makeToast('Image url is invalid!');
-            }
-            image.src = proxy_url;
+            fetch(`https://no-more-cors-error.herokuapp.com/?url=${url}`)
+                .then(response => response.json())
+                .then(response => {
+                    if (response.success) props.inputUrl(response.data);
+                    else {
+                        setGettingImage(false);
+                        btn.innerHTML = 'APPLY'
+                        makeToast('Image url is invalid!');
+                    }
+                }).catch(() => {
+                    setGettingImage(false);
+                    btn.innerHTML = 'APPLY'
+                    makeToast('Failed to fetch the image from url!');
+                }
+            );
         } else {
             setGettingImage(false);
+            btn.innerHTML = 'APPLY'
             makeToast('Image url cannot be empty!');
         }
     }
@@ -34,7 +42,11 @@ const UrlModal = (props) => {
                 <div className="modal-content">
                     <div className='modal-header'>
                         <h2>Image Url</h2>
-                        <img src={close_icon} alt='close' onClick={() => props.showModal(false)}/>
+                        <img src={close_icon} alt='close' onClick={() => {
+                            if (!gettingImage) props.showModal(false);
+                            else makeToast('Please wait while we fetch the image!');
+                        }}
+                        />
                     </div>
 
                     <div className='modal-body'>

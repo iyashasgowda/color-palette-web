@@ -26,11 +26,11 @@ const Swatches = (props) => {
     };
     const resetSwatch = (e) => e.target.value = null;
 
-    const handleUrlInput = (proxy_url, url) => {
+    const handleUrlInput = (data) => {
         setModal(false);
 
-        getSwatches(proxy_url, (swatches) => {
-            props.changeSwatch({path: url, swatches});
+        getSwatches(data, (swatches) => {
+            props.changeSwatch({path: data, swatches});
             makeToast(`${swatches.length} colors extracted.`);
         });
     }

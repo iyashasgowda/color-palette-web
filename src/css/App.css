@@ -569,54 +569,12 @@ body select {
 .container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hex div img:nth-child(2) {
   margin-left: 16px;
 }
-.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-rgb {
-  display: flex;
-  margin-top: 16px;
-  font-size: 18px;
-  font-weight: bold;
-  align-items: center;
-  justify-content: space-between;
-}
-.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-rgb div img {
-  transition: 0.3s;
-}
-.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-rgb div img:hover {
-  cursor: pointer;
-  transform: scale(0.9);
-}
 .container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-rgb div img:nth-child(2) {
   margin-left: 16px;
 }
-.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsv {
-  display: flex;
-  margin-top: 16px;
-  font-size: 18px;
-  font-weight: bold;
-  align-items: center;
-  justify-content: space-between;
-}
-.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsv img {
-  transition: 0.3s;
-}
-.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsv img:hover {
-  cursor: pointer;
-  transform: scale(0.9);
-}
-.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsl {
-  display: flex;
-  margin-top: 16px;
-  font-size: 18px;
-  font-weight: bold;
-  align-items: center;
-  justify-content: space-between;
-}
-.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsl img {
-  transition: 0.3s;
-}
-.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsl img:hover {
-  cursor: pointer;
-  transform: scale(0.9);
-}
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-rgb,
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsv,
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsl,
 .container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-cmyk {
   display: flex;
   margin-top: 16px;
@@ -625,9 +583,17 @@ body select {
   align-items: center;
   justify-content: space-between;
 }
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-rgb img,
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsv img,
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsl img,
 .container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-cmyk img {
   transition: 0.3s;
 }
+
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-rgb img:hover,
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsv img:hover,
+.container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsl img:hover,
 .container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-cmyk img:hover {
   cursor: pointer;
   transform: scale(0.9);

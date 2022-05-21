@@ -26,11 +26,11 @@ const Palette = (props) => {
         } else makeToast('Selected image is not valid!');
     };
     const resetPalette = (e) => e.target.value = null;
-    const handleUrlInput = (proxy_url, url) => {
+    const handleUrlInput = (data) => {
         setModal(false);
 
-        getPalette(proxy_url, 16, (palette) => {
-            props.changePalette({path: url, palette});
+        getPalette(data, 16, (palette) => {
+            props.changePalette({path: data, palette});
             makeToast(`${palette.swatches.length} colors extracted.`);
         });
     }

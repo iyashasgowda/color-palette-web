@@ -253,7 +253,6 @@ const updateSlider = (id, color) => {
 
 const getSwatches = (path, result) => {
     const image = new Image();
-    image.crossOrigin = 'anonymous';
     image.onload = () => {
         const palette = new Palette(image);
         let swatches = [{name: 'Dominant', rgb: palette.getDominantColor()}];
@@ -276,7 +275,6 @@ const getSwatches = (path, result) => {
 
 const getPalette = (path, count, result) => {
     const image = new Image();
-    image.crossOrigin = 'anonymous';
     image.onload = () => result(new Palette(image, count));
     image.src = path;
 };
@@ -287,7 +285,6 @@ const updateCanvas = (path) => {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     let image = new Image();
-    image.crossOrigin = 'anonymous';
     image.onload = () => {
         let hRatio = canvas.width / image.width;
         let vRatio = canvas.height / image.height;

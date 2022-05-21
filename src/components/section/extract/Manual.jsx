@@ -47,11 +47,11 @@ const Manual = (props) => {
             },
         });
     };
-    const handleUrlInput = (proxy_url, url) => {
+    const handleUrlInput = (data) => {
         setModal(false);
 
-        updateManual(url, props.manual.rgb.red, props.manual.rgb.green, props.manual.rgb.blue);
-        updateCanvas(proxy_url);
+        updateManual(data, props.manual.rgb.red, props.manual.rgb.green, props.manual.rgb.blue);
+        updateCanvas(data);
     }
 
     const handleDown = () => setIsDragging(true);
