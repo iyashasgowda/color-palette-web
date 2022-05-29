@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 
 import {copyText, hex2rgbArray, makeToast} from '../../../../utils/utils.js';
 import {add} from '../../../../utils/storage.js';
@@ -17,7 +17,7 @@ const Shade = (props) => {
                     };
 
                     add('solid', solid, (result) => {
-                        result.onsuccess = () => makeToast(`${props.shade.code} saved :)`);
+                        result.onsuccess = () => makeToast(`${props.shade.code} saved.`);
                         result.onerror = () => makeToast('Color already exist!');
                     });
                 }}>
@@ -30,11 +30,11 @@ const Shade = (props) => {
                 <img
                     src={`${process.env.PUBLIC_URL}/assets/icons/copy_large.svg`}
                     alt='copy'
-                    onClick={() => copyText(props.shade.code).then(() => makeToast(`${props.shade.code.toUpperCase()} copied :)`))}>
+                    onClick={() => copyText(props.shade.code).then(() => makeToast(`${props.shade.code.toUpperCase()} copied.`))}>
                 </img>
             </div>
         </div>
     );
 };
 
-export default memo(Shade);
+export default Shade;

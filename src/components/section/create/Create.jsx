@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 import Solid from './Solid';
 import Gradient from './Gradient';
 
@@ -11,4 +11,4 @@ const Create = (props) => {
    );
 };
 
-export default memo(Create);
+export default Create;

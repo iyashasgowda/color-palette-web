@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 
 const Color = ({item, activeColor, changeColor}) => {
     return (
@@ -8,4 +8,4 @@ const Color = ({item, activeColor, changeColor}) => {
     );
 };
 
-export default memo(Color);
+export default Color;

@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 
 const Header = (props) => {
    let theme = props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/dark/dark.svg` : `${process.env.PUBLIC_URL}/assets/icons/light/light.svg`;
@@ -16,4 +16,4 @@ const Header = (props) => {
    );
 };
 
-export default memo(Header);
+export default Header;

@@ -3,6 +3,7 @@
   --background-color: #ffffff;
   --card-color: #fafafa;
   --text-color: #212121;
+  --transition: 0.3s;
   --base-color-rgb: 211, 211, 211;
   --background-color-rgb: 255, 255, 255;
   --card-color-rgb: 250, 250, 250;
@@ -190,10 +191,10 @@
   outline: none;
   cursor: pointer;
   border-radius: 20px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
           box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
 }
 
 .toggle-checkbox::before {
@@ -207,10 +208,10 @@
   background-color: var(--card-color);
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
 }
 
 .toggle-checkbox:checked {
@@ -230,8 +231,8 @@ body {
   padding: 0;
   font-family: 'Quicksand', sans-serif;
   overflow: hidden;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   color: var(--text-color);
   background-color: var(--base-color);
 }
@@ -318,8 +319,8 @@ body select {
 .container .menu {
   width: 96px;
   height: 100vh;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -361,8 +362,8 @@ body select {
 .container .menu div .logo {
   cursor: pointer;
   margin-top: 24px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container .menu div .logo:hover {
@@ -378,8 +379,8 @@ body select {
 
 .container .menu div ul li {
   margin-bottom: 40px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   cursor: pointer;
 }
 
@@ -418,8 +419,8 @@ body select {
   margin-bottom: 50px;
   -ms-grid-column-align: end;
       justify-self: end;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
           filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
 }
@@ -451,8 +452,8 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -480,6 +481,8 @@ body select {
   color: var(--text-color);
   font-size: 32px;
   font-weight: 900;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .header div p {
@@ -492,8 +495,8 @@ body select {
 .container section .header img {
   cursor: pointer;
   margin-right: 50px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
           filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
 }
@@ -521,16 +524,16 @@ body select {
   padding: 16px 20px;
   display: -ms-grid;
   display: grid;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -ms-grid-columns: (1fr)[5];
       grid-template-columns: repeat(5, 1fr);
   background-color: var(--background-color);
 }
 
 .container section .material-color .color-shades .color-shade {
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   margin: 16px 20px;
   border-radius: 24px;
   background-color: var(--card-color);
@@ -541,8 +544,8 @@ body select {
 .container section .material-color .color-shades .color-shade div:nth-child(1) {
   width: 100%;
   height: 74%;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 24px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -562,6 +565,8 @@ body select {
 }
 
 .container section .material-color .color-shades .color-shade div:nth-child(2) div p:nth-child(1) {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   font-size: 20px;
   font-weight: 900;
   margin-bottom: 2px;
@@ -569,14 +574,16 @@ body select {
 }
 
 .container section .material-color .color-shades .color-shade div:nth-child(2) div p:nth-child(2) {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   font-size: 16px;
   font-weight: 600;
   color: var(--text-color);
 }
 
 .container section .material-color .color-shades .color-shade div:nth-child(2) img {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .material-color .color-shades .color-shade div:nth-child(2) img:hover {
@@ -602,8 +609,8 @@ body select {
   margin-left: 1px;
   display: -ms-grid;
   display: grid;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   grid-auto-rows: 72px;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
@@ -631,8 +638,8 @@ body select {
   display: -ms-flexbox;
   display: flex;
   cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 16px;
   -webkit-box-align: end;
       -ms-flex-align: end;
@@ -648,8 +655,8 @@ body select {
 .container section .material-color .color-holder .color-item .selector {
   width: 10px;
   height: 10px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 50%;
   margin: 0 10px 10px 0;
   background-color: var(--card-color);
@@ -685,8 +692,8 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -714,6 +721,8 @@ body select {
 }
 
 .container section .create-color .solid-section .solid-header .solid-header-title p {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   font-size: 20px;
   margin-left: 10px;
   font-weight: bold;
@@ -731,6 +740,8 @@ body select {
 }
 
 .container section .create-color .solid-section .solid-header .solid-alpha-control p {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   font-size: 20px;
   margin-right: 10px;
   font-weight: bold;
@@ -743,8 +754,8 @@ body select {
   display: flex;
   height: 100%;
   margin: 32px;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 24px;
   background-color: var(--card-color);
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
@@ -761,8 +772,8 @@ body select {
 }
 
 .container section .create-color .solid-section .solid-body .solid-color:hover {
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: var(--transition) ease-in-out;
+  transition: var(--transition) ease-in-out;
   -webkit-filter: drop-shadow(2px 0 4px rgba(0, 0, 0, 0.1));
           filter: drop-shadow(2px 0 4px rgba(0, 0, 0, 0.1));
 }
@@ -801,8 +812,8 @@ body select {
 }
 
 .container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hex div img {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hex div img:hover {
@@ -841,8 +852,8 @@ body select {
 .container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsv img,
 .container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-hsl img,
 .container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-cmyk img {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .create-color .solid-section .solid-body .solid-control .solid-attributes .solid-rgb img:hover,
@@ -926,8 +937,8 @@ body select {
   width: 100%;
   height: 100%;
   margin-left: 1px;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   background-color: var(--background-color);
 }
 
@@ -980,8 +991,8 @@ body select {
   display: flex;
   height: 100%;
   margin: 32px;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 24px;
   background-color: var(--card-color);
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
@@ -998,8 +1009,8 @@ body select {
 }
 
 .container section .create-color .gradient-section .gradient-body .gradient-color:hover {
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: var(--transition) ease-in-out;
+  transition: var(--transition) ease-in-out;
   -webkit-filter: drop-shadow(2px 0 4px rgba(0, 0, 0, 0.1));
           filter: drop-shadow(2px 0 4px rgba(0, 0, 0, 0.1));
 }
@@ -1055,8 +1066,8 @@ body select {
 .container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-hex div img,
 .container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-hex div img,
 .container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-hex div img {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-hex div img:hover,
@@ -1097,8 +1108,8 @@ body select {
 .container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-bottom-rgba div img,
 .container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-top-rgba div img,
 .container section .create-color .gradient-section .gradient-body .gradient-control .gradient-bottom .gradient-bottom-rgba div img {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .create-color .gradient-section .gradient-body .gradient-control .gradient-top .gradient-top-rgba div img:hover,
@@ -1212,8 +1223,8 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow-y: auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1257,6 +1268,8 @@ body select {
 }
 
 .container section .extract-color .swatch-section .swatch-header .swatch-header-title p {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   font-size: 20px;
   margin-left: 10px;
   font-weight: bold;
@@ -1274,6 +1287,8 @@ body select {
 }
 
 .container section .extract-color .swatch-section .swatch-header .swatch-reset p {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   font-size: 20px;
   margin-right: 10px;
   font-weight: bold;
@@ -1283,8 +1298,8 @@ body select {
 .container section .extract-color .swatch-section .swatch-header .swatch-reset img {
   height: 28px;
   width: 28px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
           filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
 }
@@ -1313,8 +1328,8 @@ body select {
   width: 100%;
   min-height: 256px;
   cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow: hidden;
   aspect-ratio: 3/1.5;
   border-radius: 24px;
@@ -1333,8 +1348,8 @@ body select {
 }
 
 .container section .extract-color .swatch-section .swatch-body .swatch-img-chooser:hover {
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: var(--transition) ease-in-out;
+  transition: var(--transition) ease-in-out;
   -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
           filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
@@ -1380,8 +1395,8 @@ body select {
   width: 32px;
   height: 32px;
   margin: 12px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 50%;
   background-color: var(--background-color);
   -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
@@ -1456,8 +1471,8 @@ body select {
   display: -ms-flexbox;
   display: flex;
   margin-left: 1px;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow-y: auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1505,6 +1520,8 @@ body select {
   margin-left: 10px;
   font-weight: bold;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .extract-color .palette-section .palette-header .palette-reset {
@@ -1522,13 +1539,15 @@ body select {
   margin-right: 10px;
   font-weight: bold;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .extract-color .palette-section .palette-header .palette-reset img {
   height: 28px;
   width: 28px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
           filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4));
 }
@@ -1557,8 +1576,8 @@ body select {
   width: 100%;
   min-height: 256px;
   cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow: hidden;
   aspect-ratio: 3/1.5;
   border-radius: 24px;
@@ -1577,8 +1596,8 @@ body select {
 }
 
 .container section .extract-color .palette-section .palette-body .palette-img-chooser:hover {
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: var(--transition) ease-in-out;
+  transition: var(--transition) ease-in-out;
   -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
           filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
@@ -1624,8 +1643,8 @@ body select {
   width: 32px;
   height: 32px;
   margin: 12px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 50%;
   background-color: var(--background-color);
   -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
@@ -1698,8 +1717,8 @@ body select {
   display: -ms-flexbox;
   display: flex;
   margin-left: 1px;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow-y: auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1743,6 +1762,8 @@ body select {
 }
 
 .container section .extract-color .manual-section .manual-header .manual-header-title p {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   font-size: 20px;
   margin-left: 10px;
   font-weight: bold;
@@ -1760,6 +1781,8 @@ body select {
 }
 
 .container section .extract-color .manual-section .manual-header .manual-reset p {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   font-size: 20px;
   margin-right: 10px;
   font-weight: bold;
@@ -2022,8 +2045,8 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -2055,6 +2078,8 @@ body select {
   margin-left: 10px;
   font-weight: bold;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .complement-container .complement-body {
@@ -2074,8 +2099,8 @@ body select {
 
 .container section .harmonize-color .complement-container .complement-body .colors-container {
   width: 100%;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 24px;
   background-color: var(--card-color);
   -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
@@ -2090,8 +2115,8 @@ body select {
   height: 120px;
   cursor: pointer;
   overflow: hidden;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: inherit;
   background-color: var(--background-color);
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
@@ -2132,6 +2157,8 @@ body select {
 .container section .harmonize-color .complement-container .complement-body .colors-container .codes div p {
   cursor: pointer;
   font-weight: 700;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .complement-container .complement-body .colors-container .codes div p:nth-child(2) {
@@ -2142,6 +2169,8 @@ body select {
   height: 1px;
   width: 100%;
   margin-top: 16px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   background-color: var(--base-color);
 }
 
@@ -2149,6 +2178,8 @@ body select {
   margin: 14px;
   font-size: 14px;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode {
@@ -2168,6 +2199,8 @@ body select {
 .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode p {
   font-size: medium;
   font-weight: 700;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .complement-container .complement-body .colors-container .invert-mode input {
@@ -2180,8 +2213,8 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   margin-left: 24px;
   border-radius: 50%;
   -webkit-box-align: center;
@@ -2222,8 +2255,6 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   aspect-ratio: 1/1;
   border-radius: 50%;
   -webkit-box-align: center;
@@ -2264,8 +2295,8 @@ body select {
   display: -ms-flexbox;
   display: flex;
   margin-left: 1px;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -2297,6 +2328,8 @@ body select {
   margin-left: 10px;
   font-weight: bold;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .split-container .split-body {
@@ -2316,8 +2349,8 @@ body select {
 
 .container section .harmonize-color .split-container .split-body .colors-container {
   width: 100%;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 24px;
   background-color: var(--card-color);
   -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
@@ -2332,8 +2365,8 @@ body select {
   height: 120px;
   cursor: pointer;
   overflow: hidden;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: inherit;
   background-color: var(--background-color);
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
@@ -2375,6 +2408,8 @@ body select {
   cursor: pointer;
   font-size: 14px;
   font-weight: 700;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .split-container .split-body .colors-container .codes div p:nth-child(2) {
@@ -2385,6 +2420,8 @@ body select {
   height: 1px;
   width: 100%;
   margin-top: 16px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   background-color: var(--base-color);
 }
 
@@ -2392,6 +2429,8 @@ body select {
   margin: 14px;
   font-size: 14px;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .split-container .split-body .colors-container .invert-mode {
@@ -2411,6 +2450,8 @@ body select {
 .container section .harmonize-color .split-container .split-body .colors-container .invert-mode p {
   font-size: medium;
   font-weight: 700;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .split-container .split-body .colors-container .invert-mode input {
@@ -2423,8 +2464,8 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   margin-left: 24px;
   border-radius: 50%;
   -webkit-box-align: center;
@@ -2465,8 +2506,6 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   aspect-ratio: 1/1;
   border-radius: 50%;
   -webkit-box-align: center;
@@ -2507,8 +2546,8 @@ body select {
   display: -ms-flexbox;
   display: flex;
   margin-left: 1px;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -2540,6 +2579,8 @@ body select {
   margin-left: 10px;
   font-weight: bold;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .analogous-container .analogous-body {
@@ -2559,8 +2600,8 @@ body select {
 
 .container section .harmonize-color .analogous-container .analogous-body .colors-container {
   width: 100%;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 24px;
   background-color: var(--card-color);
   -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
@@ -2575,8 +2616,8 @@ body select {
   height: 120px;
   cursor: pointer;
   overflow: hidden;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: inherit;
   background-color: var(--background-color);
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
@@ -2618,6 +2659,8 @@ body select {
   cursor: pointer;
   font-size: 14px;
   font-weight: 700;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .analogous-container .analogous-body .colors-container .codes div p:nth-child(2) {
@@ -2628,6 +2671,8 @@ body select {
   height: 1px;
   width: 100%;
   margin-top: 16px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   background-color: var(--base-color);
 }
 
@@ -2635,6 +2680,8 @@ body select {
   margin: 14px;
   font-size: 14px;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode {
@@ -2654,6 +2701,8 @@ body select {
 .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode p {
   font-size: medium;
   font-weight: 700;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .analogous-container .analogous-body .colors-container .invert-mode input {
@@ -2666,8 +2715,8 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   margin-left: 24px;
   border-radius: 50%;
   -webkit-box-align: center;
@@ -2708,8 +2757,6 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   aspect-ratio: 1/1;
   border-radius: 50%;
   -webkit-box-align: center;
@@ -2750,8 +2797,8 @@ body select {
   display: -ms-flexbox;
   display: flex;
   margin-left: 1px;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -2783,6 +2830,8 @@ body select {
   margin-left: 10px;
   font-weight: bold;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .triadic-container .triadic-body {
@@ -2802,8 +2851,8 @@ body select {
 
 .container section .harmonize-color .triadic-container .triadic-body .colors-container {
   width: 100%;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 24px;
   background-color: var(--card-color);
   -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
@@ -2818,8 +2867,8 @@ body select {
   height: 120px;
   cursor: pointer;
   overflow: hidden;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: inherit;
   background-color: var(--background-color);
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
@@ -2861,6 +2910,8 @@ body select {
   cursor: pointer;
   font-size: 14px;
   font-weight: 700;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .triadic-container .triadic-body .colors-container .codes div p:nth-child(2) {
@@ -2871,6 +2922,8 @@ body select {
   height: 1px;
   width: 100%;
   margin-top: 16px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   background-color: var(--base-color);
 }
 
@@ -2878,6 +2931,8 @@ body select {
   margin: 14px;
   font-size: 14px;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode {
@@ -2897,6 +2952,8 @@ body select {
 .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode p {
   font-size: medium;
   font-weight: 700;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .triadic-container .triadic-body .colors-container .invert-mode input {
@@ -2909,8 +2966,8 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   margin-left: 24px;
   border-radius: 50%;
   -webkit-box-align: center;
@@ -2951,8 +3008,6 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   aspect-ratio: 1/1;
   border-radius: 50%;
   -webkit-box-align: center;
@@ -2993,8 +3048,8 @@ body select {
   display: -ms-flexbox;
   display: flex;
   margin-left: 1px;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -3026,6 +3081,8 @@ body select {
   margin-left: 10px;
   font-weight: bold;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .tetradic-container .tetradic-body {
@@ -3045,8 +3102,8 @@ body select {
 
 .container section .harmonize-color .tetradic-container .tetradic-body .colors-container {
   width: 100%;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 24px;
   background-color: var(--card-color);
   -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
@@ -3061,8 +3118,8 @@ body select {
   height: 120px;
   cursor: pointer;
   overflow: hidden;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: inherit;
   background-color: var(--background-color);
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
@@ -3104,6 +3161,8 @@ body select {
   cursor: pointer;
   font-size: 11px;
   font-weight: 800;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .codes div p:nth-child(2) {
@@ -3114,6 +3173,8 @@ body select {
   height: 1px;
   width: 100%;
   margin-top: 16px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   background-color: var(--base-color);
 }
 
@@ -3121,6 +3182,8 @@ body select {
   margin: 14px;
   font-size: 14px;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode {
@@ -3140,6 +3203,8 @@ body select {
 .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode p {
   font-size: medium;
   font-weight: 700;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .harmonize-color .tetradic-container .tetradic-body .colors-container .invert-mode input {
@@ -3152,8 +3217,8 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   margin-left: 24px;
   border-radius: 50%;
   -webkit-box-align: center;
@@ -3194,8 +3259,6 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   aspect-ratio: 1/1;
   border-radius: 50%;
   -webkit-box-align: center;
@@ -3244,8 +3307,8 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-box-orient: vertical;
@@ -3294,6 +3357,8 @@ body select {
   margin-left: 10px;
   font-weight: bold;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .saved-color .solgrad-container .solgrad-header .solgrad-options {
@@ -3312,8 +3377,8 @@ body select {
   font-size: 16px;
   font-weight: 600;
   padding: 6px 10px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 12px;
   color: var(--text-color);
   background-color: var(--card-color);
@@ -3374,6 +3439,8 @@ body select {
   font-weight: 700;
   opacity: 0.8;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .saved-color .extraction-container {
@@ -3383,8 +3450,8 @@ body select {
   display: -ms-flexbox;
   display: flex;
   margin-left: 1px;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-box-orient: vertical;
@@ -3433,6 +3500,8 @@ body select {
   margin-left: 10px;
   font-weight: bold;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .saved-color .extraction-container .extraction-header .extraction-options {
@@ -3451,8 +3520,8 @@ body select {
   font-size: 16px;
   font-weight: 600;
   padding: 6px 10px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 12px;
   color: var(--text-color);
   background-color: var(--card-color);
@@ -3481,8 +3550,8 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -o-object-fit: cover;
      object-fit: cover;
   aspect-ratio: 3/2;
@@ -3519,6 +3588,8 @@ body select {
   font-weight: 700;
   opacity: 0.8;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .saved-color .harmony-container {
@@ -3527,8 +3598,8 @@ body select {
   display: -ms-flexbox;
   display: flex;
   margin-left: 1px;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-box-orient: vertical;
@@ -3577,6 +3648,8 @@ body select {
   margin-left: 10px;
   font-weight: bold;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .saved-color .harmony-container .harmony-header .harmony-options {
@@ -3595,8 +3668,8 @@ body select {
   font-size: 16px;
   font-weight: 600;
   padding: 6px 10px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 12px;
   color: var(--text-color);
   background-color: var(--card-color);
@@ -3645,6 +3718,8 @@ body select {
   font-weight: 700;
   opacity: 0.8;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .saved-color .preset-container {
@@ -3654,8 +3729,8 @@ body select {
   display: -ms-flexbox;
   display: flex;
   margin-left: 1px;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-box-orient: vertical;
@@ -3704,6 +3779,8 @@ body select {
   margin-left: 10px;
   font-weight: bold;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section .saved-color .preset-container .preset-header .preset-options {
@@ -3722,8 +3799,8 @@ body select {
   font-size: 16px;
   font-weight: 600;
   padding: 6px 10px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 12px;
   color: var(--text-color);
   background-color: var(--card-color);
@@ -3773,8 +3850,8 @@ body select {
   width: 100%;
   height: 72px;
   margin-top: 1px;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -3817,8 +3894,8 @@ body select {
 .container section footer ul li {
   cursor: pointer;
   margin-left: 24px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .container section footer ul li:nth-child(1) {
@@ -3883,8 +3960,8 @@ body select {
 
 .solid-item {
   width: 100%;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 24px 24px 20px 20px;
   background-color: var(--card-color);
   -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
@@ -3893,9 +3970,9 @@ body select {
 
 .solid-item .color-card {
   height: 100px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   border-radius: 24px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
           filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
@@ -3917,13 +3994,15 @@ body select {
   font-size: 15px;
   font-weight: 700;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .solid-item .solid-hex img {
   width: 24px;
   height: 24px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   margin: 0 12px 0 5px;
 }
 
@@ -3950,6 +4029,8 @@ body select {
   font-size: 15px;
   font-weight: 700;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .solid-item .solid-rgb img {
@@ -3979,8 +4060,8 @@ body select {
 
 .gradient-item {
   width: 100%;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow: hidden;
   margin-bottom: 20px;
   border-radius: 24px 24px 20px 20px;
@@ -3991,8 +4072,8 @@ body select {
 
 .gradient-item .color-card {
   height: 100px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   border-radius: 24px;
   -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
           filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
@@ -4024,8 +4105,8 @@ body select {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
           filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
 }
@@ -4064,13 +4145,15 @@ body select {
   font-size: 15px;
   font-weight: 700;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .gradient-item .code-holder .color-codes .codes .code img {
   width: 24px;
   height: 24px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   margin-left: 5px;
 }
 
@@ -4093,8 +4176,8 @@ body select {
 
 .swatch-item {
   width: 100%;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   margin-bottom: 20px;
   border-radius: 24px;
   -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
@@ -4111,6 +4194,8 @@ body select {
   margin: 12px 0 0 16px;
   font-size: 20px;
   font-weight: 700;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .swatch-item .swatch-hex {
@@ -4126,11 +4211,13 @@ body select {
 .swatch-item .swatch-hex p {
   margin: 0 0 0 16px;
   font-size: 17px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .swatch-item .swatch-hex img {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   margin-left: 5px;
 }
 
@@ -4153,11 +4240,13 @@ body select {
 .swatch-item .swatch-rgb p {
   margin: 0 0 0 16px;
   font-size: 17px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .swatch-item .swatch-rgb img {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   margin-left: 5px;
 }
 
@@ -4169,8 +4258,8 @@ body select {
 
 .dual-item {
   width: 100%;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow: hidden;
   margin-bottom: 20px;
   border-radius: 24px 24px 20px 20px;
@@ -4183,8 +4272,8 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow: hidden;
   border-radius: 24px;
   -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
@@ -4244,13 +4333,15 @@ body select {
   font-size: 15px;
   font-weight: 700;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .dual-item .color-codes .codes .code img {
   width: 24px;
   height: 24px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   margin-left: 5px;
 }
 
@@ -4272,8 +4363,8 @@ body select {
 
 .trial-item {
   width: 100%;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow: hidden;
   margin-bottom: 20px;
   border-radius: 24px 24px 20px 20px;
@@ -4286,8 +4377,8 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow: hidden;
   border-radius: 24px;
   -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
@@ -4347,13 +4438,15 @@ body select {
   font-size: 14px;
   font-weight: 700;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .trial-item .color-codes .codes .code img {
   width: 22px;
   height: 22px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   margin-left: 4px;
 }
 
@@ -4375,8 +4468,8 @@ body select {
 
 .quadral-item {
   width: 100%;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow: hidden;
   margin-bottom: 20px;
   border-radius: 24px 24px 20px 20px;
@@ -4389,8 +4482,8 @@ body select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   overflow: hidden;
   border-radius: 24px;
   -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
@@ -4441,6 +4534,8 @@ body select {
   font-size: 14px;
   font-weight: 700;
   color: var(--text-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .quadral-item .color-codes .codes p:hover {
@@ -4478,8 +4573,10 @@ body select {
   border-radius: 10px;
   padding: 10px 16px;
   font-size: medium;
-  -webkit-animation: 0.3s ease 0s 1 toast-anim;
-          animation: 0.3s ease 0s 1 toast-anim;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  -webkit-animation: toast-anim;
+          animation: toast-anim;
   z-index: 2;
   -webkit-user-select: none;
      -moz-user-select: none;

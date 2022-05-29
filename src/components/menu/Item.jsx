@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 
 const Item = (props) => {
    const path = props.darkMode
@@ -17,4 +17,4 @@ const Item = (props) => {
    );
 };
 
-export default memo(Item);
+export default Item;

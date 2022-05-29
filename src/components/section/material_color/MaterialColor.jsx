@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 import Colors from './color_option/Colors';
 import Shades from './color_shade/Shades';
 
@@ -11,4 +11,4 @@ const MaterialColor = (props) => {
    );
 };
 
-export default memo(MaterialColor);
+export default MaterialColor;

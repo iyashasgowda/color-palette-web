@@ -6,9 +6,6 @@
 .pnp.js
 
 # testing
-.idea/
-
-# testing
 /coverage
 
 # production

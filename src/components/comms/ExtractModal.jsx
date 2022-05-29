@@ -1,21 +1,22 @@
-import React, {memo} from 'react';
+import React from 'react';
 import SwatchItem from './SwatchItem';
 import PaletteItem from './Solid';
 
-import {removeOne} from '../../utils/storage';
-import {makeToast, rgb2hex} from '../../utils/utils';
+import { removeOne } from '../../utils/storage';
+import { makeToast, rgb2hex } from '../../utils/utils';
 
 const ExtractModal = (props) => {
-    return (
-        <div className='extract-modal'>
-            <div className='modal-container'>
-                <img className='extract-image'
-                     style={props.swatch ? {alignSelf: 'end', marginRight: '32px'} : {alignSelf: 'center'}}
-                     src={props.data.path} alt='extract'/>
+   const close_icon = props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/dark/close.svg` : `${process.env.PUBLIC_URL}/assets/icons/light/close.svg`;
+   const delete_icon = props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/delete.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/delete.svg`;
 
-                {props.swatch ? (
-                    <div className='swatch-extracts'>
-                        {props.data.swatches.map((item, index) => (
+   return (
+      <div className='extract-modal'>
+         <div className='modal-container'>
+            <img className='extract-image' style={props.swatch ? { alignSelf: 'end', marginRight: '32px' } : { alignSelf: 'center' }} src={props.data.path} alt='extract' />
+
+            {props.swatch ? (
+               <div className='swatch-extracts'>
+                  {props.data.swatches.map((item, index) => (
                      <SwatchItem key={index} name={item.name} rgb={item.rgb} shouldSave={false} />
                   ))}
                </div>
@@ -28,7 +29,7 @@ const ExtractModal = (props) => {
             )}
 
             <div className='modal-option close' onClick={() => props.closeModal()}>
-               <img src={props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/dark/close.svg` : `${process.env.PUBLIC_URL}/assets/icons/light/close.svg`} alt='close' />
+               <img src={close_icon} alt='close' />
             </div>
 
             <div
@@ -47,11 +48,11 @@ const ExtractModal = (props) => {
                   props.reloadExtract();
                }}
             >
-               <img src={props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/delete.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/delete.svg`} alt='close' />
+               <img src={delete_icon} alt='delete' />
             </div>
          </div>
       </div>
    );
 };
 
-export default memo(ExtractModal);
+export default ExtractModal;

@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 import Shade from './Shade';
 import {makeToast} from '../../../../utils/utils';
 import data from '../../../../utils/data.json';
@@ -16,4 +16,4 @@ const Shades = (props) => {
     );
 };
 
-export default memo(Shades);
+export default Shades;

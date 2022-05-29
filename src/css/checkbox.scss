@@ -7,8 +7,8 @@
    outline: none;
    cursor: pointer;
    border-radius: 20px;
+   transition: var(--transition);
    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
-   transition: 0.2s;
 
    // circle
    &::before {
@@ -21,8 +21,8 @@
       border-radius: 20px;
       background-color: var(--card-color);
       transform: scale(1.1);
+      transition: var(--transition);
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-      transition: 0.2s;
    }
 
    // move to right

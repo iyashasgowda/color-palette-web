@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 import Complement from './Complement';
 import SplitComplement from './SplitComplement';
 import Analogous from './Analogous';
@@ -17,4 +17,4 @@ const Harmonize = (props) => {
    );
 };
 
-export default memo(Harmonize);
+export default Harmonize;

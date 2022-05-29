@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 import {makeToast} from '../../../utils/utils';
 
 const Modal = (props) => {
@@ -58,4 +58,4 @@ const Modal = (props) => {
     );
 };
 
-export default memo(Modal);
+export default Modal;

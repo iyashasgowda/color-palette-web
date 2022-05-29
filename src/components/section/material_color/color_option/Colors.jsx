@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 import data from '../../../../utils/data.json';
 import Color from './Color';
 
@@ -17,4 +17,4 @@ const Colors = ({changeColor, activeColor}) => {
     );
 };
 
-export default memo(Colors);
+export default Colors;
