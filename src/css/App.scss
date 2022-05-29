@@ -3015,7 +3015,7 @@ body {
    padding: 10px 16px;
    font-size: medium;
    transition: var(--transition);
-   animation: toast-anim;
+   animation: var(--transition) ease 0s 1 toast-anim;
    z-index: 2;
    user-select: none;
    color: var(--background-color);

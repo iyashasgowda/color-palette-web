@@ -630,6 +630,8 @@ body select {
 
 .container section .material-color .color-holder::-webkit-scrollbar-thumb {
   border-radius: 6px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -1245,6 +1247,8 @@ body select {
 
 .container section .extract-color .swatch-section::-webkit-scrollbar-thumb {
   border-radius: 6px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -1493,6 +1497,8 @@ body select {
 
 .container section .extract-color .palette-section::-webkit-scrollbar-thumb {
   border-radius: 6px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -1739,6 +1745,8 @@ body select {
 
 .container section .extract-color .manual-section::-webkit-scrollbar-thumb {
   border-radius: 6px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -2036,6 +2044,8 @@ body select {
 
 .container section .harmonize-color::-webkit-scrollbar-thumb {
   border-radius: 6px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -3330,6 +3340,8 @@ body select {
 
 .container section .saved-color .solgrad-container::-webkit-scrollbar-thumb {
   border-radius: 6px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -3473,6 +3485,8 @@ body select {
 
 .container section .saved-color .extraction-container::-webkit-scrollbar-thumb {
   border-radius: 6px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -3621,6 +3635,8 @@ body select {
 
 .container section .saved-color .harmony-container::-webkit-scrollbar-thumb {
   border-radius: 6px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -3752,6 +3768,8 @@ body select {
 
 .container section .saved-color .preset-container::-webkit-scrollbar-thumb {
   border-radius: 6px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
@@ -4575,8 +4593,8 @@ body select {
   font-size: medium;
   -webkit-transition: var(--transition);
   transition: var(--transition);
-  -webkit-animation: toast-anim;
-          animation: toast-anim;
+  -webkit-animation: var(--transition) ease 0s 1 toast-anim;
+          animation: var(--transition) ease 0s 1 toast-anim;
   z-index: 2;
   -webkit-user-select: none;
      -moz-user-select: none;
