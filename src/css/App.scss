@@ -3122,6 +3122,90 @@ body {
    }
 }
 
+.settings-modal {
+   display: flex;
+   position: fixed;
+   align-items: center;
+   justify-content: center;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+   background-color: rgba(var(--background-color-rgb), 0.2);
+   backdrop-filter: blur(12px);
+
+   .modal-container {
+      width: 512px;
+      height: 640px;
+      border-radius: 24px;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+
+      .settings-modal-header {
+         padding: 12px 16px;
+         display: flex;
+         border-radius: 24px 24px 0 0;
+         justify-content: space-between;
+
+         img {
+            width: 20px;
+            transition: var(--transition);
+
+            &:hover {
+               cursor: pointer;
+               transform: scale(0.9);
+            }
+         }
+      }
+
+      .settings-modal-body {
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+
+         h3 {
+            margin: 16px 0 0 24px;
+         }
+
+         .extract-count {
+            margin: 8px 24px 0 24px;
+            padding: 16px;
+            border-radius: 18px;
+            background-color: var(--card-color);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+
+            .palette_seekbar_count {
+               width: 100%;
+               margin-top: 12px;
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+
+               h3 {
+                  width: 30px;
+                  margin: 0 0 4px 12px;
+               }
+            }
+
+            .separator {
+               height: 1px;
+               width: 100%;
+               margin-top: 16px;
+               transition: var(--transition);
+               background-color: var(--base-color);
+            }
+
+            .info {
+               margin-top: 8px;
+               font-size: 14px;
+            }
+         }
+      }
+   }
+}
+
 .extract-modal {
    display: flex;
    position: fixed;

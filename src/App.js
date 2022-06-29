@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Menu from './components/menu/Menu';
 import Section from './components/section/Section';
 import Warning from './components/comms/Warning';
@@ -22,6 +22,12 @@ const App = () => {
    };
    changeTheme(darkMode);
 
+   const [modal, showModal] = useState(getCache().settings);
+   const handleSettingsModal = useCallback((flag) => {
+      showModal(flag);
+      setCache('settings', flag);
+   }, []);
+
    return (
       <>
          <div className='container'>
@@ -29,8 +35,8 @@ const App = () => {
                <Warning />
             ) : (
                <>
-                  <Menu activeMenu={activeMenu} darkMode={darkMode} changeMenu={handleMenuChange} />
-                  <Section activeMenu={activeMenu} darkMode={darkMode} version={app.version} changeTheme={handleThemeChange} />
+                  <Menu activeMenu={activeMenu} darkMode={darkMode} changeMenu={handleMenuChange} showModal={handleSettingsModal} />
+                  <Section activeMenu={activeMenu} darkMode={darkMode} version={app.version} changeTheme={handleThemeChange} showSettings={modal} showModal={handleSettingsModal} />
                </>
             )}
          </div>

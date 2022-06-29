@@ -1,3 +1,4 @@
+.palette_seekbar,
 .solid_alpha_seekbar,
 .solid_red_seekbar,
 .solid_green_seekbar,
@@ -19,6 +20,7 @@
 }
 
 /* seekbar thumb:chrome **/
+.palette_seekbar::-webkit-slider-thumb,
 .solid_alpha_seekbar::-webkit-slider-thumb,
 .solid_red_seekbar::-webkit-slider-thumb,
 .solid_green_seekbar::-webkit-slider-thumb,
@@ -46,6 +48,7 @@
    }
 }
 
+.palette_seekbar::-webkit-slider-thumb,
 .gradient_top_alpha_seekbar::-webkit-slider-thumb,
 .gradient_bottom_alpha_seekbar::-webkit-slider-thumb,
 .solid_alpha_seekbar::-webkit-slider-thumb {
@@ -71,6 +74,7 @@
 }
 
 /* seekbar thumb:firefox **/
+.palette_seekbar::-moz-range-thumb,
 .solid_alpha_seekbar::-moz-range-thumb,
 .solid_red_seekbar::-moz-range-thumb,
 .solid_green_seekbar::-moz-range-thumb,
@@ -96,6 +100,7 @@
    }
 }
 
+.palette_seekbar::-moz-range-thumb,
 .gradient_top_alpha_seekbar::-moz-range-thumb,
 .gradient_bottom_alpha_seekbar::-moz-range-thumb,
 .solid_alpha_seekbar::-moz-range-thumb {

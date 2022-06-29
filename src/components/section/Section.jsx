@@ -9,14 +9,16 @@ import Harmonize from './harmonize/Harmonize';
 import Saved from './saved/Saved';
 
 import { getCache, setCache } from '../../utils/utils';
+import Settings from '../comms/Settings';
+import { useCallback } from 'react';
 
 const Section = (props) => {
    /** Material color state */
    const [activeColor, setActiveColor] = useState(getCache().material_color);
-   const handleColorChange = (id) => {
+   const handleColorChange = useCallback((id) => {
       setActiveColor(id);
       setCache('material_color', id);
-   };
+   }, []);
 
    /** Create solid state */
    const [solid, setSolid] = useState(getCache().solid);
@@ -52,8 +54,8 @@ const Section = (props) => {
    };
 
    /** Split complement colors */
-    const [split, setSplit] = useState(getCache().split);
-    
+   const [split, setSplit] = useState(getCache().split);
+
    const handleSplitChange = (split) => {
       setSplit(split);
       setCache('split', split);
@@ -108,12 +110,19 @@ const Section = (props) => {
       setCache('preset', preset);
    };
 
+   /** Palette extraction count */
+   const [extractionCount, setExtractionCount] = useState(getCache().extraction_count);
+   const handleExtractCountChange = (count) => {
+      setExtractionCount(count);
+      setCache('extraction_count', count);
+   };
+
    return (
       <section>
          <Header version={props.version} darkMode={props.darkMode} changeTheme={props.changeTheme} />
          {props.activeMenu === 1 && <MaterialColor activeColor={activeColor} darkMode={props.darkMode} changeColor={handleColorChange} />}
          {props.activeMenu === 2 && <Create darkMode={props.darkMode} solid={solid} gradient={gradient} changeSolid={handleSolidChange} changeGradient={handleGradientChange} />}
-         {props.activeMenu === 3 && <Extract darkMode={props.darkMode} swatch={swatch} palette={palette} manual={manual} changeSwatch={handleSwatchChange} changePalette={handlePaletteChange} changeManual={handleManualChange} />}
+         {props.activeMenu === 3 && <Extract darkMode={props.darkMode} swatch={swatch} palette={palette} manual={manual} changeSwatch={handleSwatchChange} changePalette={handlePaletteChange} changeManual={handleManualChange} extractionCount={extractionCount} />}
          {props.activeMenu === 4 && (
             <Harmonize
                darkMode={props.darkMode}
@@ -131,6 +140,7 @@ const Section = (props) => {
          )}
          {props.activeMenu === 5 && <Saved darkMode={props.darkMode} solgrad={solgrad} changeSolGrad={handleSolGradChange} extraction={extraction} changeExtraction={handleExtractionChange} harmony={harmony} changeHarmony={handleHarmonyChange} preset={preset} changePreset={handlePresetChange} />}
          <Footer darkMode={props.darkMode} />
+         {props.showSettings && <Settings darkMode={props.darkMode} showModal={props.showModal} extractionCount={extractionCount} changeExtractionCount={handleExtractCountChange} />}
       </section>
    );
 };

@@ -36,6 +36,7 @@
   }
 }
 
+.palette_seekbar,
 .solid_alpha_seekbar,
 .solid_red_seekbar,
 .solid_green_seekbar,
@@ -58,6 +59,7 @@
 }
 
 /* seekbar thumb:chrome **/
+.palette_seekbar::-webkit-slider-thumb,
 .solid_alpha_seekbar::-webkit-slider-thumb,
 .solid_red_seekbar::-webkit-slider-thumb,
 .solid_green_seekbar::-webkit-slider-thumb,
@@ -81,6 +83,7 @@
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+.palette_seekbar::-webkit-slider-thumb:hover,
 .solid_alpha_seekbar::-webkit-slider-thumb:hover,
 .solid_red_seekbar::-webkit-slider-thumb:hover,
 .solid_green_seekbar::-webkit-slider-thumb:hover,
@@ -97,6 +100,7 @@
   height: 17px;
 }
 
+.palette_seekbar::-webkit-slider-thumb,
 .gradient_top_alpha_seekbar::-webkit-slider-thumb,
 .gradient_bottom_alpha_seekbar::-webkit-slider-thumb,
 .solid_alpha_seekbar::-webkit-slider-thumb {
@@ -122,6 +126,7 @@
 }
 
 /* seekbar thumb:firefox **/
+.palette_seekbar::-moz-range-thumb,
 .solid_alpha_seekbar::-moz-range-thumb,
 .solid_red_seekbar::-moz-range-thumb,
 .solid_green_seekbar::-moz-range-thumb,
@@ -142,6 +147,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+.palette_seekbar::-moz-range-thumb:hover,
 .solid_alpha_seekbar::-moz-range-thumb:hover,
 .solid_red_seekbar::-moz-range-thumb:hover,
 .solid_green_seekbar::-moz-range-thumb:hover,
@@ -158,6 +164,7 @@
   height: 17px;
 }
 
+.palette_seekbar::-moz-range-thumb,
 .gradient_top_alpha_seekbar::-moz-range-thumb,
 .gradient_bottom_alpha_seekbar::-moz-range-thumb,
 .solid_alpha_seekbar::-moz-range-thumb {
@@ -4749,6 +4756,117 @@ body select {
   cursor: pointer;
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
+}
+
+.settings-modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(var(--background-color-rgb), 0.2);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+}
+
+.settings-modal .modal-container {
+  width: 512px;
+  height: 640px;
+  border-radius: 24px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.settings-modal .modal-container .settings-modal-header {
+  padding: 12px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 24px 24px 0 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.settings-modal .modal-container .settings-modal-header img {
+  width: 20px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.settings-modal .modal-container .settings-modal-header img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.settings-modal .modal-container .settings-modal-body {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.settings-modal .modal-container .settings-modal-body h3 {
+  margin: 16px 0 0 24px;
+}
+
+.settings-modal .modal-container .settings-modal-body .extract-count {
+  margin: 8px 24px 0 24px;
+  padding: 16px;
+  border-radius: 18px;
+  background-color: var(--card-color);
+  -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.settings-modal .modal-container .settings-modal-body .extract-count .palette_seekbar_count {
+  width: 100%;
+  margin-top: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.settings-modal .modal-container .settings-modal-body .extract-count .palette_seekbar_count h3 {
+  width: 30px;
+  margin: 0 0 4px 12px;
+}
+
+.settings-modal .modal-container .settings-modal-body .extract-count .separator {
+  height: 1px;
+  width: 100%;
+  margin-top: 16px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  background-color: var(--base-color);
+}
+
+.settings-modal .modal-container .settings-modal-body .extract-count .info {
+  margin-top: 8px;
+  font-size: 14px;
 }
 
 .extract-modal {

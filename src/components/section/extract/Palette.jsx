@@ -19,7 +19,7 @@ const Palette = (props) => {
       if (e.target.files && e.target.files[0]) {
          const reader = new FileReader();
          reader.onload = (e) =>
-            getPalette(e.target.result, 16, (palette) => {
+            getPalette(e.target.result, props.extractionCount, (palette) => {
                props.changePalette({ path: e.target.result, palette });
                makeToast(`${palette.swatches.length} colors extracted.`);
             });
@@ -30,7 +30,7 @@ const Palette = (props) => {
    const handleUrlInput = (data) => {
       setModal(false);
 
-      getPalette(data, 16, (palette) => {
+      getPalette(data, props.extractionCount, (palette) => {
          props.changePalette({ path: data, palette });
          makeToast(`${palette.swatches.length} colors extracted.`);
       });
