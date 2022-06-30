@@ -140,7 +140,7 @@ const Section = (props) => {
          )}
          {props.activeMenu === 5 && <Saved darkMode={props.darkMode} solgrad={solgrad} changeSolGrad={handleSolGradChange} extraction={extraction} changeExtraction={handleExtractionChange} harmony={harmony} changeHarmony={handleHarmonyChange} preset={preset} changePreset={handlePresetChange} />}
          <Footer darkMode={props.darkMode} />
-         {props.showSettings && <Settings darkMode={props.darkMode} changeTheme={props.changeTheme} showModal={props.showModal} extractionCount={extractionCount} changeExtractionCount={handleExtractCountChange} />}
+         {props.showSettings && <Settings darkMode={props.darkMode} changeTheme={props.changeTheme} version={props.version} showModal={props.showModal} extractionCount={extractionCount} changeExtractionCount={handleExtractCountChange} />}
       </section>
    );
 };

@@ -276,6 +276,7 @@ body select {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-user-drag: none;
 }
 
 .mobile-warning {
@@ -4781,7 +4782,7 @@ body select {
 
 .settings-modal .modal-container {
   width: 512px;
-  height: 640px;
+  height: auto;
   border-radius: 24px;
   overflow: hidden;
   color: var(--text-color);
@@ -4930,6 +4931,39 @@ body select {
   cursor: pointer;
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
+}
+
+.settings-modal .modal-container .settings-modal-body .about-app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin: 18px 0 16px 24px;
+}
+
+.settings-modal .modal-container .settings-modal-body .about-app .app-logo {
+  margin-bottom: 2px;
+  width: 30px;
+  height: 30px;
+}
+
+.settings-modal .modal-container .settings-modal-body .about-app .app-name {
+  padding-bottom: 0;
+  margin-left: 8px;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.settings-modal .modal-container .settings-modal-body .about-app .app-version {
+  margin: 0 0 2px 4px;
+  font-weight: 800;
+  font-size: 12px;
+  opacity: 50%;
 }
 
 .extract-modal {

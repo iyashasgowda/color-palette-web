@@ -8,6 +8,7 @@ import { makeToast, updateSlider } from '../../utils/utils';
 const Settings = (props) => {
    const close_img = props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/dark/close.svg` : `${process.env.PUBLIC_URL}/assets/icons/light/close.svg`;
    const email_img = props.darkMode ? `${process.env.PUBLIC_URL}/assets/icons/light/email.svg` : `${process.env.PUBLIC_URL}/assets/icons/dark/email.svg`;
+   const logo = `${process.env.PUBLIC_URL}/assets/logo.svg`;
 
    useEffect(() => updateSlider('palette_seekbar', data.slider.alpha));
 
@@ -20,7 +21,7 @@ const Settings = (props) => {
    const sendEmail = () => {
       const link = `mailto:${author.email}?subject=${encodeURIComponent('Color Palette: Request Feature')}`;
       window.location.href = link;
-   }
+   };
 
    return (
       <div className='settings-modal'>
@@ -60,6 +61,12 @@ const Settings = (props) => {
                <div className='settings-category feedback'>
                   <p>Request developer to implement your required feature.</p>
                   <img src={email_img} alt='email' onClick={() => sendEmail()} />
+               </div>
+
+               <div className='about-app'>
+                  <img className='app-logo' src={logo} alt='logo' />
+                  <p className='app-name'>Color Palette</p>
+                  <p className='app-version'>v{props.version}</p>
                </div>
             </div>
          </div>
