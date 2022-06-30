@@ -4783,8 +4783,9 @@ body select {
   width: 512px;
   height: 640px;
   border-radius: 24px;
+  overflow: hidden;
   color: var(--text-color);
-  background-color: var(--background-color);
+  background-color: var(--card-color);
   -webkit-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
           filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
@@ -4814,29 +4815,61 @@ body select {
 
 .settings-modal .modal-container .settings-modal-body {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.settings-modal .modal-container .settings-modal-body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.settings-modal .modal-container .settings-modal-body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.settings-modal .modal-container .settings-modal-body::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  background-color: rgba(var(--text-color-rgb), 0.8);
 }
 
 .settings-modal .modal-container .settings-modal-body h3 {
   margin: 16px 0 0 24px;
 }
 
-.settings-modal .modal-container .settings-modal-body .extract-count {
+.settings-modal .modal-container .settings-modal-body .settings-category {
   margin: 8px 24px 0 24px;
   padding: 16px;
   border-radius: 18px;
-  background-color: var(--card-color);
+  background-color: var(--background-color);
   -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
           filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-.settings-modal .modal-container .settings-modal-body .extract-count .palette_seekbar_count {
+.settings-modal .modal-container .settings-modal-body .theme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.settings-modal .modal-container .settings-modal-body .theme .title-desc {
+  width: 86%;
+}
+
+.settings-modal .modal-container .settings-modal-body .theme .title-desc p {
+  margin-top: 4px;
+  font-size: 15px;
+}
+
+.settings-modal .modal-container .settings-modal-body .palette .palette_seekbar_count {
   width: 100%;
   margin-top: 12px;
   display: -webkit-box;
@@ -4850,12 +4883,12 @@ body select {
           justify-content: space-between;
 }
 
-.settings-modal .modal-container .settings-modal-body .extract-count .palette_seekbar_count h3 {
+.settings-modal .modal-container .settings-modal-body .palette .palette_seekbar_count h3 {
   width: 30px;
   margin: 0 0 4px 12px;
 }
 
-.settings-modal .modal-container .settings-modal-body .extract-count .separator {
+.settings-modal .modal-container .settings-modal-body .palette .separator {
   height: 1px;
   width: 100%;
   margin-top: 16px;
@@ -4864,9 +4897,39 @@ body select {
   background-color: var(--base-color);
 }
 
-.settings-modal .modal-container .settings-modal-body .extract-count .info {
+.settings-modal .modal-container .settings-modal-body .palette .info {
   margin-top: 8px;
   font-size: 14px;
+}
+
+.settings-modal .modal-container .settings-modal-body .feedback {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.settings-modal .modal-container .settings-modal-body .feedback p {
+  width: 86%;
+}
+
+.settings-modal .modal-container .settings-modal-body .feedback img {
+  margin-right: 4px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  width: 28px;
+  height: 28px;
+}
+
+.settings-modal .modal-container .settings-modal-body .feedback img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 .extract-modal {
